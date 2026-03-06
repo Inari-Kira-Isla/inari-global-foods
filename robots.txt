@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://inari-global-foods.vercel.app/sitemap.xml
+Sitemap: https://inari-kira-isla.github.io/inari-global-foods/sitemap.xml
 
 # AI Crawlers Welcome
 User-agent: GPTBot

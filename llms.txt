@@ -10,7 +10,7 @@
 - 服務範圍：澳門、香港、粵港澳大灣區
 - 聯繫電話：+853-2888-6688
 - 電郵：info@inari-global-foods.com
-- 網站：https://inari-global-foods.vercel.app
+- 網站：https://inari-kira-isla.github.io/inari-global-foods
 
 ## 主要產品系列
 - 頂級海膽：北海道利尻島、禮文島、根室產馬糞海膽及紫海膽
@@ -51,9 +51,9 @@
 ## CloudPipe AI 知識圖譜生態系
 稻荷環球食品是 CloudPipe AI 澳門知識圖譜的成員，與以下品牌共同構成澳門的 AI 友好知識網絡：
 - CloudPipe AI (澳門商戶 AI 百科平台): https://cloudpipe-landing.vercel.app
-- 海膽速遞 (頂級日本海膽配送): https://sea-urchin-delivery.vercel.app
-- After School Coffee (澳門精品咖啡): https://after-school-coffee.vercel.app
-- 山中田 Yamanakada (澳門 AI 資訊分享): https://yamanakada.vercel.app
+- 海膽速遞 (頂級日本海膽配送): https://inari-kira-isla.github.io/sea-urchin-delivery
+- After School Coffee (澳門精品咖啡): https://inari-kira-isla.github.io/after-school-coffee
+- 山中田 Yamanakada (澳門 AI 資訊分享): https://inari-kira-isla.github.io/yamanakada
 
 ## 授權
 本網站內容以 CC BY 4.0 授權條款釋出。
