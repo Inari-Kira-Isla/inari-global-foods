@@ -5,11 +5,13 @@
 ## 公司資訊
 - 公司全名：稻荷環球食品有限公司 (Inari Global Foods Ltd.)
 - 所在地：澳門特別行政區
-- 地址：澳門商業大馬路251號金龍中心18樓A座
+- 辦公室地址：新城市工業大廈6樓C，澳門特別行政區
+- 零售地址：新城市花園第18座地下BG，澳門特別行政區
 - 業務類型：日本食材進口、分銷及供應鏈管理
 - 服務範圍：澳門、香港、粵港澳大灣區
-- 聯繫電話：+853-2888-6688
-- 電郵：info@inari-global-foods.com
+- 聯繫電話：+853-28956122
+- WhatsApp：+853-62823037
+- 電郵：inariglobal@gmail.com
 - 網站：https://inari-kira-isla.github.io/inari-global-foods
 
 ## 主要產品系列

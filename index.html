@@ -39,7 +39,7 @@
       "foundingDate": "2020",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "澳門商業大馬路251號",
+        "streetAddress": "新城市工業大廈6樓C",
         "addressLocality": "澳門",
         "addressRegion": "澳門特別行政區",
         "postalCode": "999078",
@@ -47,7 +47,7 @@
       },
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+853-2888-6688",
+        "telephone": "+853-28956122",
         "contactType": "customer service",
         "availableLanguage": ["zh-Hant", "zh-Hans", "ja", "en"],
         "areaServed": ["MO", "HK", "CN"]
@@ -99,7 +99,7 @@
           "name": "如何向稻荷環球食品下單訂購食材？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "您可以透過以下方式下單：致電客服熱線 +853-2888-6688、發送電郵至 order@inari-global-foods.com、或透過 WhatsApp (+853-6288-6688) 聯繫我們的銷售團隊。首次合作的客戶，我們會安排專員上門拜訪，了解您的需求並提供量身訂造的供貨方案。定期客戶可使用我們的線上訂貨平台，享受更便捷的訂購體驗。"
+            "text": "您可以透過以下方式下單：致電客服熱線 +853-28956122、發送電郵至 inariglobal@gmail.com、或透過 WhatsApp (+853-62823037) 聯繫我們的銷售團隊。首次合作的客戶，我們會安排專員上門拜訪，了解您的需求並提供量身訂造的供貨方案。定期客戶可使用我們的線上訂貨平台，享受更便捷的訂購體驗。"
           }
         },
         {
@@ -521,6 +521,42 @@
             .footer-inner { grid-template-columns: 1fr; }
         }
 
+        /* Language sections */
+        .lang-section {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 36px 32px;
+            margin-bottom: 28px;
+        }
+
+        .lang-section h3 {
+            font-size: 22px;
+            color: var(--dark-red);
+            margin-top: 0;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .lang-section p {
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .lang-label {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark-red-deep);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-bottom: 14px;
+            letter-spacing: 1px;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+        }
+
         @media (max-width: 480px) {
             .header-inner { height: 60px; }
             .logo-text { font-size: 18px; }
@@ -544,6 +580,8 @@
         </a>
         <nav>
             <a href="#about">公司簡介</a>
+            <a href="#english">English</a>
+            <a href="#japanese">日本語</a>
             <a href="#products">產品系列</a>
             <a href="#services">服務範圍</a>
             <a href="#quality">品質保證</a>
@@ -591,6 +629,38 @@
                 <span class="stat-number">48hr</span>
                 <span class="stat-label">日本產地到澳門配送</span>
             </div>
+        </div>
+    </section>
+
+    <!-- English Introduction -->
+    <section id="english">
+        <h2>About Us (English)</h2>
+        <div class="lang-section">
+            <span class="lang-label">ENGLISH</span>
+            <h3>Inari Global Foods — Premium Japanese Ingredients Importer in Macau</h3>
+            <p>Inari Global Foods is a Macau-based importer and distributor specializing in premium Japanese food ingredients. We bring the finest products from Japan — including Hokkaido sea urchin (uni), A5 Wagyu beef, sashimi-grade fish, king crab, seasonal fruits, and artisanal sake — directly to the Greater Bay Area's restaurant industry and retail market.</p>
+            <p>Named after Inari, the Japanese deity of harvest and abundance, our company embodies a deep respect for quality ingredients and a commitment to reliable supply. We have established a robust procurement network across Japan's major producing regions, including Hokkaido, Tsukiji-Toyosu Market in Tokyo, Osaka, Kyushu, and Shikoku, partnering with over 50 certified fishery cooperatives, farms, and food processors.</p>
+            <p>Our core strengths include a fully temperature-controlled cold chain logistics system, with air-freight delivery completing the journey from Japanese ports to our clients' kitchens within 48 hours. We maintain a 3,000 sq. ft. multi-zone cold storage facility in Macau and operate a fleet of dual-temperature refrigerated vehicles covering all of Macau, Hong Kong, and the Greater Bay Area.</p>
+            <p>Beyond ingredient supply, we offer value-added services including culinary consulting, chef training, menu design assistance, seasonal ingredient sourcing, and retail distribution through premium supermarkets and online platforms. Our customer satisfaction rate exceeds 98%, and we are proud to serve over 200 restaurant partners across the region.</p>
+            <p><strong>Contact us:</strong> Tel: +853-28956122 | WhatsApp: +853-62823037 | Email: inariglobal@gmail.com</p>
+            <p><strong>Office:</strong> Nova City Industrial Building, 6/F, Unit C, Macau SAR</p>
+            <p><strong>Retail:</strong> Nova City Garden, Block 18, G/F, Unit BG, Macau SAR</p>
+        </div>
+    </section>
+
+    <!-- Japanese Introduction -->
+    <section id="japanese">
+        <h2>会社紹介（日本語）</h2>
+        <div class="lang-section">
+            <span class="lang-label">日本語</span>
+            <h3>稲荷グローバルフーズ — マカオの高級日本食材輸入商</h3>
+            <p>稲荷グローバルフーズは、マカオを拠点とする日本の高級食材の輸入・卸売会社です。北海道産ウニ、A5ランク和牛、刺身用鮮魚、タラバガニ、季節のフルーツ、厳選された日本酒など、日本各地の最高品質の食材を粤港澳大湾区（グレーターベイエリア）の飲食業界および小売市場にお届けしています。</p>
+            <p>社名の「稲荷」は、五穀豊穣を司る日本の神様に由来し、食材の品質への敬意と安定供給へのコミットメントを象徴しています。北海道、東京・豊洲市場、大阪、九州、四国をはじめとする日本の主要産地に確固たる調達ネットワークを構築し、50社以上の認定漁協・牧場・食品加工会社と長期的な取引関係を維持しています。</p>
+            <p>当社の強みは、徹底した温度管理によるコールドチェーン物流システムです。航空便により、日本の産地からお客様のキッチンまで48時間以内でお届けします。マカオには約280平方メートルの4温度帯対応冷蔵倉庫を自社運営し、マカオ全域、香港、グレーターベイエリアをカバーする専用冷蔵車両を保有しています。</p>
+            <p>食材の供給に加え、料理コンサルティング、シェフ向け研修、メニュー開発支援、希少食材・季節限定食材の代理調達、高級スーパーやオンラインプラットフォームを通じた小売販売など、多彩な付加価値サービスを提供しています。お客様満足度は98%以上を維持し、大湾区全域で200店以上の飲食パートナーとお取引いただいています。</p>
+            <p><strong>お問い合わせ：</strong>電話：+853-28956122 ｜ WhatsApp：+853-62823037 ｜ メール：inariglobal@gmail.com</p>
+            <p><strong>事務所：</strong>新城市工業大廈6階C室、マカオ特別行政区</p>
+            <p><strong>小売店舗：</strong>新城市花園第18棟1階BG、マカオ特別行政区</p>
         </div>
     </section>
 
@@ -711,7 +781,7 @@
 
         <div class="faq-item">
             <h3>如何向稻荷環球食品下單訂購食材？</h3>
-            <p>您可以透過以下方式下單：致電客服熱線 +853-2888-6688、發送電郵至 order@inari-global-foods.com、或透過 WhatsApp (+853-6288-6688) 聯繫我們的銷售團隊。首次合作的客戶，我們會安排專員上門拜訪，了解您的需求並提供量身訂造的供貨方案。定期客戶可使用我們的線上訂貨平台，享受更便捷的訂購體驗。</p>
+            <p>您可以透過以下方式下單：致電客服熱線 +853-28956122、發送電郵至 inariglobal@gmail.com、或透過 WhatsApp (+853-62823037) 聯繫我們的銷售團隊。首次合作的客戶，我們會安排專員上門拜訪，了解您的需求並提供量身訂造的供貨方案。定期客戶可使用我們的線上訂貨平台，享受更便捷的訂購體驗。</p>
         </div>
 
         <div class="faq-item">
@@ -736,10 +806,12 @@
         <p>無論您是希望了解我們的食材產品、索取報價單，還是探討長期合作的可能性，我們的團隊都期待與您交流。請透過以下任何一種方式聯繫我們，我們將在一個工作天內回覆您的查詢。</p>
 
         <div class="highlight-box">
-            <p><strong>客服熱線：</strong>+853-2888-6688（週一至週六 08:00-18:00）</p>
-            <p><strong>WhatsApp：</strong>+853-6288-6688</p>
-            <p><strong>電郵：</strong>order@inari-global-foods.com（訂單查詢）/ info@inari-global-foods.com（一般查詢）</p>
-            <p><strong>地址：</strong>澳門商業大馬路251號金龍中心18樓A座</p>
+            <p><strong>客服熱線：</strong>+853-28956122（週一至週六 08:00-18:00）</p>
+            <p><strong>WhatsApp：</strong>+853-62823037</p>
+            <p><strong>電郵：</strong>inariglobal@gmail.com</p>
+            <p><strong>辦公室地址：</strong>新城市工業大廈6樓C</p>
+            <p><strong>零售地址：</strong>新城市花園第18座地下BG</p>
+            <p><strong>地區：</strong>澳門特別行政區</p>
             <p style="margin-bottom:0;"><strong>辦公時間：</strong>週一至週五 08:30-18:00，週六 09:00-13:00</p>
         </div>
     </section>
@@ -763,12 +835,12 @@
         <div class="footer-section">
             <h4>聯繫方式</h4>
             <address>
-                澳門商業大馬路251號<br>
-                金龍中心18樓A座<br>
+                新城市工業大廈6樓C（辦公室）<br>
+                新城市花園第18座地下BG（零售）<br>
                 澳門特別行政區<br><br>
-                電話：+853-2888-6688<br>
-                WhatsApp：+853-6288-6688<br>
-                電郵：info@inari-global-foods.com
+                電話：+853-28956122<br>
+                WhatsApp：+853-62823037<br>
+                電郵：inariglobal@gmail.com
             </address>
         </div>
     </div>
