@@ -43,12 +43,21 @@
         "latitude": 22.2065,
         "longitude": 113.5525
       },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+853-6282-3037",
-        "contactType": "customer service",
-        "availableLanguage": ["zh-Hant", "zh-Hans", "ja", "en"]
-      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+853-6282-3037",
+          "contactType": "customer service",
+          "availableLanguage": ["zh-Hant", "zh-Hans", "ja", "en"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+853-2895-6122",
+          "contactType": "sales",
+          "description": "批發查詢 Wholesale Inquiry"
+        }
+      ],
+      "faxNumber": "+853-2823-6428",
       "foundingDate": "2021",
       "founder": {
         "@type": "Person",
@@ -617,6 +626,39 @@
         }
         .footer-bottom a { color: var(--gold-light); text-decoration: none; }
 
+        /* Stats Counter */
+        .stats-section {
+            background: var(--charcoal);
+            padding: 60px 24px;
+            border-top: 1px solid rgba(201,168,76,0.2);
+            border-bottom: 1px solid rgba(201,168,76,0.2);
+        }
+        .stats-inner {
+            max-width: 900px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 32px; text-align: center;
+        }
+        .stat-item { position: relative; }
+        .stat-number {
+            font-size: 48px; font-weight: 900;
+            color: var(--gold); letter-spacing: 2px;
+            display: inline;
+        }
+        .stat-plus {
+            font-size: 28px; font-weight: 700;
+            color: var(--gold); display: inline;
+            vertical-align: super;
+        }
+        .stat-label {
+            font-size: 15px; font-weight: 700;
+            color: var(--white); margin-top: 4px;
+        }
+        .stat-sub {
+            font-size: 11px; color: var(--text-light);
+            letter-spacing: 2px; text-transform: uppercase;
+            margin-top: 2px;
+        }
+
         /* Animations */
         .fade-in {
             opacity: 0;
@@ -638,6 +680,8 @@
             .about-img { order: -1; }
             .about-img img { height: 280px; }
             .features-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+            .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .stat-number { font-size: 36px; }
             .location-inner { grid-template-columns: 1fr; }
             .footer-inner { grid-template-columns: 1fr; }
             .articles-grid { grid-template-columns: 1fr; }
@@ -653,6 +697,13 @@
             .feature-card .card-img { height: 160px; }
             .menu-section { padding: 60px 16px; }
             .location { padding: 60px 16px; }
+            .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+            .stat-number { font-size: 32px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+            .fade-in { opacity: 1; transform: none; }
         }
     </style>
 <link rel="alternate" hreflang="zh-TW" href="https://inari-kira-isla.github.io/inari-global-foods">
@@ -677,6 +728,7 @@
             <a href="#about">關於我們</a>
             <a href="#features">特色</a>
             <a href="#menu">產品</a>
+            <a href="products.html">批發目錄</a>
             <a href="#location">位置</a>
         </nav>
         <button class="mobile-menu" aria-label="開啟選單">&#9776;</button>
@@ -751,54 +803,110 @@
     </div>
 </section>
 
+<!-- Stats Counter -->
+<section class="stats-section" aria-label="公司數據">
+    <div class="stats-inner">
+        <div class="stat-item fade-in">
+            <div class="stat-number" data-target="120">0</div>
+            <div class="stat-plus">+</div>
+            <div class="stat-label">批發品項</div>
+            <div class="stat-sub">SKU Products</div>
+        </div>
+        <div class="stat-item fade-in">
+            <div class="stat-number" data-target="10">0</div>
+            <div class="stat-label">產品大類</div>
+            <div class="stat-sub">Categories</div>
+        </div>
+        <div class="stat-item fade-in">
+            <div class="stat-number" data-target="29">0</div>
+            <div class="stat-plus">年</div>
+            <div class="stat-label">水產業資歷</div>
+            <div class="stat-sub">Years Experience</div>
+        </div>
+        <div class="stat-item fade-in">
+            <div class="stat-number" data-target="8">0</div>
+            <div class="stat-label">來源國家</div>
+            <div class="stat-sub">Countries</div>
+        </div>
+    </div>
+</section>
+
 <!-- Menu / Products -->
 <section id="menu" class="menu-section">
     <div class="menu-bg" style="background-image:url('images/menu-seafood.jpg')"></div>
     <div class="menu-content">
         <div class="section-header fade-in">
-            <h2>產品及價格</h2>
-            <div class="en-sub">Products &amp; Pricing</div>
+            <h2>批發產品精選</h2>
+            <div class="en-sub">Wholesale Product Highlights</div>
         </div>
 
         <div class="menu-category fade-in">
-            <h3>招牌手卷 Hand Rolls</h3>
+            <h3>蝦類 Shrimp · 24 品項</h3>
             <div class="menu-item">
-                <div class="menu-item-name">各款手卷<small>海膽 / 三文魚 / 吞拿魚等</small></div>
-                <div class="menu-item-price">MOP $20 起</div>
+                <div class="menu-item-name">俄羅斯甜蝦 3L (40-50隻/kg)<small>Russia Sweet Shrimp · 刺身級</small></div>
+                <div class="menu-item-price">$296/箱</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-name">加拿大牡丹蝦 XL (21-25pc)<small>Canada Botan Shrimp · 頂級</small></div>
+                <div class="menu-item-price">$418/箱</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-name">越南天婦羅蝦 5L<small>Vietnam Tempura Shrimp</small></div>
+                <div class="menu-item-price">$43/箱</div>
             </div>
         </div>
 
         <div class="menu-category fade-in">
-            <h3>新鮮海膽 Sea Urchin</h3>
+            <h3>帶子 / 北寄貝 Scallops · 11 品項</h3>
             <div class="menu-item">
-                <div class="menu-item-name">北海道馬糞海膽<small>Hokkaido Bafun Uni</small></div>
-                <div class="menu-item-price">時價</div>
+                <div class="menu-item-name">北海道帶子 M (26-30p)<small>Hokkaido Scallop · 最大尺寸</small></div>
+                <div class="menu-item-price">$580/箱</div>
             </div>
             <div class="menu-item">
-                <div class="menu-item-name">北海道紫海膽<small>Hokkaido Murasaki Uni</small></div>
-                <div class="menu-item-price">時價</div>
+                <div class="menu-item-name">北海道帶子 4S (51-60p)<small>Hokkaido Scallop · 高性價比</small></div>
+                <div class="menu-item-price">$398/箱</div>
             </div>
-        </div>
-
-        <div class="menu-category fade-in">
-            <h3>刺身級鮮魚 Sashimi-Grade Fish</h3>
             <div class="menu-item">
-                <div class="menu-item-name">三文魚 / 吞拿魚 / 真鯛 等<small>Salmon / Tuna / Snapper etc.</small></div>
-                <div class="menu-item-price">時價</div>
+                <div class="menu-item-name">加拿大北寄貝 M<small>Surf Clam</small></div>
+                <div class="menu-item-price">$192/箱</div>
             </div>
         </div>
 
         <div class="menu-category fade-in">
-            <h3>日本食材 Japanese Ingredients</h3>
+            <h3>魚籽 / 鰻魚 Roe & Eel · 25 品項</h3>
             <div class="menu-item">
-                <div class="menu-item-name">各類日本調味料、乾貨、米類<small>Seasonings, Dried Goods, Rice</small></div>
-                <div class="menu-item-price">歡迎查詢</div>
+                <div class="menu-item-name">北海道三文魚籽醬油漬<small>Hokkaido Ikura · 軍艦壽司必備</small></div>
+                <div class="menu-item-price">$450/箱</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-name">30P 碳燒鰻魚（獨立包裝）<small>Unagi · 最大尾</small></div>
+                <div class="menu-item-price">$165/箱</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-name">鳥取縣急凍蟹膏<small>Tottori Crab Paste</small></div>
+                <div class="menu-item-price">$108/箱</div>
+            </div>
+        </div>
+
+        <div class="menu-category fade-in">
+            <h3>壽司配料 / 干貨 · 37 品項</h3>
+            <div class="menu-item">
+                <div class="menu-item-name">京都三角腐皮 / 四角腐皮<small>Kyoto Inari Tofu Skin</small></div>
+                <div class="menu-item-price">$39-43/箱</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-name">丸金味醂 18L / 萬宇豉油 18L<small>桶裝 · 餐廳專用</small></div>
+                <div class="menu-item-price">$345-385</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-name">全型紫菜 / 軍艦紫菜<small>Nori Sheets</small></div>
+                <div class="menu-item-price">$55-60/箱</div>
             </div>
         </div>
 
         <div style="text-align:center;margin-top:36px" class="fade-in">
-            <p style="color:rgba(255,255,255,0.5);font-size:14px;margin-bottom:16px">價格隨季節及供貨調整，歡迎致電查詢最新價目</p>
-            <a href="tel:+85362823037" style="color:var(--gold);font-size:16px;font-weight:700;text-decoration:none;letter-spacing:1px">+853 6282 3037</a>
+            <a href="products.html" style="display:inline-block;background:var(--gold);color:var(--dark);padding:14px 36px;border-radius:4px;text-decoration:none;font-weight:700;font-size:15px;letter-spacing:2px;transition:all 0.3s;">查看完整產品目錄 →</a>
+            <p style="color:rgba(255,255,255,0.5);font-size:14px;margin-top:16px">120+ 品項 · 10 大類 · 批發價格一覽</p>
         </div>
     </div>
 </section>
@@ -816,18 +924,20 @@
             </div>
 
             <div class="location-detail">
-                <div class="label">電話</div>
+                <div class="label">門市電話</div>
                 <p><a href="tel:+85362823037">+853 6282 3037</a></p>
             </div>
 
             <div class="location-detail">
-                <div class="label">付款方式</div>
-                <p>現金</p>
+                <div class="label">批發部 / 倉庫</div>
+                <p>澳門牧場街61號<br>台山新城市工業大廈6樓C座<br>
+                電話：<a href="tel:+85328956122">(853) 2895 6122</a><br>
+                傳真：(853) 2823 6428</p>
             </div>
 
             <div class="location-detail">
                 <div class="label">交通</div>
-                <p>鄰近關閘，可乘巴士 25 / 25B / 59 / 101X</p>
+                <p>門市鄰近關閘，可乘巴士 25 / 25B / 59 / 101X</p>
             </div>
 
             <div class="location-detail">
@@ -891,16 +1001,20 @@
             <h4>快速連結</h4>
             <a href="#about">關於我們</a>
             <a href="#features">四大堅持</a>
-            <a href="#menu">產品及價格</a>
+            <a href="#menu">產品精選</a>
+            <a href="products.html">批發產品目錄</a>
             <a href="#location">聯繫我們</a>
             <a href="https://www.instagram.com/inariglobal/" target="_blank" rel="noopener">Instagram</a>
         </div>
         <div class="footer-section">
             <h4>聯繫方式</h4>
             <address>
-                澳門雷普仙街8座<br>
-                地下BG鋪<br><br>
-                電話：<a href="tel:+85362823037">+853 6282 3037</a><br>
+                <strong style="color:var(--gold-light)">門市</strong><br>
+                澳門雷普仙街8座地下BG鋪<br>
+                電話：<a href="tel:+85362823037">+853 6282 3037</a><br><br>
+                <strong style="color:var(--gold-light)">批發倉庫</strong><br>
+                牧場街61號台山新城市工業大廈6樓C座<br>
+                電話：<a href="tel:+85328956122">(853) 2895 6122</a><br>
                 IG：<a href="https://www.instagram.com/inariglobal/" target="_blank" rel="noopener">@inariglobal</a>
             </address>
         </div>
@@ -957,6 +1071,28 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Count Up Animation
+const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.dataset.target);
+            let current = 0;
+            const step = Math.max(1, Math.floor(target / 40));
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                el.textContent = current;
+            }, 30);
+            countObserver.unobserve(el);
+        }
+    });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat-number[data-target]').forEach(el => countObserver.observe(el));
 
 // Mobile menu
 document.querySelector('.mobile-menu').addEventListener('click', function() {
