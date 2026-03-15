@@ -220,6 +220,16 @@
       padding: 0 24px 80px;
     }
 
+    /* === Category Banner Image === */
+    .cat-banner {
+      width: 100%; height: 220px;
+      object-fit: cover; border-radius: 12px;
+      margin-bottom: 24px;
+      filter: brightness(0.7) saturate(1.2);
+      transition: filter 0.5s;
+    }
+    .cat-banner:hover { filter: brightness(0.85) saturate(1.3); }
+
     /* === Category Section === */
     .category {
       padding: 60px 0 40px;
@@ -524,7 +534,7 @@
 <div class="b2b-bar animate">
   <div>
     <h3>批發查詢</h3>
-    <p>所有價格以箱為單位（MOP），歡迎餐廳、酒店、超市及食品批發商洽詢。價格隨季節及供貨調整，以最新報價為準。</p>
+    <p>所有價格以<strong>每公斤 (kg)</strong> 或<strong>每包/合</strong>為單位（MOP），規格欄顯示每箱裝量。歡迎餐廳、酒店、超市及食品批發商洽詢。價格隨季節及供貨調整，以最新報價為準。</p>
     <div class="contact-info" style="margin-top:12px">
       <div class="contact-item"><strong>電話：</strong><a href="tel:+85328956122">(853) 2895 6122</a></div>
       <div class="contact-item"><strong>傳真：</strong>(853) 2823 6428</div>
@@ -537,6 +547,7 @@
 
 <!-- ==================== 1. 蝦類 ==================== -->
 <section id="shrimp" class="category animate" aria-label="蝦類產品">
+  <img class="cat-banner" src="images/cat-shrimp.jpg" alt="新鮮蝦類 — 俄羅斯甜蝦、加拿大牡丹蝦" loading="lazy">
   <div class="cat-header">
     <h2>蝦類</h2>
     <span class="cat-en">Shrimp & Prawns</span>
@@ -545,7 +556,7 @@
 
   <table class="product-table">
     <thead>
-      <tr><th>產品名稱</th><th>產地</th><th>規格</th><th>價格 (MOP/箱)</th></tr>
+      <tr><th>產品名稱</th><th>產地</th><th>規格</th><th>單價 (MOP)</th></tr>
     </thead>
     <tbody>
       <tr>
@@ -691,6 +702,7 @@
 
 <!-- ==================== 2. 蟹類 ==================== -->
 <section id="crab" class="category animate" aria-label="蟹類產品">
+  <img class="cat-banner" src="images/cat-crab.jpg" alt="蟹類產品 — 鳥取蟹膏、松葉蟹腳" loading="lazy">
   <div class="cat-header">
     <h2>蟹類</h2>
     <span class="cat-en">Crab Products</span>
@@ -699,7 +711,7 @@
 
   <table class="product-table">
     <thead>
-      <tr><th>產品名稱</th><th>產地</th><th>規格</th><th>價格 (MOP/箱)</th></tr>
+      <tr><th>產品名稱</th><th>產地</th><th>規格</th><th>單價 (MOP)</th></tr>
     </thead>
     <tbody>
       <tr>
@@ -755,6 +767,7 @@
 
 <!-- ==================== 3. 魚口左及其他魚類 ==================== -->
 <section id="fish" class="category animate" aria-label="魚類產品">
+  <img class="cat-banner" src="images/cat-fish.jpg" alt="魚類產品 — 青森左口魚、味淋魚干" loading="lazy">
   <div class="cat-header">
     <h2>魚口左及其他魚類</h2>
     <span class="cat-en">Flounder & Fish</span>
@@ -763,7 +776,7 @@
 
   <table class="product-table">
     <thead>
-      <tr><th>產品名稱</th><th>產地</th><th>規格</th><th>價格 (MOP/箱)</th></tr>
+      <tr><th>產品名稱</th><th>產地</th><th>規格</th><th>單價 (MOP)</th></tr>
     </thead>
     <tbody>
       <tr>
@@ -803,6 +816,7 @@
 
 <!-- ==================== 4. 鰻魚類及其他魚類 ==================== -->
 <section id="eel" class="category animate" aria-label="鰻魚類產品">
+  <img class="cat-banner" src="images/cat-eel.jpg" alt="碳燒鰻魚 — 30P至60P多種規格" loading="lazy">
   <div class="cat-header">
     <h2>鰻魚類及其他魚類</h2>
     <span class="cat-en">Eel & Other Fish</span>
@@ -811,7 +825,7 @@
 
   <table class="product-table">
     <thead>
-      <tr><th>產品名稱</th><th>產地</th><th>規格</th><th>價格 (MOP/箱)</th></tr>
+      <tr><th>產品名稱</th><th>產地</th><th>規格</th><th>單價 (MOP)</th></tr>
     </thead>
     <tbody>
       <tr>
@@ -885,6 +899,7 @@
 
 <!-- ==================== 5. 魚籽及魚類 ==================== -->
 <section id="roe" class="category animate" aria-label="魚籽及魚類產品">
+  <img class="cat-banner" src="images/cat-uni.jpg" alt="海膽魚卵 — 北海道海膽、醬油漬三文魚籽" loading="lazy">
   <div class="cat-header">
     <h2>魚籽及魚類</h2>
     <span class="cat-en">Roe & Premium Fish</span>
@@ -893,7 +908,7 @@
 
   <table class="product-table">
     <thead>
-      <tr><th>產品名稱</th><th>產地</th><th>規格</th><th>價格 (MOP/箱)</th></tr>
+      <tr><th>產品名稱</th><th>產地</th><th>規格</th><th>單價 (MOP)</th></tr>
     </thead>
     <tbody>
       <tr>
@@ -991,6 +1006,7 @@
 
 <!-- ==================== 6. 帶子 / 北寄貝 ==================== -->
 <section id="scallop" class="category animate" aria-label="帶子及北寄貝產品">
+  <img class="cat-banner" src="images/cat-scallop.jpg" alt="北海道帶子 — 4S至M全尺寸" loading="lazy">
   <div class="cat-header">
     <h2>帶子 / 北寄貝</h2>
     <span class="cat-en">Scallops & Surf Clams</span>
@@ -999,7 +1015,7 @@
 
   <table class="product-table">
     <thead>
-      <tr><th>產品名稱</th><th>產地</th><th>規格</th><th>價格 (MOP/箱)</th></tr>
+      <tr><th>產品名稱</th><th>產地</th><th>規格</th><th>單價 (MOP)</th></tr>
     </thead>
     <tbody>
       <tr>
@@ -1073,6 +1089,7 @@
 
 <!-- ==================== 7. 其他凍貨 ==================== -->
 <section id="frozen" class="category animate" aria-label="其他凍貨">
+  <img class="cat-banner" src="images/cat-frozen.jpg" alt="凍貨 — 八爪魚、魷魚、鮑魚、蟹籽" loading="lazy">
   <div class="cat-header">
     <h2>其他凍貨</h2>
     <span class="cat-en">Other Frozen Products</span>
@@ -1081,7 +1098,7 @@
 
   <table class="product-table">
     <thead>
-      <tr><th>產品名稱</th><th>產地</th><th>規格</th><th>價格 (MOP/箱)</th></tr>
+      <tr><th>產品名稱</th><th>產地</th><th>規格</th><th>單價 (MOP)</th></tr>
     </thead>
     <tbody>
       <tr>
@@ -1211,6 +1228,7 @@
 
 <!-- ==================== 8. 壽司配料 ==================== -->
 <section id="sushi" class="category animate" aria-label="壽司配料">
+  <img class="cat-banner" src="images/cat-sushi.jpg" alt="壽司配料 — 壽司蛋、腐皮、蟹柳、芥末" loading="lazy">
   <div class="cat-header">
     <h2>壽司配料</h2>
     <span class="cat-en">Sushi Ingredients</span>
@@ -1219,7 +1237,7 @@
 
   <table class="product-table">
     <thead>
-      <tr><th>產品名稱</th><th>產地</th><th>規格</th><th>價格 (MOP/箱)</th></tr>
+      <tr><th>產品名稱</th><th>產地</th><th>規格</th><th>單價 (MOP)</th></tr>
     </thead>
     <tbody>
       <tr>
@@ -1299,6 +1317,7 @@
 
 <!-- ==================== 9. 干貨 ==================== -->
 <section id="dry" class="category animate" aria-label="干貨">
+  <img class="cat-banner" src="images/cat-dry.jpg" alt="干貨 — 海苔、昆布、豉油、味醂、芥辣粉" loading="lazy">
   <div class="cat-header">
     <h2>干貨</h2>
     <span class="cat-en">Dry Goods & Seasonings</span>
@@ -1307,7 +1326,7 @@
 
   <table class="product-table">
     <thead>
-      <tr><th>產品名稱</th><th>規格</th><th>價格 (MOP/箱)</th></tr>
+      <tr><th>產品名稱</th><th>規格</th><th>單價 (MOP)</th></tr>
     </thead>
     <tbody>
       <tr>
@@ -1471,6 +1490,7 @@
 
 <!-- ==================== 10. 新鮮商品 ==================== -->
 <section id="fresh" class="category animate" aria-label="新鮮商品">
+  <img class="cat-banner" src="images/cat-market.jpg" alt="新鮮商品 — 大葉、活赤貝" loading="lazy">
   <div class="cat-header">
     <h2>新鮮商品</h2>
     <span class="cat-en">Fresh Products</span>
@@ -1479,7 +1499,7 @@
 
   <table class="product-table">
     <thead>
-      <tr><th>產品名稱</th><th>規格</th><th>價格 (MOP)</th></tr>
+      <tr><th>產品名稱</th><th>規格</th><th>單價 (MOP)</th></tr>
     </thead>
     <tbody>
       <tr>
