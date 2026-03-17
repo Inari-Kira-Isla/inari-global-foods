@@ -1,0 +1,543 @@
+{
+  "_meta": {
+    "description": "日本水產旬曆（季節性食材月曆）— 稻荷環球食品",
+    "version": "1.0",
+    "last_verified": "2026-03-18",
+    "next_verification": "2026-06-16",
+    "verification_method": "AI cross-check + manual review"
+  },
+  "ingredients": [
+    {
+      "id": "bafun-uni",
+      "name_zh": "馬糞海膽",
+      "name_ja": "バフンウニ",
+      "name_en": "Bafun Uni",
+      "category": "uni",
+      "peak_months": [
+        6,
+        7,
+        8
+      ],
+      "available_months": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "origin": "北海道（積丹・利尻）",
+      "description": "橙紅色，濃郁甘甜，海膽中的經典",
+      "price_tier": "premium",
+      "image_prompt": "Close-up of fresh bafun uni (sea urchin) in a traditional wooden box on crushed ice, vibrant golden-orange color, professional dark mood food photography",
+      "source": "北海道漁業協同組合連合会 / 豊洲市場データ",
+      "verified_at": "2026-03-18",
+      "confidence": 0.95
+    },
+    {
+      "id": "murasaki-uni-kyushu",
+      "name_zh": "紫海膽（九州產）",
+      "name_ja": "ムラサキウニ",
+      "name_en": "Murasaki Uni (Kyushu)",
+      "category": "uni",
+      "peak_months": [
+        6,
+        7,
+        8
+      ],
+      "available_months": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "origin": "九州（福岡・長崎・熊本）",
+      "description": "淡黃色，清甜細膩，溫暖海域品種",
+      "price_tier": "premium",
+      "image_prompt": "Fresh murasaki uni (purple sea urchin) roe in a ceramic dish, pale yellow color, elegant Japanese plating, dark background",
+      "source": "九州漁業協同組合 / v5.1審計修正",
+      "verified_at": "2026-03-18",
+      "confidence": 0.9
+    },
+    {
+      "id": "kita-murasaki-uni",
+      "name_zh": "北紫海膽（北海道產）",
+      "name_ja": "キタムラサキウニ",
+      "name_en": "Kita Murasaki Uni (Hokkaido)",
+      "category": "uni",
+      "peak_months": [
+        9,
+        10,
+        11
+      ],
+      "available_months": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "origin": "北海道",
+      "description": "大顆粒，口感爽滑，秋冬主力海膽",
+      "price_tier": "premium",
+      "image_prompt": "Large kita-murasaki uni lobes on a dark slate plate, orange-yellow, close-up macro food photography",
+      "source": "北海道漁業協同組合連合会 / v5.1審計修正",
+      "verified_at": "2026-03-18",
+      "confidence": 0.9
+    },
+    {
+      "id": "aka-uni",
+      "name_zh": "赤海膽",
+      "name_ja": "アカウニ",
+      "name_en": "Aka Uni",
+      "category": "uni",
+      "peak_months": [
+        7,
+        8,
+        9
+      ],
+      "available_months": [
+        7,
+        8,
+        9
+      ],
+      "origin": "九州（福岡・長崎）",
+      "description": "極稀少，深橙色，類似栗子的獨特甜味",
+      "price_tier": "ultra-premium",
+      "image_prompt": "Rare aka uni (red sea urchin) on a lacquerware dish, deep orange color, luxurious Japanese dining setting",
+      "source": "九州漁業市場データ",
+      "verified_at": "2026-03-18",
+      "confidence": 0.85
+    },
+    {
+      "id": "hokkaido-scallop",
+      "name_zh": "北海道帶子",
+      "name_ja": "ホタテ",
+      "name_en": "Hokkaido Scallop",
+      "category": "scallop",
+      "peak_months": [
+        12,
+        1,
+        2,
+        3
+      ],
+      "available_months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "origin": "北海道（紋別・網走）",
+      "description": "冬季肉質最緊實甘甜，全年供應",
+      "price_tier": "standard",
+      "image_prompt": "Fresh Hokkaido scallops on crushed ice, plump white flesh with slight pink hue, dark background food photography",
+      "source": "北海道漁連 / 稻荷29年經驗",
+      "verified_at": "2026-03-18",
+      "confidence": 0.95
+    },
+    {
+      "id": "kan-buri",
+      "name_zh": "寒鰤",
+      "name_ja": "カンブリ",
+      "name_en": "Winter Yellowtail (Kan-Buri)",
+      "category": "fish",
+      "peak_months": [
+        12,
+        1,
+        2
+      ],
+      "available_months": [
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "origin": "富山灣（氷見）",
+      "description": "冬季脂肪最豐富，大理石般油花",
+      "price_tier": "premium",
+      "image_prompt": "Thick slice of kan-buri (winter yellowtail) showing marbled fat pattern, on a dark cutting board, professional sashimi photography",
+      "source": "富山県漁業協同組合連合会",
+      "verified_at": "2026-03-18",
+      "confidence": 0.95
+    },
+    {
+      "id": "maguro-ooma",
+      "name_zh": "鮪魚（大間產）",
+      "name_ja": "マグロ（大間）",
+      "name_en": "Bluefin Tuna (Ooma)",
+      "category": "fish",
+      "peak_months": [
+        10,
+        11,
+        12,
+        1
+      ],
+      "available_months": [
+        9,
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "origin": "青森縣大間",
+      "description": "秋冬大腹最肥美，最高級鮪魚",
+      "price_tier": "ultra-premium",
+      "image_prompt": "Premium otoro (fatty tuna belly) slice showing rich marbling, glistening surface, dark moody lighting",
+      "source": "豊洲市場拍賣データ",
+      "verified_at": "2026-03-18",
+      "confidence": 0.95
+    },
+    {
+      "id": "amaebi",
+      "name_zh": "甜蝦",
+      "name_ja": "アマエビ",
+      "name_en": "Sweet Shrimp (Amaebi)",
+      "category": "shrimp",
+      "peak_months": [
+        1,
+        2,
+        3
+      ],
+      "available_months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "origin": "北陸（旬期）/ 俄羅斯（全年）",
+      "description": "冬季北陸產甜度最高，俄羅斯產全年供應",
+      "price_tier": "standard",
+      "image_prompt": "Translucent pink sweet shrimp (amaebi) arranged on a dark plate, showing their natural sweetness and freshness",
+      "source": "石川県漁業協同組合 / 俄羅斯極東漁業データ / v5.1審計修正",
+      "verified_at": "2026-03-18",
+      "confidence": 0.9
+    },
+    {
+      "id": "botan-ebi",
+      "name_zh": "牡丹蝦",
+      "name_ja": "ボタンエビ",
+      "name_en": "Botan Shrimp",
+      "category": "shrimp",
+      "peak_months": [
+        4,
+        5,
+        6
+      ],
+      "available_months": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "origin": "加拿大太平洋沿岸",
+      "description": "春季肉質最飽滿，蝦膏豐富",
+      "price_tier": "premium",
+      "image_prompt": "Large botan shrimp (spot prawn) with visible roe, on a wooden sushi counter, Japanese style photography",
+      "source": "BC Canada fishery data / 稻荷採購記錄",
+      "verified_at": "2026-03-18",
+      "confidence": 0.9
+    },
+    {
+      "id": "aki-sake",
+      "name_zh": "秋鮭",
+      "name_ja": "アキサケ",
+      "name_en": "Autumn Salmon",
+      "category": "fish",
+      "peak_months": [
+        9,
+        10,
+        11
+      ],
+      "available_months": [
+        9,
+        10,
+        11
+      ],
+      "origin": "北海道",
+      "description": "洄游期品質最佳，配合三文魚籽旬期",
+      "price_tier": "standard",
+      "image_prompt": "Fresh whole autumn salmon (aki-sake) on ice at a Japanese fish market, showing silver skin and firm flesh",
+      "source": "北海道漁連",
+      "verified_at": "2026-03-18",
+      "confidence": 0.95
+    },
+    {
+      "id": "ikura",
+      "name_zh": "三文魚籽",
+      "name_ja": "イクラ",
+      "name_en": "Salmon Roe (Ikura)",
+      "category": "roe",
+      "peak_months": [
+        9,
+        10,
+        11
+      ],
+      "available_months": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "origin": "北海道",
+      "description": "秋季粒粒飽滿，軍艦壽司靈魂食材",
+      "price_tier": "premium",
+      "image_prompt": "Glistening salmon roe (ikura) in a small ceramic bowl, each egg translucent orange-red, dark background, macro photography",
+      "source": "北海道漁連",
+      "verified_at": "2026-03-18",
+      "confidence": 0.95
+    },
+    {
+      "id": "unagi",
+      "name_zh": "鰻魚",
+      "name_ja": "ウナギ",
+      "name_en": "Eel (Unagi)",
+      "category": "eel",
+      "peak_months": [
+        7,
+        8
+      ],
+      "available_months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "origin": "日本（養殖）",
+      "description": "土用丑之日傳統，全年養殖供應",
+      "price_tier": "standard",
+      "image_prompt": "Grilled unagi (eel) with kabayaki glaze on a traditional Japanese lacquerware plate, steam rising, dark moody setting",
+      "source": "日本養殖漁業協会",
+      "verified_at": "2026-03-18",
+      "confidence": 0.95
+    },
+    {
+      "id": "matsuba-gani",
+      "name_zh": "松葉蟹",
+      "name_ja": "マツバガニ",
+      "name_en": "Snow Crab (Matsuba-Gani)",
+      "category": "crab",
+      "peak_months": [
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "available_months": [
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "origin": "鳥取・福井・石川",
+      "description": "冬季蟹膏最濃厚，日本海代表食材",
+      "price_tier": "ultra-premium",
+      "image_prompt": "Whole snow crab (matsuba-gani) with legs spread on ice, showing rich crab roe inside, Japanese fish market style",
+      "source": "鳥取県漁業協同組合",
+      "verified_at": "2026-03-18",
+      "confidence": 0.95
+    },
+    {
+      "id": "sakura-tai",
+      "name_zh": "櫻鯛",
+      "name_ja": "サクラダイ",
+      "name_en": "Cherry Blossom Sea Bream",
+      "category": "fish",
+      "peak_months": [
+        3,
+        4,
+        5
+      ],
+      "available_months": [
+        3,
+        4,
+        5
+      ],
+      "origin": "瀬戶内海・紀伊水道",
+      "description": "春季祝賀之魚，產卵前體色粉紅",
+      "price_tier": "premium",
+      "image_prompt": "Beautiful pink sakura-tai (cherry sea bream) whole fish on a ceramic plate with spring cherry blossom decoration",
+      "source": "瀬戸内海漁業データ",
+      "verified_at": "2026-03-18",
+      "confidence": 0.9
+    },
+    {
+      "id": "norway-salmon",
+      "name_zh": "挪威三文魚（冰鮮）",
+      "name_ja": "ノルウェーサーモン",
+      "name_en": "Norway Fresh Salmon",
+      "category": "fish",
+      "peak_months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "available_months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "origin": "挪威",
+      "description": "全年冰鮮供應（0-4°C），每週兩次到貨",
+      "price_tier": "standard",
+      "image_prompt": "Fresh Norwegian salmon fillet showing rich orange flesh and white fat lines, on a dark slate surface with ice crystals",
+      "source": "Norwegian Seafood Council",
+      "verified_at": "2026-03-18",
+      "confidence": 0.95
+    }
+  ],
+  "monthly_highlights": {
+    "1": [
+      "amaebi",
+      "kan-buri",
+      "hokkaido-scallop",
+      "matsuba-gani"
+    ],
+    "2": [
+      "amaebi",
+      "kan-buri",
+      "hokkaido-scallop",
+      "matsuba-gani"
+    ],
+    "3": [
+      "sakura-tai",
+      "amaebi",
+      "hokkaido-scallop",
+      "matsuba-gani"
+    ],
+    "4": [
+      "sakura-tai",
+      "botan-ebi"
+    ],
+    "5": [
+      "sakura-tai",
+      "botan-ebi"
+    ],
+    "6": [
+      "bafun-uni",
+      "murasaki-uni-kyushu",
+      "botan-ebi"
+    ],
+    "7": [
+      "bafun-uni",
+      "murasaki-uni-kyushu",
+      "aka-uni",
+      "unagi"
+    ],
+    "8": [
+      "bafun-uni",
+      "murasaki-uni-kyushu",
+      "aka-uni",
+      "unagi"
+    ],
+    "9": [
+      "kita-murasaki-uni",
+      "aki-sake",
+      "ikura"
+    ],
+    "10": [
+      "kita-murasaki-uni",
+      "maguro-ooma",
+      "ikura"
+    ],
+    "11": [
+      "kita-murasaki-uni",
+      "maguro-ooma",
+      "matsuba-gani",
+      "ikura"
+    ],
+    "12": [
+      "kan-buri",
+      "maguro-ooma",
+      "hokkaido-scallop",
+      "matsuba-gani"
+    ]
+  },
+  "quarterly_image_schedule": {
+    "Q1": {
+      "months": [
+        1,
+        2,
+        3
+      ],
+      "theme": "冬の海幸 — 寒鰤・帶子・甜蝦・松葉蟹",
+      "generate_by": "12-25"
+    },
+    "Q2": {
+      "months": [
+        4,
+        5,
+        6
+      ],
+      "theme": "春の彩 — 櫻鯛・牡丹蝦・海膽解禁",
+      "generate_by": "03-25"
+    },
+    "Q3": {
+      "months": [
+        7,
+        8,
+        9
+      ],
+      "theme": "夏の極 — 海膽盛宴・鰻魚・三文魚籽",
+      "generate_by": "06-25"
+    },
+    "Q4": {
+      "months": [
+        10,
+        11,
+        12
+      ],
+      "theme": "秋の實 — 大間鮪魚・松葉蟹・北紫海膽",
+      "generate_by": "09-25"
+    }
+  }
+}

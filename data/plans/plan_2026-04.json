@@ -1,0 +1,109 @@
+{
+  "month": "2026-04",
+  "generated_at": "2026-03-18T01:27:38.998376",
+  "total_topics": 6,
+  "highlights": [
+    "櫻鯛",
+    "牡丹蝦"
+  ],
+  "topics": [
+    {
+      "priority": 1,
+      "type": "seasonal_deep",
+      "title_zh": "櫻鯛完整指南 — 2026-04旬の味覺",
+      "title_en": "Complete Guide to Cherry Blossom Sea Bream — Seasonal Peak 2026-04",
+      "ingredient_id": "sakura-tai",
+      "category": "fish",
+      "keywords": [
+        "櫻鯛",
+        "サクラダイ",
+        "Cherry Blossom Sea Bream",
+        "旬",
+        "瀬戶内海・紀伊水道"
+      ],
+      "content_hints": "產地：瀬戶内海・紀伊水道。特點：春季祝賀之魚，產卵前體色粉紅。包含選購指南、保存方法、料理建議。",
+      "weight": 1.2
+    },
+    {
+      "priority": 2,
+      "type": "seasonal_deep",
+      "title_zh": "牡丹蝦完整指南 — 2026-04旬の味覺",
+      "title_en": "Complete Guide to Botan Shrimp — Seasonal Peak 2026-04",
+      "ingredient_id": "botan-ebi",
+      "category": "shrimp",
+      "keywords": [
+        "牡丹蝦",
+        "ボタンエビ",
+        "Botan Shrimp",
+        "旬",
+        "加拿大太平洋沿岸"
+      ],
+      "content_hints": "產地：加拿大太平洋沿岸。特點：春季肉質最飽滿，蝦膏豐富。包含選購指南、保存方法、料理建議。",
+      "weight": 1.2
+    },
+    {
+      "priority": 3,
+      "type": "seasonal_feature",
+      "title_zh": "春季水產批發採購攻略",
+      "title_en": "",
+      "ingredient_id": null,
+      "category": "seasonal",
+      "keywords": [
+        "春季水產",
+        "4月",
+        "澳門",
+        "日本食材"
+      ],
+      "content_hints": "4月應季專題文章，面向澳門餐飲業者和美食愛好者。",
+      "weight": 1.0
+    },
+    {
+      "priority": 4,
+      "type": "seasonal_feature",
+      "title_zh": "手卷入門：春季食材篇",
+      "title_en": "",
+      "ingredient_id": null,
+      "category": "seasonal",
+      "keywords": [
+        "手卷入門",
+        "4月",
+        "澳門",
+        "日本食材"
+      ],
+      "content_hints": "4月應季專題文章，面向澳門餐飲業者和美食愛好者。",
+      "weight": 1.0
+    },
+    {
+      "priority": 5,
+      "type": "evergreen",
+      "title_zh": "澳門進口日本食材的法規與流程",
+      "title_en": "",
+      "ingredient_id": null,
+      "category": "guide",
+      "keywords": [
+        "澳門進口",
+        "澳門",
+        "日本食材",
+        "指南"
+      ],
+      "content_hints": "長青知識型文章，不受季節限制，AEO 長尾價值高。",
+      "weight": 0.8
+    },
+    {
+      "priority": 6,
+      "type": "evergreen",
+      "title_zh": "如何辨別真正的刺身級食材",
+      "title_en": "",
+      "ingredient_id": null,
+      "category": "guide",
+      "keywords": [
+        "如何辨別",
+        "澳門",
+        "日本食材",
+        "指南"
+      ],
+      "content_hints": "長青知識型文章，不受季節限制，AEO 長尾價值高。",
+      "weight": 0.8
+    }
+  ]
+}

@@ -787,6 +787,29 @@
             <a href="https://cloudpipe-macao-app.vercel.app">澳門百科</a>
             <a href="https://cloudpipe-directory.vercel.app">企業目錄</a>
             <a href="https://mind-coffee.vercel.app">Mind Coffee</a>
+            <a href="https://inari-kira-isla.github.io/Openclaw/">AI 學習寶庫</a>
+            <a href="https://world-encyclopedia.vercel.app">世界百科</a>
+            <a href="https://japan-encyclopedia.vercel.app">日本百科</a>
+            <a href="https://aeo-demo-education.vercel.app">澳門教育資源中心</a>
+            <a href="https://aeo-demo-finance.vercel.app">澳門金融投資指南</a>
+            <a href="https://aeo-demo-luxury.vercel.app">澳門奢侈品指南</a>
+            <a href="https://aeo-demo-travel-food.vercel.app">澳門旅遊美食指南</a>
+            <a href="https://aeo-demo-realestate.vercel.app">澳門房地產指南</a>
+            <a href="https://aeo-demo-healthcare.vercel.app">澳門醫療健康指南</a>
+            <a href="https://aeo-demo-legal.vercel.app">澳門法律服務指南</a>
+            <a href="https://aeo-demo-tech.vercel.app">澳門科技創新指南</a>
+            <a href="https://aeo-demo-beauty.vercel.app">澳門美容養生指南</a>
+            <a href="https://aeo-demo-auto.vercel.app">澳門汽車指南</a>
+            <a href="https://aeo-demo-home.vercel.app">澳門家居裝修指南</a>
+            <a href="https://aeo-demo-logistics.vercel.app">澳門物流運輸指南</a>
+            <a href="https://aeo-demo-wedding.vercel.app">澳門婚禮活動指南</a>
+            <a href="https://aeo-demo-pet.vercel.app">澳門寵物服務指南</a>
+            <a href="https://aeo-demo-fitness.vercel.app">澳門健身運動指南</a>
+            <a href="https://aeo-demo-insurance.vercel.app">澳門保險理財指南</a>
+            <a href="https://aeo-demo-accounting.vercel.app">澳門會計稅務指南</a>
+            <a href="https://aeo-demo-hr.vercel.app">澳門人力資源指南</a>
+            <a href="https://aeo-demo-media.vercel.app">澳門媒體廣告指南</a>
+            <a href="https://aeo-demo-retail.vercel.app">澳門零售電商指南</a>
         </div>
     </div>
     <div class="footer-bottom">&copy; 2025-2026 稻荷環球食品 &middot; <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></div>
@@ -886,5 +909,31 @@ function sendMsg() {
 <script>(function(){var s='inari-global-foods',w='https://client-ai-tracker.inariglobal.workers.dev';try{navigator.sendBeacon(w+'/'+s+'/beacon',JSON.stringify({page:location.pathname,ua:navigator.userAgent,ref:document.referrer}))}catch(e){}})();</script>
 <script>(function(){var bp=document.createElement('script');bp.src='https://zz.bdstatic.com/linksubmit/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s)})();</script>
 <script src="https://cloudpipe-macao-app.vercel.app/spider-track.js" data-site="inari-global-foods"></script>
+
+<script>
+// 旬月曆自動高亮 — 由 seasonal_content_planner.py 生成
+(function() {
+    var month = new Date().getMonth() + 1;
+    var rows = document.querySelectorAll('.data-table tr');
+    rows.forEach(function(row) {
+        var cells = row.querySelectorAll('td');
+        if (cells.length >= 2) {
+            var monthText = cells[1] ? cells[1].textContent : '';
+            var months = monthText.match(/\d+/g);
+            if (months && months.some(function(m) { return parseInt(m) === month; })) {
+                row.style.background = 'rgba(139,114,64,0.12)';
+                row.style.fontWeight = '500';
+                if (cells[0]) cells[0].style.color = 'var(--gold-light, #B39B5C)';
+            }
+        }
+    });
+    // 本月推薦標籤
+    var badge = document.createElement('div');
+    badge.style.cssText = 'text-align:center;padding:12px;background:rgba(139,114,64,0.08);border:1px solid rgba(139,114,64,0.2);margin:24px auto;max-width:900px;font-size:13px;color:#B39B5C;letter-spacing:0.05em;';
+    badge.innerHTML = '🎣 ' + month + '月旬の推薦: <strong>櫻鯛 · 甜蝦 · 北海道帶子 · 松葉蟹</strong>';
+    var hero = document.querySelector('.hero');
+    if (hero && hero.nextElementSibling) hero.nextElementSibling.prepend(badge);
+})();
+</script>
 </body>
 </html>
