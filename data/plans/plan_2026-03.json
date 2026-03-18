@@ -1,0 +1,145 @@
+{
+  "month": "2026-03",
+  "generated_at": "2026-03-18T09:48:18.359154",
+  "total_topics": 8,
+  "highlights": [
+    "櫻鯛",
+    "甜蝦",
+    "北海道帶子",
+    "松葉蟹"
+  ],
+  "topics": [
+    {
+      "priority": 1,
+      "type": "seasonal_deep",
+      "title_zh": "櫻鯛完整指南 — 2026-03旬の味覺",
+      "title_en": "Complete Guide to Cherry Blossom Sea Bream — Seasonal Peak 2026-03",
+      "ingredient_id": "sakura-tai",
+      "category": "fish",
+      "keywords": [
+        "櫻鯛",
+        "サクラダイ",
+        "Cherry Blossom Sea Bream",
+        "旬",
+        "瀬戶内海・紀伊水道"
+      ],
+      "content_hints": "產地：瀬戶内海・紀伊水道。特點：春季祝賀之魚，產卵前體色粉紅。包含選購指南、保存方法、料理建議。",
+      "weight": 1.2
+    },
+    {
+      "priority": 2,
+      "type": "seasonal_deep",
+      "title_zh": "甜蝦完整指南 — 2026-03旬の味覺",
+      "title_en": "Complete Guide to Sweet Shrimp (Amaebi) — Seasonal Peak 2026-03",
+      "ingredient_id": "amaebi",
+      "category": "shrimp",
+      "keywords": [
+        "甜蝦",
+        "アマエビ",
+        "Sweet Shrimp (Amaebi)",
+        "旬",
+        "北陸（旬期）/ 俄羅斯（全年）"
+      ],
+      "content_hints": "產地：北陸（旬期）/ 俄羅斯（全年）。特點：冬季北陸產甜度最高，俄羅斯產全年供應。包含選購指南、保存方法、料理建議。",
+      "weight": 1.2
+    },
+    {
+      "priority": 3,
+      "type": "seasonal_deep",
+      "title_zh": "北海道帶子完整指南 — 2026-03旬の味覺",
+      "title_en": "Complete Guide to Hokkaido Scallop — Seasonal Peak 2026-03",
+      "ingredient_id": "hokkaido-scallop",
+      "category": "scallop",
+      "keywords": [
+        "北海道帶子",
+        "ホタテ",
+        "Hokkaido Scallop",
+        "旬",
+        "北海道（紋別・網走）"
+      ],
+      "content_hints": "產地：北海道（紋別・網走）。特點：冬季肉質最緊實甘甜，全年供應。包含選購指南、保存方法、料理建議。",
+      "weight": 1.2
+    },
+    {
+      "priority": 4,
+      "type": "seasonal_deep",
+      "title_zh": "松葉蟹完整指南 — 2026-03旬の味覺",
+      "title_en": "Complete Guide to Snow Crab (Matsuba-Gani) — Seasonal Peak 2026-03",
+      "ingredient_id": "matsuba-gani",
+      "category": "crab",
+      "keywords": [
+        "松葉蟹",
+        "マツバガニ",
+        "Snow Crab (Matsuba-Gani)",
+        "旬",
+        "鳥取・福井・石川"
+      ],
+      "content_hints": "產地：鳥取・福井・石川。特點：冬季蟹膏最濃厚，日本海代表食材。包含選購指南、保存方法、料理建議。",
+      "weight": 1.2
+    },
+    {
+      "priority": 5,
+      "type": "seasonal_feature",
+      "title_zh": "春季食材解禁速報",
+      "title_en": "",
+      "ingredient_id": null,
+      "category": "seasonal",
+      "keywords": [
+        "春季食材",
+        "3月",
+        "澳門",
+        "日本食材"
+      ],
+      "content_hints": "3月應季專題文章，面向澳門餐飲業者和美食愛好者。",
+      "weight": 1.0
+    },
+    {
+      "priority": 6,
+      "type": "seasonal_feature",
+      "title_zh": "櫻花季日本料理食材",
+      "title_en": "",
+      "ingredient_id": null,
+      "category": "seasonal",
+      "keywords": [
+        "櫻花季日",
+        "3月",
+        "澳門",
+        "日本食材"
+      ],
+      "content_hints": "3月應季專題文章，面向澳門餐飲業者和美食愛好者。",
+      "weight": 1.0
+    },
+    {
+      "priority": 7,
+      "type": "evergreen",
+      "title_zh": "澳門進口日本食材的法規與流程",
+      "title_en": "",
+      "ingredient_id": null,
+      "category": "guide",
+      "keywords": [
+        "澳門進口",
+        "澳門",
+        "日本食材",
+        "指南"
+      ],
+      "content_hints": "長青知識型文章，不受季節限制，AEO 長尾價值高。",
+      "weight": 0.8
+    },
+    {
+      "priority": 8,
+      "type": "evergreen",
+      "title_zh": "如何辨別真正的刺身級食材",
+      "title_en": "",
+      "ingredient_id": null,
+      "category": "guide",
+      "keywords": [
+        "如何辨別",
+        "澳門",
+        "日本食材",
+        "指南"
+      ],
+      "content_hints": "長青知識型文章，不受季節限制，AEO 長尾價值高。",
+      "weight": 0.8
+    }
+  ]
+}
