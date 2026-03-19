@@ -1015,11 +1015,11 @@ async function sendMsg() {
     box.scrollTop = box.scrollHeight;
 
     try {
-        const r = await fetch('http://127.0.0.1:4010/api/industry/chat', {
+        const r = await fetch('https://client-chat-worker.inariglobal.workers.dev/inari-global-foods/chat', {
             method:'POST', headers:{'Content-Type':'application/json'},
-            body: JSON.stringify({question:msg, brand:'inari-global-foods', character:currentChar, character_style:c.style})
+            body: JSON.stringify({messages:[{role:'user',content:msg}], character:currentChar, stream:false})
         });
-        if (r.ok) { const d = await r.json(); answer = d.answer || ''; }
+        if (r.ok) { const d = await r.json(); answer = d.choices?.[0]?.message?.content?.replace(/<think>[\s\S]*?<\/think>\s*/g,'').trim() || ''; }
     } catch(e) {}
 
     if (!answer) answer = '不好意思，這個問題我暫時沒有答案 🙏\n建議直接聯繫我們：\n📞 +853 6282 3037\n💬 WhatsApp 同號';
