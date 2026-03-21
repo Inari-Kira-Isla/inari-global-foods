@@ -22,6 +22,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"稻荷環球食品","alternateName":"Inari Global Foods","url":"https://inari-kira-isla.github.io/inari-global-foods","description":"澳門日本及環球水產進口批發商，提供海膽、帝王蟹、鮪魚等高級水產食材直送服務。","address":{"@type":"PostalAddress","streetAddress":"澳門","addressLocality":"Macau","addressRegion":"Macau SAR","addressCountry":"MO"},"geo":{"@type":"GeoCoordinates","latitude":22.2085,"longitude":113.5460},"telephone":"+853-6282-3037","priceRange":"$$-$$$","openingHours":"Mo-Sa 06:00-18:00","hasMap":"https://www.google.com/maps?q=22.2085,113.5460","sameAs":["https://cloudpipe-macao-app.vercel.app/macao/food-supply/food-import/inari-global-foods","https://cloudpipe-landing.vercel.app","https://inari-kira-isla.github.io/sea-urchin-delivery","https://mind-coffee.vercel.app","https://inari-kira-isla.github.io/after-school-coffee","https://inari-kira-isla.github.io/yamanakada"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"稻荷環球食品提供什麼服務？","acceptedAnswer":{"@type":"Answer","text":"稻荷環球食品是澳門專業的日本及環球水產進口批發商，提供北海道海膽、帝王蟹、鮪魚、三文魚、帆立貝等高級水產食材，48小時空運直送澳門餐廳。"}},{"@type":"Question","name":"如何向稻荷環球食品訂購水產？","acceptedAnswer":{"@type":"Answer","text":"可透過 WhatsApp (+853-6282-3037) 聯繫下單。支持澳門全境配送，餐廳客戶可享批發價格和定期供貨服務。"}},{"@type":"Question","name":"稻荷環球食品的食材保鮮方式是什麼？","acceptedAnswer":{"@type":"Answer","text":"全程 -2°C 至 2°C 恆溫冷鏈運輸，從日本漁港到澳門餐桌 48 小時內送達。"}},{"@type":"Question","name":"稻荷環球食品服務哪些類型的客戶？","acceptedAnswer":{"@type":"Answer","text":"主要服務澳門的日本料理餐廳、酒店餐飲部、Omakase 料理店和高級中餐廳。也接受個人客戶的小批量訂購。"}}]}</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -40,14 +42,19 @@ body{font-family:'Noto Serif TC',serif;background:var(--deep);color:var(--text);
 @keyframes fadeUp{to{opacity:1;transform:translateY(0)}from{opacity:0;transform:translateY(30px)}}
 @keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1)}100%{transform:scaleY(0);transform-origin:bottom}}
 
-/* Split layout: frame left + text right */
-.split{display:grid;grid-template-columns:1fr 1fr;min-height:100vh}
-.split-frame{position:relative;overflow:hidden;background:var(--deep)}
-.split-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .12s}
+/* Cinema layout: full-screen frame + text overlay */
+.cinema{position:relative;min-height:200vh;overflow:hidden}
+.cinema .split-frame{position:sticky;top:0;width:100%;height:100vh;overflow:hidden;background:var(--deep)}
+.split-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .08s ease-out;will-change:opacity}
 .split-frame img.on{opacity:1}
-.split-text{display:flex;flex-direction:column;justify-content:center;padding:4rem 3.5rem;position:relative}
-.split.reverse{direction:rtl}
-.split.reverse>*{direction:ltr}
+.cinema .cinema-text{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem;z-index:3;pointer-events:none;opacity:0;transition:opacity .5s ease}
+.cinema .cinema-text.visible{opacity:1;pointer-events:auto}
+.cinema .cinema-text::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(2,11,24,.85) 0%,rgba(2,11,24,.6) 50%,transparent 100%);z-index:-1}
+.cinema .cinema-text .sbody,.cinema .cinema-text .ssub{max-width:520px}
+.cinema .cinema-text .btn,.cinema .cinema-text a{pointer-events:auto}
+
+/* Full-width section with background image */
+.section-full{position:relative;min-height:80vh;display:flex;align-items:center;justify-content:center;background-size:cover;background-position:center}
 
 .eyebrow{font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
 .stitle{font-size:clamp(1.6rem,3vw,2.5rem);font-weight:600;line-height:1.3;margin-bottom:1rem}
@@ -124,13 +131,21 @@ body{font-family:'Noto Serif TC',serif;background:var(--deep);color:var(--text);
 .btn:hover{background:var(--gold);color:var(--deep)}
 .btn-s{background:var(--gold);color:var(--deep)}
 
+/* GSAP reveal animations */
+.reveal{opacity:0;transform:translateY(40px)}
+.reveal-left{opacity:0;transform:translateX(-30px)}
+.cinema-text>*{opacity:0;transform:translateY(25px)}
+
+/* Section divider gradient */
+.section-fade{height:120px;background:linear-gradient(180deg,var(--deep) 0%,var(--ocean) 50%,var(--deep) 100%);margin:0}
+
 footer{text-align:center;padding:2rem;border-top:1px solid rgba(255,255,255,.06);font-size:11px;color:var(--dim)}
 footer a{color:var(--gold);text-decoration:none}
 
 @media(max-width:900px){
-  .split{grid-template-columns:1fr;min-height:auto}
-  .split-frame{height:50vh}
-  .split-text{padding:2.5rem 1.5rem}
+  .cinema{min-height:180vh}
+  .cinema .cinema-text{padding:1.5rem}
+  .cinema .cinema-text .sbody br{display:none}
   .cgrid{grid-template-columns:1fr 1fr}
   .cgrid[style*='repeat(5']{grid-template-columns:repeat(3,1fr) !important}
   .pgrid{grid-template-columns:1fr}
@@ -148,27 +163,28 @@ footer a{color:var(--gold);text-decoration:none}
 <div id="bar"></div>
 <div class="bubbles" id="bubs"></div>
 
-<!-- ═══ 1. ORIGIN — 三文魚游動（左幀右文）═══ -->
-<div class="split" id="s-origin" data-seq="salmon" data-frames="60">
+<!-- ═══ 1. ORIGIN — 三文魚全螢幕動畫 ═══ -->
+<div class="cinema" id="s-origin" data-seq="salmon" data-frames="60">
   <div class="split-frame" id="salmon-frames"></div>
-  <div class="split-text" style="background:linear-gradient(135deg,var(--deep),var(--ocean))">
+  <div class="cinema-text" id="origin-text">
     <div class="eyebrow">Since 2008 · Macau Origin</div>
     <h1 class="stitle" style="font-size:clamp(2rem,4vw,3.5rem)">稻荷<em>環球</em>食品</h1>
     <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;letter-spacing:.3em;color:var(--dim);margin-bottom:1.5rem">INARI GLOBAL FOODS</p>
     <div style="width:50px;height:1px;background:var(--gold);margin-bottom:1.5rem"></div>
     <p class="ssub">「一切從碼頭的清晨六點開始。」</p>
-    <p class="sbody">從太平洋深處到澳門的餐桌，每一條魚都經歷了一段旅程。我們的工作，是讓這段旅程盡可能短、盡可能冷、盡可能好。</p>
-    <div class="scroll-h"><span>向下探索</span><div class="scroll-l"></div></div>
+    <p class="sbody" style="text-align:center">從太平洋深處到澳門的餐桌，每一條魚都經歷了一段旅程。<br>我們的工作，是讓這段旅程盡可能短、盡可能冷、盡可能好。</p>
+    <div class="scroll-h" style="position:relative;bottom:auto;left:auto;transform:none;margin-top:2rem"><span>向下探索</span><div class="scroll-l"></div></div>
   </div>
 </div>
 
-<!-- ═══ 2. JOURNEY — 太平洋到餐桌（右幀左文）═══ -->
-<div class="split reverse" id="s-journey">
-  <div class="split-text" style="background:var(--ocean)">
-    <div class="eyebrow">The Journey · 旅程</div>
-    <h2 class="stitle">從<em>太平洋</em>到餐桌<br>只有一個承諾</h2>
-    <p class="ssub">澳門首家專業海膽供應商——築地 20 年修行。</p>
-    <div class="journey">
+<!-- ═══ 2. JOURNEY — 太平洋到餐桌（全寬）═══ -->
+<section id="s-journey" style="position:relative;min-height:80vh;background:url('images/products/salmon-ocean.png') center/cover;display:flex;align-items:center;justify-content:center">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,30,61,.75) 0%,rgba(2,11,24,.85) 100%)"></div>
+  <div style="position:relative;z-index:2;text-align:center;max-width:700px;padding:3rem 2rem">
+    <div class="eyebrow reveal" style="justify-content:center;display:flex">The Journey · 旅程</div>
+    <h2 class="stitle reveal" style="text-align:center">從<em>太平洋</em>到餐桌<br>只有一個承諾</h2>
+    <p class="ssub reveal" style="text-align:center">澳門首家專業海膽供應商——築地 20 年修行。</p>
+    <div class="journey" style="justify-content:center">
       <div class="jstep"><div class="jstep-top">太平洋</div><div class="jstep-bot">北海道·挪威</div></div>
       <div class="jarrow">→</div>
       <div class="jstep"><div class="jstep-top">空運</div><div class="jstep-bot">48h 冷鏈</div></div>
@@ -177,35 +193,34 @@ footer a{color:var(--gold);text-decoration:none}
       <div class="jarrow">→</div>
       <div class="jstep"><div class="jstep-top">餐桌</div><div class="jstep-bot">300+ 客戶</div></div>
     </div>
-    <div style="display:flex;gap:1rem;margin-top:1.5rem">
+    <div style="display:flex;gap:1rem;margin-top:2rem;justify-content:center">
       <a href="https://wa.me/85366218088?text=%E6%88%91%E5%BE%9E%E7%B6%B2%E7%AB%99%E6%89%BE%E5%88%B0%E4%BD%A0%E5%80%91%EF%BC%8C%E6%83%B3%E6%9F%A5%E8%A9%A2%E6%B0%B4%E7%94%A2%E8%B3%87%E8%A8%8A" class="btn btn-s" onclick="try{navigator.sendBeacon('https://client-ai-tracker.inariglobal.workers.dev/inari-global-foods/wa-click',JSON.stringify({page:location.pathname,ts:Date.now()}))}catch(e){}">WhatsApp 查詢</a>
       <a href="#products" class="btn">瀏覽商品</a>
     </div>
   </div>
-  <div style="background:url('images/cards/journey-pacific.png') center/cover;min-height:100vh"></div>
-</div>
+</section>
 
-<!-- ═══ 3. STORY — Joe 的故事（左圖右文）═══ -->
-<div class="split" id="s-story">
-  <div style="background:url('images/cards/card-portrait.png') center/cover;min-height:100vh"></div>
-  <div class="split-text" style="background:linear-gradient(135deg,var(--deep),var(--ocean))">
-    <div class="eyebrow">傳承 · The Successor</div>
-    <h2 class="stitle">從建築師到<em>接班人</em></h2>
-    <p class="ssub">「從上海世博到碼頭——一個兒子的選擇」</p>
-    <p class="sbody">卓岫（JOE），建築師出身，曾參與上海世博會、金沙城中心等大型項目。他開過補習社、醫療中心、外賣店——似乎什麼都做過。但當他看到年邁的父母還在凌晨扛著保冷箱送貨，他知道自己真正該接手的是什麼。</p>
-    <div style="margin-top:1.5rem;border-left:2px solid rgba(196,152,58,.3);padding-left:1rem;display:flex;flex-direction:column;gap:.6rem">
-      <div><span style="font-size:10px;letter-spacing:.15em;color:var(--gold)">建築時期</span><br><span style="font-size:.85rem;font-weight:600">上海世博會 · 金沙城中心 · 海洋公園</span></div>
-      <div><span style="font-size:10px;letter-spacing:.15em;color:var(--gold)">創業時期</span><br><span style="font-size:.85rem;font-weight:600">補習社 · 醫療中心 · 外賣店 · 咖啡店</span></div>
-      <div><span style="font-size:10px;letter-spacing:.15em;color:var(--gold)">回歸家業</span><br><span style="font-size:.85rem;font-weight:600">接手稻荷 · AI 轉型 · 做父母沒做完的事</span></div>
+<!-- ═══ 3. STORY — Joe 的故事（全寬）═══ -->
+<section id="s-story" style="position:relative;min-height:80vh;background:url('images/people/joe-portrait.jpg') center top/cover;display:flex;align-items:center;justify-content:center">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,11,24,.7) 0%,rgba(10,30,61,.85) 100%)"></div>
+  <div style="position:relative;z-index:2;text-align:center;max-width:650px;padding:3rem 2rem">
+    <div class="eyebrow reveal" style="justify-content:center;display:flex">傳承 · The Successor</div>
+    <h2 class="stitle reveal" style="text-align:center">從建築師到<em>接班人</em></h2>
+    <p class="ssub reveal" style="text-align:center">「從上海世博到碼頭——一個兒子的選擇」</p>
+    <p class="sbody" style="text-align:center;max-width:550px;margin:0 auto">卓岫（JOE），建築師出身，曾參與上海世博會、金沙城中心等大型項目。他開過補習社、醫療中心、外賣店——似乎什麼都做過。但當他看到年邁的父母還在凌晨扛著保冷箱送貨，他知道自己真正該接手的是什麼。</p>
+    <div style="display:flex;gap:2rem;margin-top:2rem;justify-content:center;flex-wrap:wrap">
+      <div style="text-align:center"><span style="font-size:10px;letter-spacing:.15em;color:var(--gold);display:block;margin-bottom:.3rem">建築時期</span><span style="font-size:.85rem;font-weight:600">上海世博會 · 金沙城中心 · 海洋公園</span></div>
+      <div style="text-align:center"><span style="font-size:10px;letter-spacing:.15em;color:var(--gold);display:block;margin-bottom:.3rem">創業時期</span><br><span style="font-size:.85rem;font-weight:600">補習社 · 醫療中心 · 外賣店 · 咖啡店</span></div>
+      <div style="text-align:center"><span style="font-size:10px;letter-spacing:.15em;color:var(--gold);display:block;margin-bottom:.3rem">回歸家業</span><br><span style="font-size:.85rem;font-weight:600">接手稻荷 · AI 轉型 · 做父母沒做完的事</span></div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- ═══ 4. EVOLUTION — 紙筆到 AI ═══ -->
 <section style="min-height:70vh;background:var(--ocean);display:flex;align-items:center;justify-content:center" id="s-evo">
   <div style="width:100%;max-width:1100px;padding:3rem;text-align:center">
-    <div class="eyebrow" style="justify-content:center;display:flex">進化 · The Evolution</div>
-    <h2 class="stitle" style="text-align:center">從紙筆到 <em>AI</em></h2>
+    <div class="eyebrow reveal" style="justify-content:center;display:flex">進化 · The Evolution</div>
+    <h2 class="stitle reveal" style="text-align:center">從紙筆到 <em>AI</em></h2>
     <div class="tl" style="margin-top:2.5rem">
       <div class="tn"><div class="tc">90s</div><div class="tera">1990s</div><div class="tname">紙筆時代</div><div class="tquote">「一支筆、一本簿<br>——當年的 ERP」</div></div>
       <div class="tn"><div class="tc">08</div><div class="tera">2008+</div><div class="tname">碼頭時代</div><div class="tquote">「凌晨三點<br>檢疫站的燈還亮著」</div></div>
@@ -234,45 +249,45 @@ footer a{color:var(--gold);text-decoration:none}
       <div class="crd"><img class="cimg" src="images/cards/edge-pioneer.png" onerror="this.src='images/cards/card-uni.png'" alt="先行者"><div class="cbody"><div class="ctitle">先行者地位</div><div class="cdesc">整個澳門沒有公司敢專業做海膽。我們用十幾年跑通了這條路。</div><div class="cquote">「別人不敢做的生意，我們做了二十年。」</div></div></div>
       <div class="crd"><img class="cimg" src="images/cards/edge-daily.png" onerror="this.src='images/cards/card-akagai.png'" alt="每日"><div class="cbody"><div class="ctitle">每日到貨</div><div class="cdesc">海膽和活赤貝每天到貨——永遠是最新鮮的一批。</div><div class="cquote">「別人一週到一次，我們每天到。」</div></div></div>
       <div class="crd"><img class="cimg" src="images/cards/edge-airfreight.png" onerror="this.src='images/cards/card-airfreight.png'" alt="空運"><div class="cbody"><div class="ctitle">日本空運 · 每週三航</div><div class="cdesc">週一・三・五直送日本頂級水產。</div><div class="cquote">「從日本到澳門，中間只隔一趟飛機。」</div></div></div>
-      <div class="crd"><img class="cimg" src="images/cards/edge-fresh.png" onerror="this.src='images/cards/card-salmon.png'" alt="冰鮮"><div class="cbody"><div class="ctitle">挪威冰鮮三文魚</div><div class="cdesc">不是冷凍，是冰鮮——全程冰鮮保存，每天供應。</div><div class="cquote">「冰鮮，靠的是供應鏈的深度。」</div></div></div>
+      <div class="crd"><img class="cimg" src="images/products/salmon-whole.png" onerror="this.src='images/cards/edge-fresh.png'" alt="挪威冰鮮三文魚整條"><div class="cbody"><div class="ctitle">挪威冰鮮三文魚</div><div class="cdesc">不是冷凍，是冰鮮——全程冰鮮保存，每天供應。</div><div class="cquote">「冰鮮，靠的是供應鏈的深度。」</div></div></div>
       <div class="crd"><img class="cimg" src="images/cards/edge-inspect.png" onerror="this.src='images/cards/card-quality.png'" alt="品質"><div class="cbody"><div class="ctitle">二十年品質眼光</div><div class="cdesc">每一批貨逐盒人工檢驗。乾身、不滲水。</div><div class="cquote">「品質不過關，再大的訂單也退回。」</div></div></div>
       <div class="crd"><img class="cimg" src="images/cards/edge-temp.png" onerror="this.src='images/cards/card-coldchain.png'" alt="冷鏈"><div class="cbody"><div class="ctitle">全程冷鏈控制</div><div class="cdesc">從產地到客戶的全程溫控管理。</div><div class="cquote">「我們看到的是溫度曲線，不只是海膽。」</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ 7. REVEAL — 開箱（右幀左文）═══ -->
-<div class="split reverse" id="s-reveal" data-seq="unbox" data-frames="60">
-  <div class="split-text" style="background:var(--ocean)">
+<!-- ═══ 7. REVEAL — 開箱全螢幕動畫 ═══ -->
+<div class="cinema" id="s-reveal" data-seq="unbox" data-frames="60">
+  <div class="split-frame" id="unbox-frames"></div>
+  <div class="cinema-text" id="reveal-text">
     <div class="eyebrow">The Reveal · 展示</div>
     <h2 class="stitle">打開一盒稻荷<br>就是打開<em>一片海洋</em></h2>
     <p class="ssub">向下捲動，見證頂級海鮮從封閉到完全展現的過程。</p>
-    <p class="sbody">精緻禮盒外觀，金色燙印稻荷 Logo。盒蓋掀起的瞬間，冷霧溢出，內部層次逐一展現。完全展開，澳門最鮮的海膽、赤貝主角登場——每件都附產地溯源。</p>
+    <p class="sbody" style="text-align:center">精緻禮盒外觀，金色燙印稻荷 Logo。盒蓋掀起的瞬間，冷霧溢出，<br>內部層次逐一展現。完全展開，澳門最鮮的海膽、赤貝主角登場。</p>
     <div style="display:flex;gap:1.5rem;margin-top:1.5rem;font-size:11px;color:var(--dim)">
       <span>禮盒完整</span><span style="color:var(--gold)">→</span>
       <span>緩緩開啟</span><span style="color:var(--gold)">→</span>
       <span>完全展現</span>
     </div>
   </div>
-  <div class="split-frame" id="unbox-frames"></div>
 </div>
 
 <!-- ═══ 8. PRODUCTS ═══ -->
-<section style="background:var(--deep)" id="products">
+<section style="background:var(--deep);opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease" id="products" class="fade-section">
   <div class="cards">
     <h2>每一樣，都是承諾</h2>
     <div class="sub">The Collection — 十大嚴選商品</div>
     <div class="cgrid" style="grid-template-columns:repeat(5,1fr)">
-      <div class="crd"><div class="cbadge bg">每日到貨</div><img class="cimg" src="images/cards/prod-uni.png" alt="海膽"><div class="cbody"><div class="ctitle">海膽</div><div class="cfreq">北海道馬糞海膽 · 每日到貨</div><div class="cdesc">澳門首家，逐盒人工檢驗。</div></div></div>
-      <div class="crd"><div class="cbadge br">冰鮮</div><img class="cimg" src="images/cards/prod-salmon.png" alt="三文魚"><div class="cbody"><div class="ctitle">三文魚</div><div class="cfreq">挪威冰鮮 · 每日供應</div><div class="cdesc">不是冷凍，是冰鮮。</div></div></div>
-      <div class="crd"><div class="cbadge bb">空運</div><img class="cimg" src="images/cards/prod-amaebi.png" onerror="this.src='images/cards/card-scallop.png'" alt="甜蝦"><div class="cbody"><div class="ctitle">甜蝦</div><div class="cfreq">日本空運 · 週一三五</div><div class="cdesc">晶瑩剔透，入口即化。</div></div></div>
-      <div class="crd"><div class="cbadge bb">空運</div><img class="cimg" src="images/cards/prod-botan.png" onerror="this.src='images/cards/card-scallop.png'" alt="牡丹蝦"><div class="cbody"><div class="ctitle">牡丹蝦</div><div class="cfreq">日本空運 · 週一三五</div><div class="cdesc">比甜蝦更大更豪華。</div></div></div>
+      <div class="crd"><div class="cbadge bg">每日到貨</div><img class="cimg" src="images/products/uni.png" onerror="this.src='images/cards/prod-uni.png'" alt="北海道馬糞海膽木盒裝"><div class="cbody"><div class="ctitle">海膽</div><div class="cfreq">北海道馬糞海膽 · 每日到貨</div><div class="cdesc">澳門首家，逐盒人工檢驗。</div></div></div>
+      <div class="crd"><div class="cbadge br">冰鮮</div><img class="cimg" src="images/products/salmon-whole.png" onerror="this.src='images/products/salmon.png'" alt="挪威冰鮮三文魚整條"><div class="cbody"><div class="ctitle">三文魚</div><div class="cfreq">挪威冰鮮 · 每日供應</div><div class="cdesc">不是冷凍，是冰鮮。</div></div></div>
+      <div class="crd"><div class="cbadge bb">空運</div><img class="cimg" src="images/products/amaebi.png" onerror="this.src='images/cards/prod-amaebi.png'" alt="日本空運甜蝦"><div class="cbody"><div class="ctitle">甜蝦</div><div class="cfreq">日本空運 · 週一三五</div><div class="cdesc">晶瑩剔透，入口即化。</div></div></div>
+      <div class="crd"><div class="cbadge bb">空運</div><img class="cimg" src="images/products/botan-ebi.png" onerror="this.src='images/cards/prod-botan.png'" alt="加拿大牡丹蝦"><div class="cbody"><div class="ctitle">牡丹蝦</div><div class="cfreq">日本空運 · 週一三五</div><div class="cdesc">比甜蝦更大更豪華。</div></div></div>
       <div class="crd"><div class="cbadge bb">空運</div><img class="cimg" src="images/cards/prod-hotate.png" alt="帆立貝"><div class="cbody"><div class="ctitle">帆立貝</div><div class="cfreq">北海道 · 週一三五</div><div class="cdesc">半透明貝肉，鮮甜無比。</div></div></div>
-      <div class="crd"><div class="cbadge bb">空運</div><img class="cimg" src="images/cards/prod-hokkigai.png" onerror="this.src='images/cards/prod-akagai.png'" alt="北寄貝"><div class="cbody"><div class="ctitle">北寄貝</div><div class="cfreq">日本空運 · 週一三五</div><div class="cdesc">粉紅雙色漸變，口感脆嫩。</div></div></div>
-      <div class="crd"><div class="cbadge bb">空運</div><img class="cimg" src="images/cards/prod-maguro.png" onerror="this.src='images/cards/prod-salmon-closeup.png'" alt="金槍魚"><div class="cbody"><div class="ctitle">金槍魚</div><div class="cfreq">日本空運 · 週一三五</div><div class="cdesc">深紅赤身，油脂紋理豐富。</div></div></div>
-      <div class="crd"><div class="cbadge bg">每日到貨</div><img class="cimg" src="images/cards/prod-akagai.png" alt="赤貝"><div class="cbody"><div class="ctitle">赤貝</div><div class="cfreq">活體 · 每日到貨</div><div class="cdesc">打開箱子，牠還在動。</div></div></div>
-      <div class="crd"><div class="cbadge bb">空運</div><img class="cimg" src="images/cards/prod-ikura.png" onerror="this.src='images/cards/prod-uni.png'" alt="三文魚籽"><div class="cbody"><div class="ctitle">三文魚籽</div><div class="cfreq">日本空運 · 週一三五</div><div class="cdesc">晶瑩透亮，顆顆飽滿。</div></div></div>
-      <div class="crd"><div class="cbadge bb">空運</div><img class="cimg" src="images/cards/prod-swordfish.png" onerror="this.src='images/cards/prod-salmon.png'" alt="劍魚腩"><div class="cbody"><div class="ctitle">劍魚腩</div><div class="cfreq">日本空運 · 週一三五</div><div class="cdesc">厚切白粉色，油脂豐富。</div></div></div>
+      <div class="crd"><div class="cbadge bb">空運</div><img class="cimg" src="images/products/hokkigai.png" onerror="this.src='images/cards/prod-hokkigai.png'" alt="北寄貝刺身切片"><div class="cbody"><div class="ctitle">北寄貝</div><div class="cfreq">日本空運 · 週一三五</div><div class="cdesc">粉紅雙色漸變，口感脆嫩。</div></div></div>
+      <div class="crd"><div class="cbadge bb">空運</div><img class="cimg" src="images/products/maguro-akami.png" onerror="this.src='images/cards/prod-maguro.png'" alt="鮪魚赤身"><div class="cbody"><div class="ctitle">金槍魚赤身</div><div class="cfreq">日本空運 · 週一三五</div><div class="cdesc">深紅赤身，肉質紮實。</div></div></div>
+      <div class="crd"><div class="cbadge bg">每日到貨</div><img class="cimg" src="images/products/akagai.png" onerror="this.src='images/cards/prod-akagai.png'" alt="活赤貝"><div class="cbody"><div class="ctitle">赤貝</div><div class="cfreq">活體 · 每日到貨</div><div class="cdesc">打開箱子，牠還在動。</div></div></div>
+      <div class="crd"><div class="cbadge bb">空運</div><img class="cimg" src="images/products/ikura.png" onerror="this.src='images/cards/prod-ikura.png'" alt="日本醬油漬三文魚籽"><div class="cbody"><div class="ctitle">三文魚籽</div><div class="cfreq">日本空運 · 週一三五</div><div class="cdesc">晶瑩透亮，顆顆飽滿。</div></div></div>
+      <div class="crd"><div class="cbadge bb">空運</div><img class="cimg" src="images/products/otoro.png" onerror="this.src='images/cards/prod-swordfish.png'" alt="鮪魚大トロ厚切"><div class="cbody"><div class="ctitle">大トロ</div><div class="cfreq">日本空運 · 週一三五</div><div class="cdesc">雪花般的油脂紋理，入口即化。</div></div></div>
     </div>
   </div>
 </section>
@@ -325,7 +340,9 @@ footer a{color:var(--gold);text-decoration:none}
 </footer>
 
 <script>
-// Frame Sequence
+gsap.registerPlugin(ScrollTrigger);
+
+/* ═══ 1. FRAME SEQUENCE ENGINE (GSAP ScrollTrigger) ═══ */
 const seqs={};
 document.querySelectorAll('[data-seq]').forEach(el=>{
   const n=el.dataset.seq,c=parseInt(el.dataset.frames),wrap=el.querySelector('.split-frame');
@@ -333,32 +350,140 @@ document.querySelectorAll('[data-seq]').forEach(el=>{
   const imgs=[];
   for(let i=1;i<=c;i++){
     const img=document.createElement('img');
-    img.src=`frames/${n}/f${String(i).padStart(3,'0')}.jpg`;
-    img.loading=i<=3?'eager':'lazy';
+    img.style.willChange='opacity';
+    const src=`frames/${n}/f${String(i).padStart(3,'0')}.jpg`;
+    if(i<=5)img.src=src; else img.dataset.src=src;
     if(i===1)img.classList.add('on');
     wrap.appendChild(img);
     imgs.push(img);
   }
-  seqs[n]={el,imgs,c,cur:0};
+  seqs[n]={el,imgs,c,cur:0,loaded:5};
 });
 
-function tick(){
-  Object.entries(seqs).forEach(([n,{el,imgs,c}])=>{
-    const r=el.getBoundingClientRect(),vh=window.innerHeight,h=el.offsetHeight;
-    if(r.top>=vh||r.bottom<=0)return;
-    const p=Math.max(0,Math.min(1,(vh-r.top)/(vh+h)));
-    const f=Math.min(c-1,Math.floor(p*c));
-    if(f!==seqs[n].cur){imgs[seqs[n].cur]?.classList.remove('on');imgs[f]?.classList.add('on');seqs[n].cur=f;}
-  });
-  document.getElementById('bar').style.width=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100)+'%';
+function preloadAll(seq){
+  if(seq.loaded>=seq.c)return;
+  for(let i=seq.loaded;i<seq.c;i++){
+    const img=seq.imgs[i];
+    if(img.dataset.src&&!img.src)img.src=img.dataset.src;
+  }
+  seq.loaded=seq.c;
 }
 
-// Bubbles
-(function(){const w=document.getElementById('bubs');for(let i=0;i<12;i++){const b=document.createElement('div');b.className='bub';const s=3+Math.random()*10;b.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;animation-duration:${8+Math.random()*14}s;animation-delay:${Math.random()*8}s`;w.appendChild(b);}})();
+// Bind each cinema section to GSAP ScrollTrigger (scrub mode like Pioneer)
+Object.entries(seqs).forEach(([n,seq])=>{
+  const {el,imgs,c}=seq;
+  const textEl=el.querySelector('.cinema-text');
 
-let tk=false;
-window.addEventListener('scroll',()=>{if(!tk){requestAnimationFrame(()=>{tick();tk=false});tk=true}});
-tick();
+  ScrollTrigger.create({
+    trigger:el,
+    start:'top top',
+    end:'bottom bottom',
+    scrub:0.3, // smooth scrub like Pioneer
+    onUpdate:self=>{
+      const p=self.progress;
+      const f=Math.min(c-1,Math.floor(p*c));
+      if(f!==seq.cur){
+        imgs[seq.cur]?.classList.remove('on');
+        imgs[f]?.classList.add('on');
+        seq.cur=f;
+      }
+      // Text overlay: fade in at 55%, stagger children
+      if(textEl){
+        if(p>0.5&&!textEl.classList.contains('visible')){
+          textEl.classList.add('visible');
+          gsap.fromTo(textEl.children,
+            {opacity:0,y:25},
+            {opacity:1,y:0,duration:0.6,stagger:0.12,ease:'power2.out'}
+          );
+        }else if(p<=0.45&&textEl.classList.contains('visible')){
+          textEl.classList.remove('visible');
+          gsap.set(textEl.children,{opacity:0,y:25});
+        }
+      }
+    },
+    onEnter:()=>preloadAll(seq),
+    onEnterBack:()=>preloadAll(seq),
+  });
+});
+
+/* ═══ 2. SECTION REVEAL ANIMATIONS ═══ */
+// Staggered text reveals for each section
+gsap.utils.toArray('.reveal').forEach(el=>{
+  gsap.to(el,{
+    opacity:1,y:0,duration:0.9,ease:'power3.out',
+    scrollTrigger:{trigger:el,start:'top 85%',toggleActions:'play none none reverse'}
+  });
+});
+
+// Product cards staggered entrance
+gsap.utils.toArray('.crd').forEach((card,i)=>{
+  gsap.fromTo(card,
+    {opacity:0,y:30,scale:0.95},
+    {opacity:1,y:0,scale:1,duration:0.6,delay:i*0.06,ease:'power2.out',
+      scrollTrigger:{trigger:card.parentElement,start:'top 80%',toggleActions:'play none none reverse'}
+    }
+  );
+});
+
+// Stats counter animation
+gsap.utils.toArray('.stat').forEach((stat,i)=>{
+  gsap.fromTo(stat,
+    {opacity:0,y:20},
+    {opacity:1,y:0,duration:0.5,delay:i*0.1,ease:'power2.out',
+      scrollTrigger:{trigger:stat.parentElement,start:'top 85%',toggleActions:'play none none reverse'}
+    }
+  );
+});
+
+// Timeline nodes staggered
+gsap.utils.toArray('.tn').forEach((node,i)=>{
+  gsap.fromTo(node,
+    {opacity:0,y:25},
+    {opacity:1,y:0,duration:0.6,delay:i*0.15,ease:'power2.out',
+      scrollTrigger:{trigger:node.parentElement,start:'top 80%',toggleActions:'play none none reverse'}
+    }
+  );
+});
+
+// AI cards & Partner cards
+gsap.utils.toArray('.aicard, .pcard').forEach((card,i)=>{
+  gsap.fromTo(card,
+    {opacity:0,y:25},
+    {opacity:1,y:0,duration:0.6,delay:(i%6)*0.08,ease:'power2.out',
+      scrollTrigger:{trigger:card.parentElement,start:'top 80%',toggleActions:'play none none reverse'}
+    }
+  );
+});
+
+// Edge cards
+gsap.utils.toArray('.crd').forEach((card,i)=>{
+  if(card.closest('#s-edge')){
+    gsap.fromTo(card,
+      {opacity:0,scale:0.9},
+      {opacity:1,scale:1,duration:0.7,delay:(i%3)*0.1,ease:'back.out(1.2)',
+        scrollTrigger:{trigger:card.parentElement,start:'top 80%',toggleActions:'play none none reverse'}
+      }
+    );
+  }
+});
+
+// Fade-in products section after reveal cinema
+const prodSection=document.getElementById('products');
+if(prodSection){
+  gsap.to(prodSection,{
+    opacity:1,y:0,duration:1,ease:'power2.out',
+    scrollTrigger:{trigger:prodSection,start:'top 90%',toggleActions:'play none none reverse'}
+  });
+}
+
+/* ═══ 3. PROGRESS BAR ═══ */
+gsap.to('#bar',{
+  width:'100%',ease:'none',
+  scrollTrigger:{trigger:'body',start:'top top',end:'bottom bottom',scrub:0.3}
+});
+
+/* ═══ 4. BUBBLES ═══ */
+(function(){const w=document.getElementById('bubs');for(let i=0;i<12;i++){const b=document.createElement('div');b.className='bub';const s=3+Math.random()*10;b.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;animation-duration:${8+Math.random()*14}s;animation-delay:${Math.random()*8}s`;w.appendChild(b);}})();
 </script>
 <!-- Referrer Tracking -->
 <script>
