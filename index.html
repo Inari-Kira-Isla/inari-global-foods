@@ -31,6 +31,12 @@ body { font-family: 'Noto Serif TC', serif; background: var(--ink); color: var(-
 #page-counter { position:fixed; bottom:2rem; right:2rem; z-index:100; font-family:'Cormorant Garamond',serif; font-size:11px; letter-spacing:0.3em; color:rgba(248,242,230,0.3); }
 #page-counter b { color:rgba(248,242,230,0.75); font-size:14px; font-weight:300; }
 
+
+/* Product/edge icon images */
+.edge-icon, .prod-icon, .partner-icon { font-size:0 !important; }
+.edge-icon img, .prod-icon img, .partner-icon img { width:48px; height:48px; border-radius:10px; object-fit:cover; }
+.cal-label img { width:16px; height:16px; border-radius:3px; object-fit:cover; vertical-align:middle; margin-right:4px; }
+
 /* ── SCROLL CONTAINER ── */
 #snap-wrap { height:100vh; overflow-y:scroll; scroll-snap-type:y mandatory; }
 #snap-wrap::-webkit-scrollbar { display:none; }
@@ -371,12 +377,12 @@ body { font-family: 'Noto Serif TC', serif; background: var(--ink); color: var(-
         但當他看到年邁的父母還在凌晨扛著保冷箱送貨，他知道自己真正該接手的是什麼。
       </p>
     </div>
-    <!-- 🖼️ JOE 個人照片插槽 -->
+    <!-- JOE 個人照片插槽 -->
     <div class="ch2-photo" id="joe-photo-slot">
       <img src="images/people/joe-portrait.jpg" alt="卓岫 JOE"
            onload="this.style.display='block';this.classList.add('loaded');document.getElementById('joe-ph').style.display='none'">
       <div class="photo-ph" id="joe-ph">
-        <div class="icon">👤</div>
+        <div class="icon" style="font-size:2rem;opacity:0.3">人</div>
         <div class="lbl">JOE 個人照片</div>
         <div class="hint-txt">請放入 images/people/joe-portrait.jpg</div>
       </div>
@@ -405,11 +411,11 @@ body { font-family: 'Noto Serif TC', serif; background: var(--ink); color: var(-
       <h2 class="section-title anim">從紙筆到 AI</h2>
     </div>
     <div class="evo-track">
-      <div class="evo-node"><div class="evo-circle">📞</div><div class="evo-era">1990s</div><div class="evo-name">紙筆時代</div><div class="evo-quote">「一支筆、一本簿——這就是當年的 ERP」</div></div>
-      <div class="evo-node"><div class="evo-circle">🚢</div><div class="evo-era">2008+</div><div class="evo-name">碼頭時代</div><div class="evo-quote">「凌晨三點，檢疫站的燈還亮著。」</div></div>
-      <div class="evo-node"><div class="evo-circle">💻</div><div class="evo-era">2012+</div><div class="evo-name">ERP 時代</div><div class="evo-quote">「第一次知道這個月到底賺了多少。」</div></div>
-      <div class="evo-node"><div class="evo-circle">📱</div><div class="evo-era">2016+</div><div class="evo-name">社群時代</div><div class="evo-quote">「十分鐘來了三個新客戶的詢問。」</div></div>
-      <div class="evo-node highlight"><div class="evo-circle">🤖</div><div class="evo-era">NOW</div><div class="evo-name">AI 時代</div><div class="evo-quote">「凌晨三點 AI 在工作。我們終於可以睡了。」</div></div>
+      <div class="evo-node"><div class="evo-circle">電</div><div class="evo-era">1990s</div><div class="evo-name">紙筆時代</div><div class="evo-quote">「一支筆、一本簿——這就是當年的 ERP」</div></div>
+      <div class="evo-node"><div class="evo-circle">船</div><div class="evo-era">2008+</div><div class="evo-name">碼頭時代</div><div class="evo-quote">「凌晨三點，檢疫站的燈還亮著。」</div></div>
+      <div class="evo-node"><div class="evo-circle">網</div><div class="evo-era">2012+</div><div class="evo-name">ERP 時代</div><div class="evo-quote">「第一次知道這個月到底賺了多少。」</div></div>
+      <div class="evo-node"><div class="evo-circle">轉</div><div class="evo-era">2016+</div><div class="evo-name">社群時代</div><div class="evo-quote">「十分鐘來了三個新客戶的詢問。」</div></div>
+      <div class="evo-node highlight"><div class="evo-circle">AI</div><div class="evo-era">NOW</div><div class="evo-name">AI 時代</div><div class="evo-quote">「凌晨三點 AI 在工作。我們終於可以睡了。」</div></div>
     </div>
   </div>
   <div class="hint" onclick="goTo(3)"><span>核心</span><div class="hint-line"></div></div>
@@ -431,12 +437,12 @@ body { font-family: 'Noto Serif TC', serif; background: var(--ink); color: var(-
       <div class="stat-block"><div class="stat-num">首家</div><div class="stat-unit">澳門</div><div class="stat-desc">專業海膽供應商</div></div>
     </div>
     <div class="edges-grid">
-      <div class="edge-card"><div class="edge-icon">🥇</div><div class="edge-title">先行者地位</div><div class="edge-body">在稻荷之前，整個澳門沒有公司敢專業做海膽。我們用十幾年跑通了這條路。</div><div class="edge-quote">「別人不敢做的生意，我們做了二十年。」</div></div>
-      <div class="edge-card"><div class="edge-icon">🦔</div><div class="edge-title">每日到貨</div><div class="edge-body">海膽和活赤貝每天到貨——客戶拿到的永遠是最新鮮的一批，不是庫存貨。</div><div class="edge-quote">「別人一週到一次，我們每天到。」</div></div>
-      <div class="edge-card"><div class="edge-icon">✈️</div><div class="edge-title">日本空運 · 每週三航</div><div class="edge-body">週一・三・五直送日本頂級水產，客戶提前 3 天訂貨即可收到。</div><div class="edge-quote">「從日本到澳門，中間只隔一趟飛機。」</div></div>
-      <div class="edge-card"><div class="edge-icon">🐟</div><div class="edge-title">挪威冰鮮三文魚 · 每日</div><div class="edge-body">不是冷凍，是冰鮮——從挪威空運，全程冰鮮保存，每天都有供應。</div><div class="edge-quote">「冰鮮，靠的是供應鏈的深度。」</div></div>
-      <div class="edge-card"><div class="edge-icon">👁️</div><div class="edge-title">二十年品質眼光</div><div class="edge-body">每一批貨逐盒人工檢驗。乾身、不滲水——這是卓素二十年練出的鐵律。</div><div class="edge-quote">「品質不過關，再大的訂單也退回。」</div></div>
-      <div class="edge-card"><div class="edge-icon">🌡️</div><div class="edge-title">全程冷鏈控制</div><div class="edge-body">從產地到客戶的全程溫控管理。我們看到的是從產地到澳門之間的溫度曲線。</div><div class="edge-quote">「別人看到的是一盒海膽，我們看到的是溫度。」</div></div>
+      <div class="edge-card"><div class="edge-icon"><img src="images/feature-uni.jpg" alt="uni"></div><div class="edge-title">先行者地位</div><div class="edge-body">在稻荷之前，整個澳門沒有公司敢專業做海膽。我們用十幾年跑通了這條路。</div><div class="edge-quote">「別人不敢做的生意，我們做了二十年。」</div></div>
+      <div class="edge-card"><div class="edge-icon"><img src="images/cat-uni.jpg" alt="uni"></div><div class="edge-title">每日到貨</div><div class="edge-body">海膽和活赤貝每天到貨——客戶拿到的永遠是最新鮮的一批，不是庫存貨。</div><div class="edge-quote">「別人一週到一次，我們每天到。」</div></div>
+      <div class="edge-card"><div class="edge-icon"><img src="images/cat-market.jpg" alt="market"></div><div class="edge-title">日本空運 · 每週三航</div><div class="edge-body">週一・三・五直送日本頂級水產，客戶提前 3 天訂貨即可收到。</div><div class="edge-quote">「從日本到澳門，中間只隔一趟飛機。」</div></div>
+      <div class="edge-card"><div class="edge-icon"><img src="images/cat-fish.jpg" alt="fish"></div><div class="edge-title">挪威冰鮮三文魚 · 每日</div><div class="edge-body">不是冷凍，是冰鮮——從挪威空運，全程冰鮮保存，每天都有供應。</div><div class="edge-quote">「冰鮮，靠的是供應鏈的深度。」</div></div>
+      <div class="edge-card"><div class="edge-icon"><img src="images/feature-quality.jpg" alt="quality"></div><div class="edge-title">二十年品質眼光</div><div class="edge-body">每一批貨逐盒人工檢驗。乾身、不滲水——這是卓素二十年練出的鐵律。</div><div class="edge-quote">「品質不過關，再大的訂單也退回。」</div></div>
+      <div class="edge-card"><div class="edge-icon"><img src="images/feature-coldchain.jpg" alt="coldchain"></div><div class="edge-title">全程冷鏈控制</div><div class="edge-body">從產地到客戶的全程溫控管理。我們看到的是從產地到澳門之間的溫度曲線。</div><div class="edge-quote">「別人看到的是一盒海膽，我們看到的是溫度。」</div></div>
     </div>
   </div>
   <div class="hint" onclick="goTo(4)"><span>展示</span><div class="hint-line"></div></div>
@@ -475,12 +481,12 @@ body { font-family: 'Noto Serif TC', serif; background: var(--ink); color: var(-
       <h2 class="section-title anim" style="text-align:center">每一樣，都是承諾</h2>
     </div>
     <div class="products-grid">
-      <div class="prod-card"><div class="prod-badge badge-daily">每日到貨</div><div class="prod-icon">🦔</div><div class="prod-name">招牌海膽系列</div><div class="prod-freq">每日到貨 ⭐</div><div class="prod-desc">澳門首家專業海膽供應，逐盒人工檢驗，品質不達標即退回。</div></div>
-      <div class="prod-card"><div class="prod-badge badge-daily">每日到貨</div><div class="prod-icon">🦀</div><div class="prod-name">活赤貝</div><div class="prod-freq">每日到貨 ⭐</div><div class="prod-desc">鮮活赤貝每日到貨，活體狀態送達，打開箱子，牠還在動。</div></div>
-      <div class="prod-card"><div class="prod-badge badge-weekly">每週三航</div><div class="prod-icon">✈️</div><div class="prod-name">空運日本水產</div><div class="prod-freq">週一・三・五 直送</div><div class="prod-desc">鮪魚・帆立貝・甜蝦等當季頂級食材，提前3天訂貨即可收到。</div></div>
-      <div class="prod-card"><div class="prod-badge badge-new">🆕 新品</div><div class="prod-icon">🐟</div><div class="prod-name">挪威冰鮮三文魚</div><div class="prod-freq">每日供應（冰鮮非冷凍）</div><div class="prod-desc">不是冷凍，是冰鮮。從挪威空運，每天都有，這是供應鏈的實力。</div></div>
-      <div class="prod-card"><div class="prod-icon">🦞</div><div class="prod-name">冷凍水產系列</div><div class="prod-freq">穩定供應</div><div class="prod-desc">餐廳日常備貨需求，品質嚴格篩選，解凍後口感接近生鮮。</div></div>
-      <div class="prod-card"><div class="prod-icon">🍶</div><div class="prod-name">清酒・和牛</div><div class="prod-freq">精選日式食材</div><div class="prod-desc">我們想做的是日式食材的一站式最佳夥伴，不只是海鮮。</div></div>
+      <div class="prod-card"><div class="prod-badge badge-daily">每日到貨</div><div class="prod-icon"><img src="images/cat-uni.jpg" alt="uni"></div><div class="prod-name">招牌海膽系列</div><div class="prod-freq">每日到貨</div><div class="prod-desc">澳門首家專業海膽供應，逐盒人工檢驗，品質不達標即退回。</div></div>
+      <div class="prod-card"><div class="prod-badge badge-daily">每日到貨</div><div class="prod-icon"><img src="images/cat-crab.jpg" alt="crab"></div><div class="prod-name">活赤貝</div><div class="prod-freq">每日到貨</div><div class="prod-desc">鮮活赤貝每日到貨，活體狀態送達，打開箱子，牠還在動。</div></div>
+      <div class="prod-card"><div class="prod-badge badge-weekly">每週三航</div><div class="prod-icon"><img src="images/cat-market.jpg" alt="market"></div><div class="prod-name">空運日本水產</div><div class="prod-freq">週一・三・五 直送</div><div class="prod-desc">鮪魚・帆立貝・甜蝦等當季頂級食材，提前3天訂貨即可收到。</div></div>
+      <div class="prod-card"><div class="prod-badge badge-new">新品</div><div class="prod-icon"><img src="images/cat-fish.jpg" alt="fish"></div><div class="prod-name">挪威冰鮮三文魚</div><div class="prod-freq">每日供應（冰鮮非冷凍）</div><div class="prod-desc">不是冷凍，是冰鮮。從挪威空運，每天都有，這是供應鏈的實力。</div></div>
+      <div class="prod-card"><div class="prod-icon"><img src="images/cat-frozen.jpg" alt="frozen"></div><div class="prod-name">冷凍水產系列</div><div class="prod-freq">穩定供應</div><div class="prod-desc">餐廳日常備貨需求，品質嚴格篩選，解凍後口感接近生鮮。</div></div>
+      <div class="prod-card"><div class="prod-icon"><img src="images/cat-sushi.jpg" alt="sushi"></div><div class="prod-name">清酒・和牛</div><div class="prod-freq">精選日式食材</div><div class="prod-desc">我們想做的是日式食材的一站式最佳夥伴，不只是海鮮。</div></div>
     </div>
     <div class="week-cal">
       <div class="cal-header">
@@ -488,10 +494,10 @@ body { font-family: 'Noto Serif TC', serif; background: var(--ink); color: var(-
         <div class="cal-cell">一</div><div class="cal-cell">二</div><div class="cal-cell">三</div>
         <div class="cal-cell">四</div><div class="cal-cell">五</div><div class="cal-cell">六</div><div class="cal-cell">日</div>
       </div>
-      <div class="cal-row"><div class="cal-label">🦔 海膽</div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div></div>
-      <div class="cal-row"><div class="cal-label">🦀 赤貝</div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div></div>
-      <div class="cal-row"><div class="cal-label">🐟 三文魚</div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div></div>
-      <div class="cal-row"><div class="cal-label">✈️ 日本空運</div><div class="cal-dot"><div class="dot-plane">✈️</div></div><div class="cal-dot"><div class="dot-empty"></div></div><div class="cal-dot"><div class="dot-plane">✈️</div></div><div class="cal-dot"><div class="dot-empty"></div></div><div class="cal-dot"><div class="dot-plane">✈️</div></div><div class="cal-dot"><div class="dot-empty"></div></div><div class="cal-dot"><div class="dot-empty"></div></div></div>
+      <div class="cal-row"><div class="cal-label"><img src="images/cat-uni.jpg" alt="uni"> 海膽</div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div></div>
+      <div class="cal-row"><div class="cal-label"><img src="images/cat-crab.jpg" alt="akagai"> 赤貝</div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div></div>
+      <div class="cal-row"><div class="cal-label"><img src="images/cat-fish.jpg" alt="salmon"> 三文魚</div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div><div class="cal-dot"><div class="dot-filled"></div></div></div>
+      <div class="cal-row"><div class="cal-label">▲ 日本空運</div><div class="cal-dot"><div class="dot-plane">▲</div></div><div class="cal-dot"><div class="dot-empty"></div></div><div class="cal-dot"><div class="dot-plane">▲</div></div><div class="cal-dot"><div class="dot-empty"></div></div><div class="cal-dot"><div class="dot-plane">▲</div></div><div class="cal-dot"><div class="dot-empty"></div></div><div class="cal-dot"><div class="dot-empty"></div></div></div>
     </div>
   </div>
   <div class="hint" onclick="goTo(6)"><span>智能</span><div class="hint-line"></div></div>
@@ -507,12 +513,12 @@ body { font-family: 'Noto Serif TC', serif; background: var(--ink); color: var(-
     </div>
     <p class="ch7-opening">「我們不是科技公司，我們是一間用科技武裝自己的水產公司。」</p>
     <div class="ai-compare">
-      <div class="ai-card"><div class="ai-icon">🤖</div><div class="ai-topic">社群發文</div><div class="ai-before">JOE 晚上花 1-2 小時寫文案、找圖、排版</div><div class="ai-after">AI 自動生成貼文，每週穩定 5+ 篇</div></div>
-      <div class="ai-card"><div class="ai-icon">💬</div><div class="ai-topic">客服回覆</div><div class="ai-before">客戶訊息來一條回一條，忙時漏回</div><div class="ai-after">AI 即時回覆常見問題，人工處理複雜需求</div></div>
-      <div class="ai-card"><div class="ai-icon">📊</div><div class="ai-topic">會計對帳</div><div class="ai-before">月底花 3 天人手核對每一筆帳</div><div class="ai-after">AI 自動比對，3 小時完成月結報表</div></div>
-      <div class="ai-card"><div class="ai-icon">🌐</div><div class="ai-topic">網站維護</div><div class="ai-before">想更新但沒時間，網站停在舊版本</div><div class="ai-after">AI 定期自動更新產品頁和公司動態</div></div>
-      <div class="ai-card"><div class="ai-icon">📈</div><div class="ai-topic">市場分析</div><div class="ai-before">靠經驗和感覺判斷行情</div><div class="ai-after">AI 抓取市場數據，生成競品報告</div></div>
-      <div class="ai-card"><div class="ai-icon">📋</div><div class="ai-topic">訂單處理</div><div class="ai-before">電話接單 → 手寫 → 人工錄入 ERP</div><div class="ai-after">AI 輔助整理訂單，減少人為錯誤</div></div>
+      <div class="ai-card"><div class="ai-icon">AI</div><div class="ai-topic">社群發文</div><div class="ai-before">JOE 晚上花 1-2 小時寫文案、找圖、排版</div><div class="ai-after">AI 自動生成貼文，每週穩定 5+ 篇</div></div>
+      <div class="ai-card"><div class="ai-icon">客</div><div class="ai-topic">客服回覆</div><div class="ai-before">客戶訊息來一條回一條，忙時漏回</div><div class="ai-after">AI 即時回覆常見問題，人工處理複雜需求</div></div>
+      <div class="ai-card"><div class="ai-icon">帳</div><div class="ai-topic">會計對帳</div><div class="ai-before">月底花 3 天人手核對每一筆帳</div><div class="ai-after">AI 自動比對，3 小時完成月結報表</div></div>
+      <div class="ai-card"><div class="ai-icon">站</div><div class="ai-topic">網站維護</div><div class="ai-before">想更新但沒時間，網站停在舊版本</div><div class="ai-after">AI 定期自動更新產品頁和公司動態</div></div>
+      <div class="ai-card"><div class="ai-icon">析</div><div class="ai-topic">市場分析</div><div class="ai-before">靠經驗和感覺判斷行情</div><div class="ai-after">AI 抓取市場數據，生成競品報告</div></div>
+      <div class="ai-card"><div class="ai-icon">單</div><div class="ai-topic">訂單處理</div><div class="ai-before">電話接單 → 手寫 → 人工錄入 ERP</div><div class="ai-after">AI 輔助整理訂單，減少人為錯誤</div></div>
     </div>
     <p class="ch7-declaration">「父親用肩膀扛出了這門生意，我們用 AI 讓它走得更遠。」</p>
   </div>
@@ -527,11 +533,11 @@ body { font-family: 'Noto Serif TC', serif; background: var(--ink); color: var(-
       <h2 class="section-title">與我們同行的人</h2>
     </div>
     <div class="partners-grid">
-      <div class="partner-card"><div class="partner-icon">🍣</div><div class="partner-name">澳門日本餐廳</div><div class="partner-body">高端日料到街坊壽司店，稻荷是二十年的老夥伴。海膽赤貝每天到，廚師永遠有最鮮的食材。</div><div class="partner-quote">「二十年前第一個客戶是間小壽司店。二十年後，他還在。」</div></div>
-      <div class="partner-card"><div class="partner-icon">🏪</div><div class="partner-name">大型連鎖超市</div><div class="partner-body">大批量・高頻率・品質一致——這是連鎖超市最核心的要求，也是稻荷的強項。</div><div class="partner-quote">「每一間分店、每一天、同一個品質。」</div></div>
-      <div class="partner-card"><div class="partner-icon">🛒</div><div class="partner-name">實體及網路零售商</div><div class="partner-body">海鮮專賣店、精品超市、電商平台——我們做批發，但每一盒都是零售品質。</div><div class="partner-quote">「我們做批發，但每一盒都是零售品質。」</div></div>
-      <div class="partner-card"><div class="partner-icon">🏨</div><div class="partner-name">星級酒店採購</div><div class="partner-body">服務宴會廳、自助餐、日料吧。從 20 盒到 2000 盒，同一個品質標準。</div><div class="partner-quote">「從 20 盒到 2000 盒，同一個標準。」</div></div>
-      <div class="partner-card"><div class="partner-icon">🍽️</div><div class="partner-name">連鎖日本料理</div><div class="partner-body">跨門店的統一品質供應。十間店，同一個味道——這背後需要的是供應鏈的穩定。</div><div class="partner-quote">「十間店，同一個味道。不是運氣，是供應鏈。」</div></div>
+      <div class="partner-card"><div class="partner-icon"><img src="images/cat-sushi.jpg" alt="sushi"></div><div class="partner-name">澳門日本餐廳</div><div class="partner-body">高端日料到街坊壽司店，稻荷是二十年的老夥伴。海膽赤貝每天到，廚師永遠有最鮮的食材。</div><div class="partner-quote">「二十年前第一個客戶是間小壽司店。二十年後，他還在。」</div></div>
+      <div class="partner-card"><div class="partner-icon"><img src="images/cat-market.jpg" alt="market"></div><div class="partner-name">大型連鎖超市</div><div class="partner-body">大批量・高頻率・品質一致——這是連鎖超市最核心的要求，也是稻荷的強項。</div><div class="partner-quote">「每一間分店、每一天、同一個品質。」</div></div>
+      <div class="partner-card"><div class="partner-icon"><img src="images/cat-frozen.jpg" alt="retail"></div><div class="partner-name">實體及網路零售商</div><div class="partner-body">海鮮專賣店、精品超市、電商平台——我們做批發，但每一盒都是零售品質。</div><div class="partner-quote">「我們做批發，但每一盒都是零售品質。」</div></div>
+      <div class="partner-card"><div class="partner-icon"><img src="images/cat-scallop.jpg" alt="hotel"></div><div class="partner-name">星級酒店採購</div><div class="partner-body">服務宴會廳、自助餐、日料吧。從 20 盒到 2000 盒，同一個品質標準。</div><div class="partner-quote">「從 20 盒到 2000 盒，同一個標準。」</div></div>
+      <div class="partner-card"><div class="partner-icon"><img src="images/feature-handroll.jpg" alt="catering"></div><div class="partner-name">連鎖日本料理</div><div class="partner-body">跨門店的統一品質供應。十間店，同一個味道——這背後需要的是供應鏈的穩定。</div><div class="partner-quote">「十間店，同一個味道。不是運氣，是供應鏈。」</div></div>
     </div>
     <div class="ch8-testimony">
       <p class="testimony-quote">「我看著他背著包包風雨無阻地送了二十年。」</p>
@@ -550,7 +556,7 @@ body { font-family: 'Noto Serif TC', serif; background: var(--ink); color: var(-
     <h2 class="ch9-h">讓世界<br>嚐見澳門</h2>
     <p class="ch9-tag">合作詢問 · 批發採購 · 品牌授權</p>
     <div class="cta-row">
-      <a href="https://wa.me/85362823037" target="_blank" class="btn-wa">📱 WhatsApp 立即查詢</a>
+      <a href="https://wa.me/85362823037" target="_blank" class="btn-wa">WhatsApp 立即查詢</a>
       <a href="mailto:inariglobal@gmail.com" class="btn-ghost">發送 Email 查詢</a>
     </div>
     <div class="ch9-contacts">
@@ -617,7 +623,7 @@ function drawFrame(idx) {
 
   if (ph>=1) {
     const eT = ph===1 ? eio(pt) : 1;
-    const items = [{e:'🦔',x:-65,y:-65,a:-0.25},{e:'🦀',x:65,y:-45,a:0.3},{e:'🦐',x:-20,y:-90,a:-0.1},{e:'🍣',x:45,y:-70,a:0.4}];
+    const items = [];  // emoji particles removed — replaced with images
     items.forEach((item,i) => {
       const d=i*0.12, iT=Math.max(0,Math.min(1,(eT-d)/(1-d)));
       if (iT<=0) return;
