@@ -132,6 +132,7 @@ footer a{color:var(--gold);text-decoration:none}
   .split-frame{height:50vh}
   .split-text{padding:2.5rem 1.5rem}
   .cgrid{grid-template-columns:1fr 1fr}
+  .cgrid[style*='repeat(5']{grid-template-columns:repeat(3,1fr) !important}
   .pgrid{grid-template-columns:1fr}
   .pcard{flex-direction:column}
   .pimg{width:100%;height:180px}
@@ -139,7 +140,8 @@ footer a{color:var(--gold);text-decoration:none}
   .tl::before{display:none}
   .stats{flex-wrap:wrap;gap:1.5rem}
 }
-@media(max-width:480px){.cgrid{grid-template-columns:1fr}.btns{flex-direction:column;align-items:center}}
+@media(max-width:480px){.cgrid{grid-template-columns:1fr}
+  .cgrid[style*='repeat(5']{grid-template-columns:repeat(2,1fr) !important}.btns{flex-direction:column;align-items:center}}
 </style>
 </head>
 <body>
@@ -180,7 +182,7 @@ footer a{color:var(--gold);text-decoration:none}
       <a href="#products" class="btn">瀏覽商品</a>
     </div>
   </div>
-  <div style="background:url('images/cards/card-hero.png') center/cover;min-height:100vh"></div>
+  <div style="background:url('images/cards/journey-pacific.png') center/cover;min-height:100vh"></div>
 </div>
 
 <!-- ═══ 3. STORY — Joe 的故事（左圖右文）═══ -->
@@ -259,14 +261,18 @@ footer a{color:var(--gold);text-decoration:none}
 <section style="background:var(--deep)" id="products">
   <div class="cards">
     <h2>每一樣，都是承諾</h2>
-    <div class="sub">The Collection — 商品系列</div>
-    <div class="cgrid">
-      <div class="crd"><div class="cbadge bg">每日到貨</div><img class="cimg" src="images/cards/card-uni.png" alt="海膽"><div class="cbody"><div class="ctitle">招牌海膽系列</div><div class="cfreq">每日到貨</div><div class="cdesc">澳門首家專業海膽供應，逐盒人工檢驗。</div></div></div>
-      <div class="crd"><div class="cbadge bg">每日到貨</div><img class="cimg" src="images/cards/card-akagai.png" alt="赤貝"><div class="cbody"><div class="ctitle">活赤貝</div><div class="cfreq">每日到貨</div><div class="cdesc">活體狀態送達，打開箱子，牠還在動。</div></div></div>
-      <div class="crd"><div class="cbadge bb">每週三航</div><img class="cimg" src="images/cards/card-scallop.png" alt="帶子"><div class="cbody"><div class="ctitle">空運日本水產</div><div class="cfreq">週一 · 三 · 五</div><div class="cdesc">鮪魚・帆立貝・甜蝦等當季頂級食材。</div></div></div>
-      <div class="crd"><div class="cbadge br">新品</div><img class="cimg" src="images/cards/card-salmon.png" alt="三文魚"><div class="cbody"><div class="ctitle">挪威冰鮮三文魚</div><div class="cfreq">每日供應</div><div class="cdesc">不是冷凍，是冰鮮。每天都有。</div></div></div>
-      <div class="crd"><img class="cimg" src="images/cards/card-frozen.png" alt="冷凍"><div class="cbody"><div class="ctitle">冷凍水產系列</div><div class="cfreq">穩定供應</div><div class="cdesc">餐廳日常備貨，品質嚴格篩選。</div></div></div>
-      <div class="crd"><img class="cimg" src="images/cards/card-sake.png" alt="和牛"><div class="cbody"><div class="ctitle">清酒 · 和牛</div><div class="cfreq">精選日式食材</div><div class="cdesc">一站式最佳夥伴，不只是海鮮。</div></div></div>
+    <div class="sub">The Collection — 十大嚴選商品</div>
+    <div class="cgrid" style="grid-template-columns:repeat(5,1fr)">
+      <div class="crd"><div class="cbadge bg">每日到貨</div><img class="cimg" src="images/cards/prod-uni.png" alt="海膽"><div class="cbody"><div class="ctitle">海膽</div><div class="cfreq">北海道馬糞海膽 · 每日到貨</div><div class="cdesc">澳門首家，逐盒人工檢驗。</div></div></div>
+      <div class="crd"><div class="cbadge br">冰鮮</div><img class="cimg" src="images/cards/prod-salmon.png" alt="三文魚"><div class="cbody"><div class="ctitle">三文魚</div><div class="cfreq">挪威冰鮮 · 每日供應</div><div class="cdesc">不是冷凍，是冰鮮。</div></div></div>
+      <div class="crd"><div class="cbadge bb">空運</div><img class="cimg" src="images/cards/prod-amaebi.png" onerror="this.src='images/cards/card-scallop.png'" alt="甜蝦"><div class="cbody"><div class="ctitle">甜蝦</div><div class="cfreq">日本空運 · 週一三五</div><div class="cdesc">晶瑩剔透，入口即化。</div></div></div>
+      <div class="crd"><div class="cbadge bb">空運</div><img class="cimg" src="images/cards/prod-botan.png" onerror="this.src='images/cards/card-scallop.png'" alt="牡丹蝦"><div class="cbody"><div class="ctitle">牡丹蝦</div><div class="cfreq">日本空運 · 週一三五</div><div class="cdesc">比甜蝦更大更豪華。</div></div></div>
+      <div class="crd"><div class="cbadge bb">空運</div><img class="cimg" src="images/cards/prod-hotate.png" alt="帆立貝"><div class="cbody"><div class="ctitle">帆立貝</div><div class="cfreq">北海道 · 週一三五</div><div class="cdesc">半透明貝肉，鮮甜無比。</div></div></div>
+      <div class="crd"><div class="cbadge bb">空運</div><img class="cimg" src="images/cards/prod-hokkigai.png" onerror="this.src='images/cards/prod-akagai.png'" alt="北寄貝"><div class="cbody"><div class="ctitle">北寄貝</div><div class="cfreq">日本空運 · 週一三五</div><div class="cdesc">粉紅雙色漸變，口感脆嫩。</div></div></div>
+      <div class="crd"><div class="cbadge bb">空運</div><img class="cimg" src="images/cards/prod-maguro.png" onerror="this.src='images/cards/prod-salmon-closeup.png'" alt="金槍魚"><div class="cbody"><div class="ctitle">金槍魚</div><div class="cfreq">日本空運 · 週一三五</div><div class="cdesc">深紅赤身，油脂紋理豐富。</div></div></div>
+      <div class="crd"><div class="cbadge bg">每日到貨</div><img class="cimg" src="images/cards/prod-akagai.png" alt="赤貝"><div class="cbody"><div class="ctitle">赤貝</div><div class="cfreq">活體 · 每日到貨</div><div class="cdesc">打開箱子，牠還在動。</div></div></div>
+      <div class="crd"><div class="cbadge bb">空運</div><img class="cimg" src="images/cards/prod-ikura.png" onerror="this.src='images/cards/prod-uni.png'" alt="三文魚籽"><div class="cbody"><div class="ctitle">三文魚籽</div><div class="cfreq">日本空運 · 週一三五</div><div class="cdesc">晶瑩透亮，顆顆飽滿。</div></div></div>
+      <div class="crd"><div class="cbadge bb">空運</div><img class="cimg" src="images/cards/prod-swordfish.png" onerror="this.src='images/cards/prod-salmon.png'" alt="劍魚腩"><div class="cbody"><div class="ctitle">劍魚腩</div><div class="cfreq">日本空運 · 週一三五</div><div class="cdesc">厚切白粉色，油脂豐富。</div></div></div>
     </div>
   </div>
 </section>
@@ -296,8 +302,8 @@ footer a{color:var(--gold);text-decoration:none}
     <div class="sub">The Partners — 二十年並肩</div>
     <div class="pgrid">
       <div class="pcard"><img class="pimg" src="images/cards/card-sushi.png" alt="日料"><div class="pbody"><div class="pname">澳門日本餐廳</div><div class="cdesc">高端日料到街坊壽司店，二十年的老夥伴。</div><div class="cquote">「二十年前第一個客戶是間小壽司店。他還在。」</div></div></div>
-      <div class="pcard"><img class="pimg" src="images/cards/card-hero.png" alt="批發"><div class="pbody"><div class="pname">批發市場零售商</div><div class="cdesc">澳門街市的水產檔口，每天準時到貨，從不斷供。</div><div class="cquote">「做批發靠的不是花巧，是每一天都做到。」</div></div></div>
-      <div class="pcard"><img class="pimg" src="images/cards/card-coldchain.png" alt="酒店"><div class="pbody"><div class="pname">五星級酒店</div><div class="cdesc">酒店宴會需要大量穩定供應。冷鏈管理達到酒店食安標準。</div><div class="cquote">「五星級的要求，二十年的標準。」</div></div></div>
+      <div class="pcard"><img class="pimg" src="images/cards/partner-market.png" alt="批發"><div class="pbody"><div class="pname">批發市場零售商</div><div class="cdesc">澳門街市的水產檔口，每天準時到貨，從不斷供。</div><div class="cquote">「做批發靠的不是花巧，是每一天都做到。」</div></div></div>
+      <div class="pcard"><img class="pimg" src="images/cards/partner-hotel.png" alt="酒店"><div class="pbody"><div class="pname">五星級酒店</div><div class="cdesc">酒店宴會需要大量穩定供應。冷鏈管理達到酒店食安標準。</div><div class="cquote">「五星級的要求，二十年的標準。」</div></div></div>
       <div class="pcard"><img class="pimg" src="images/cards/card-quality.png" alt="餐飲"><div class="pbody"><div class="pname">餐飲集團</div><div class="cdesc">連鎖餐飲需要統一品質。每一間店收到的貨一模一樣。</div><div class="cquote">「一百間店，一個標準。」</div></div></div>
     </div>
   </div>
