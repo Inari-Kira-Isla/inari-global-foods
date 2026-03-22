@@ -196,19 +196,13 @@ body{font-family:'Noto Serif TC',serif;background:var(--deep);color:var(--text);
 .btn:hover{background:var(--gold);color:var(--deep)}
 .btn-s{background:var(--gold);color:var(--deep)}
 
-/* Gallery wall — auto-scrolling image rows */
-.gallery-wall{overflow:hidden;position:relative}
-.gallery-track{display:flex;gap:3px;width:max-content}
-.gallery-track img{width:220px;height:150px;object-fit:cover;flex-shrink:0;filter:brightness(.8);transition:filter .4s,transform .4s}
-.gallery-track img:hover{filter:brightness(1.1);transform:scale(1.05);z-index:2}
-.track-left{animation:scroll-left 40s linear infinite}
-.track-right{animation:scroll-right 50s linear infinite}
-@keyframes scroll-left{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-@keyframes scroll-right{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+/* Photo wall — full screen grid */
+.photo-wall{position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(4,1fr);gap:2px}
+.photo-wall img{width:100%;height:100%;object-fit:cover;filter:brightness(.55);transition:filter .4s,transform .4s}
+.photo-wall img:hover{filter:brightness(1);transform:scale(1.08);z-index:2;position:relative}
+.photo-wall-overlay{position:absolute;inset:0;background:rgba(2,11,24,.4);z-index:1;pointer-events:none}
 @media(max-width:900px){
-  .gallery-track img{width:160px;height:110px}
-  .track-left{animation-duration:30s}
-  .track-right{animation-duration:38s}
+  .photo-wall{grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(6,1fr)}
 }
 
 /* GSAP reveal animations */
@@ -509,62 +503,39 @@ footer a{color:var(--gold);text-decoration:none}
 </div><!-- end page 9 -->
 <div class="ppt-page" data-page="10">
 <!-- ═══ 10b. GALLERY WALL — 圖片展示牆 ═══ -->
-<section style="background:var(--ocean);min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:3rem 0;overflow:hidden" id="s-gallery">
-  <div style="text-align:center;margin-bottom:2rem;padding:0 2rem">
-    <div class="eyebrow reveal" style="justify-content:center;display:flex">The Gallery · 食材圖鑑</div>
-    <h2 class="reveal" style="text-align:center;font-size:clamp(1.4rem,2.5vw,1.8rem);font-weight:600">每一件食材，都值得被看見</h2>
+<section style="background:var(--deep);min-height:100vh;position:relative;overflow:hidden" id="s-gallery">
+  <!-- 24-tile photo wall (6x4 grid) -->
+  <div class="photo-wall">
+    <img src="images/products/uni.png" alt="海膽" loading="lazy">
+    <img src="images/products/salmon-sliced.jpg" alt="三文魚" loading="lazy">
+    <img src="images/products/otoro.png" alt="大トロ" loading="lazy">
+    <img src="images/products/uni-box.jpg" alt="海膽木盒" loading="lazy">
+    <img src="images/products/wagyu.jpg" alt="和牛" loading="lazy">
+    <img src="images/products/botan-ebi.png" alt="牡丹蝦" loading="lazy">
+    <img src="images/products/crab.jpg" alt="毛蟹" loading="lazy">
+    <img src="images/products/maguro-akami.png" alt="赤身" loading="lazy">
+    <img src="images/products/ikura.png" alt="三文魚籽" loading="lazy">
+    <img src="images/products/oyster.jpg" alt="牡蠣" loading="lazy">
+    <img src="images/products/salmon-whole.png" alt="整條三文魚" loading="lazy">
+    <img src="images/products/akagai.png" alt="赤貝" loading="lazy">
+    <img src="images/products/lobster.jpg" alt="龍蝦" loading="lazy">
+    <img src="images/products/amaebi.png" alt="甜蝦" loading="lazy">
+    <img src="images/products/uni-heart.jpg" alt="海膽禮盒" loading="lazy">
+    <img src="images/products/hokkigai.png" alt="北寄貝" loading="lazy">
+    <img src="images/products/hotate-box.jpg" alt="帆立貝" loading="lazy">
+    <img src="images/products/salmon.png" alt="三文魚刺身" loading="lazy">
+    <img src="images/products/uni-open.jpg" alt="開殼海膽" loading="lazy">
+    <img src="images/products/chicken-wings.jpg" alt="雞翼" loading="lazy">
+    <img src="images/products/salmon-ocean.png" alt="太平洋" loading="lazy">
+    <img src="images/drive-import/1SmjKyjaquMRdyl0Qk23pkyS4-Ehmi1Tj.jpg" alt="豐洲市場" loading="lazy">
+    <img src="images/drive-import/1dxKooMuVfL39feWTBQnLc1U4wc2qDePS.jpg" alt="松葉蟹" loading="lazy">
+    <img src="images/drive-import/13vrcklCtRBWUMLk-5FUXAW3JatZiJKod.jpg" alt="吞拿魚" loading="lazy">
   </div>
-  <!-- Auto-scrolling row 1 (left) -->
-  <div class="gallery-wall">
-    <div class="gallery-track track-left">
-      <img src="images/products/uni-box.jpg" onerror="this.src='images/products/uni.png'" alt="海膽木盒" loading="lazy">
-      <img src="images/products/salmon-sliced.jpg" onerror="this.src='images/products/salmon-whole.png'" alt="三文魚切片" loading="lazy">
-      <img src="images/products/wagyu.jpg" onerror="this.src='images/products/otoro.png'" alt="和牛" loading="lazy">
-      <img src="images/products/crab.jpg" onerror="this.src='images/products/botan-ebi.png'" alt="毛蟹" loading="lazy">
-      <img src="images/products/oyster.jpg" onerror="this.src='images/products/hokkigai.png'" alt="牡蠣" loading="lazy">
-      <img src="images/products/lobster.jpg" onerror="this.src='images/products/amaebi.png'" alt="龍蝦" loading="lazy">
-      <img src="images/products/uni-heart.jpg" onerror="this.src='images/products/ikura.png'" alt="心形海膽盒" loading="lazy">
-      <img src="images/products/hotate-box.jpg" onerror="this.src='images/cards/prod-hotate.png'" alt="帆立貝箱裝" loading="lazy">
-      <img src="images/products/uni-open.jpg" onerror="this.src='images/products/akagai.png'" alt="開殼海膽" loading="lazy">
-      <img src="images/products/chicken-wings.jpg" onerror="this.src='images/cards/card-frozen.png'" alt="雞翼" loading="lazy">
-      <!-- duplicate for seamless loop -->
-      <img src="images/products/uni-box.jpg" onerror="this.src='images/products/uni.png'" alt="海膽木盒" loading="lazy">
-      <img src="images/products/salmon-sliced.jpg" onerror="this.src='images/products/salmon-whole.png'" alt="三文魚切片" loading="lazy">
-      <img src="images/products/wagyu.jpg" onerror="this.src='images/products/otoro.png'" alt="和牛" loading="lazy">
-      <img src="images/products/crab.jpg" onerror="this.src='images/products/botan-ebi.png'" alt="毛蟹" loading="lazy">
-      <img src="images/products/oyster.jpg" onerror="this.src='images/products/hokkigai.png'" alt="牡蠣" loading="lazy">
-      <img src="images/products/lobster.jpg" onerror="this.src='images/products/amaebi.png'" alt="龍蝦" loading="lazy">
-      <img src="images/products/uni-heart.jpg" onerror="this.src='images/products/ikura.png'" alt="心形海膽盒" loading="lazy">
-      <img src="images/products/hotate-box.jpg" onerror="this.src='images/cards/prod-hotate.png'" alt="帆立貝箱裝" loading="lazy">
-      <img src="images/products/uni-open.jpg" onerror="this.src='images/products/akagai.png'" alt="開殼海膽" loading="lazy">
-      <img src="images/products/chicken-wings.jpg" onerror="this.src='images/cards/card-frozen.png'" alt="雞翼" loading="lazy">
-    </div>
-  </div>
-  <!-- Auto-scrolling row 2 (right, slower) — original product photos -->
-  <div class="gallery-wall" style="margin-top:3px">
-    <div class="gallery-track track-right">
-      <img src="images/products/uni.png" alt="海膽" loading="lazy">
-      <img src="images/products/salmon.png" alt="三文魚刺身" loading="lazy">
-      <img src="images/products/otoro.png" alt="大トロ" loading="lazy">
-      <img src="images/products/maguro-akami.png" alt="赤身" loading="lazy">
-      <img src="images/products/botan-ebi.png" alt="牡丹蝦" loading="lazy">
-      <img src="images/products/ikura.png" alt="三文魚籽" loading="lazy">
-      <img src="images/products/akagai.png" alt="赤貝" loading="lazy">
-      <img src="images/products/amaebi.png" alt="甜蝦" loading="lazy">
-      <img src="images/products/hokkigai.png" alt="北寄貝" loading="lazy">
-      <img src="images/products/salmon-whole.png" alt="整條三文魚" loading="lazy">
-      <!-- duplicate -->
-      <img src="images/products/uni.png" alt="海膽" loading="lazy">
-      <img src="images/products/salmon.png" alt="三文魚刺身" loading="lazy">
-      <img src="images/products/otoro.png" alt="大トロ" loading="lazy">
-      <img src="images/products/maguro-akami.png" alt="赤身" loading="lazy">
-      <img src="images/products/botan-ebi.png" alt="牡丹蝦" loading="lazy">
-      <img src="images/products/ikura.png" alt="三文魚籽" loading="lazy">
-      <img src="images/products/akagai.png" alt="赤貝" loading="lazy">
-      <img src="images/products/amaebi.png" alt="甜蝦" loading="lazy">
-      <img src="images/products/hokkigai.png" alt="北寄貝" loading="lazy">
-      <img src="images/products/salmon-whole.png" alt="整條三文魚" loading="lazy">
-    </div>
+  <div class="photo-wall-overlay"></div>
+  <!-- Centered title over the wall -->
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:2;pointer-events:none">
+    <div class="eyebrow" style="justify-content:center;display:flex;color:rgba(240,236,226,.6)">The Gallery · 食材圖鑑</div>
+    <h2 style="font-size:clamp(2rem,4vw,3.5rem);font-weight:900;text-align:center;text-shadow:0 2px 30px rgba(0,0,0,.8);letter-spacing:.08em">每一件食材<br>都值得被<span style="color:var(--gold)">看見</span></h2>
   </div>
 </section>
 
