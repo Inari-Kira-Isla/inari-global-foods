@@ -343,21 +343,23 @@ footer a{color:var(--gold);text-decoration:none}
 gsap.registerPlugin(ScrollTrigger);
 
 /* ═══ 1. FRAME SEQUENCE ENGINE (GSAP ScrollTrigger) ═══ */
+const isMobile=window.innerWidth<=900;
+const frameStep=isMobile?3:1; // mobile: every 3rd frame (20 total), desktop: all 60
 const seqs={};
 document.querySelectorAll('[data-seq]').forEach(el=>{
-  const n=el.dataset.seq,c=parseInt(el.dataset.frames),wrap=el.querySelector('.split-frame');
+  const n=el.dataset.seq,total=parseInt(el.dataset.frames),wrap=el.querySelector('.split-frame');
   if(!wrap)return;
   const imgs=[];
-  for(let i=1;i<=c;i++){
+  for(let i=1;i<=total;i+=frameStep){
     const img=document.createElement('img');
-    img.style.willChange='opacity';
+    if(!isMobile)img.style.willChange='opacity';
     const src=`frames/${n}/f${String(i).padStart(3,'0')}.jpg`;
-    if(i<=5)img.src=src; else img.dataset.src=src;
-    if(i===1)img.classList.add('on');
+    if(imgs.length<5)img.src=src; else img.dataset.src=src;
+    if(imgs.length===0)img.classList.add('on');
     wrap.appendChild(img);
     imgs.push(img);
   }
-  seqs[n]={el,imgs,c,cur:0,loaded:5};
+  seqs[n]={el,imgs,c:imgs.length,cur:0,loaded:Math.min(5,imgs.length)};
 });
 
 function preloadAll(seq){
