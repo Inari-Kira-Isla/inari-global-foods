@@ -34,6 +34,24 @@
 html{scroll-behavior:smooth}
 body{font-family:'Noto Serif TC',serif;background:var(--deep);color:var(--text);overflow-x:hidden}
 
+/* Click-to-next hint at bottom of each section */
+.next-hint{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;z-index:10;opacity:0;transition:opacity .6s ease .5s;pointer-events:none}
+.next-hint.show{opacity:.65;pointer-events:auto}
+.next-hint:hover{opacity:1}
+.next-hint span{font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:var(--dim);font-family:'Cormorant Garamond',serif}
+.next-hint .arrow{width:12px;height:12px;border-right:1px solid var(--gold);border-bottom:1px solid var(--gold);transform:rotate(45deg);animation:bounce-down 1.5s ease-in-out infinite}
+@keyframes bounce-down{0%,100%{transform:rotate(45deg) translate(0,0)}50%{transform:rotate(45deg) translate(3px,3px)}}
+
+/* Side nav dots */
+#nav-dots{position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);z-index:200;display:flex;flex-direction:column;gap:10px}
+.dot{width:6px;height:6px;border-radius:50%;background:rgba(240,236,226,.15);border:1px solid rgba(240,236,226,.3);cursor:pointer;transition:all .4s}
+.dot.active{background:var(--gold);border-color:var(--gold);transform:scale(1.6);box-shadow:0 0 8px rgba(196,152,58,.4)}
+.dot:hover{background:rgba(240,236,226,.4)}
+
+/* Page counter */
+#page-num{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.3em;color:rgba(240,236,226,.25)}
+#page-num b{color:rgba(240,236,226,.6);font-size:14px;font-weight:300}
+
 /* Fixed */
 #bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--light),var(--gold));z-index:200;width:0%;transition:width .3s}
 .bubbles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
@@ -220,6 +238,8 @@ footer a{color:var(--gold);text-decoration:none}
 <div id="bar"></div>
 <div class="bubbles" id="bubs"></div>
 <div class="fish-layer" id="fish-layer"></div>
+<nav id="nav-dots"></nav>
+<div id="page-num"><b>01</b> / 13</div>
 
 <!-- ═══ 1. ORIGIN — 三文魚全螢幕動畫 ═══ -->
 <div class="cinema" id="s-origin" data-seq="salmon" data-frames="60">
@@ -762,6 +782,62 @@ gsap.to('#bar',{
 
 /* ═══ 5. BUBBLES ═══ */
 (function(){const w=document.getElementById('bubs');for(let i=0;i<12;i++){const b=document.createElement('div');b.className='bub';const s=3+Math.random()*10;b.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;animation-duration:${8+Math.random()*14}s;animation-delay:${Math.random()*8}s`;w.appendChild(b);}})();
+
+/* ═══ 6. PAGE NAVIGATION — click to next section ═══ */
+(function(){
+  // Define navigable sections
+  const pageIds=['s-origin','s-journey','s-story','s-evo','s-stats','s-edge','s-network','s-reveal','products','s-ai','s-services','s-gallery','s-partners','s-cta'];
+  const labels=['起源','旅程','傳承','進化','數據','優勢','網絡','展示','商品','智能','加工','圖鑑','夥伴','聯繫'];
+  const pages=pageIds.map(id=>document.getElementById(id)).filter(Boolean);
+  const total=pages.length;
+  const dotsNav=document.getElementById('nav-dots');
+  const pageNum=document.getElementById('page-num');
+
+  // Create nav dots
+  pages.forEach((_,i)=>{
+    const d=document.createElement('div');
+    d.className='dot'+(i===0?' active':'');
+    d.title=labels[i]||'';
+    d.addEventListener('click',()=>pages[i].scrollIntoView({behavior:'smooth'}));
+    dotsNav.appendChild(d);
+  });
+
+  // Add "click next" hint to each section (except last)
+  pages.forEach((page,i)=>{
+    if(i>=total-1)return;
+    const hint=document.createElement('div');
+    hint.className='next-hint';
+    hint.innerHTML=`<span>${labels[i+1]||'下一頁'}</span><div class="arrow"></div>`;
+    hint.addEventListener('click',()=>pages[i+1].scrollIntoView({behavior:'smooth'}));
+    // For cinema sections, append to the parent
+    const target=page.closest('.cinema')||page;
+    target.style.position=target.style.position||'relative';
+    target.appendChild(hint);
+  });
+
+  // Show hints after 1s
+  setTimeout(()=>document.querySelectorAll('.next-hint').forEach(h=>h.classList.add('show')),1200);
+
+  // Track current page via IntersectionObserver
+  const dots=dotsNav.querySelectorAll('.dot');
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting||e.intersectionRatio<0.3)return;
+      const idx=pages.indexOf(e.target);
+      if(idx<0)return;
+      dots.forEach((d,di)=>d.classList.toggle('active',di===idx));
+      pageNum.innerHTML=`<b>${String(idx+1).padStart(2,'0')}</b> / ${String(total).padStart(2,'0')}`;
+    });
+  },{threshold:0.3});
+  pages.forEach(p=>obs.observe(p));
+
+  // Keyboard navigation
+  document.addEventListener('keydown',e=>{
+    const cur=Array.from(dots).findIndex(d=>d.classList.contains('active'));
+    if(e.key==='ArrowDown'||e.key==='PageDown'){e.preventDefault();if(cur<total-1)pages[cur+1].scrollIntoView({behavior:'smooth'});}
+    if(e.key==='ArrowUp'||e.key==='PageUp'){e.preventDefault();if(cur>0)pages[cur-1].scrollIntoView({behavior:'smooth'});}
+  });
+})();
 </script>
 <!-- Referrer Tracking -->
 <script>
