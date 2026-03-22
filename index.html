@@ -169,13 +169,19 @@ body{font-family:'Noto Serif TC',serif;background:var(--deep);color:var(--text);
 .aicard .old{font-size:11px;color:var(--dim);text-decoration:line-through;margin:.4rem 0}
 .aicard .new{font-size:12px;color:var(--surface);font-weight:600}
 
-/* Partner */
-.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:4px}
-.pcard{display:flex;overflow:hidden;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);transition:.3s}
-.pcard:hover{border-color:rgba(196,152,58,.2)}
-.pimg{width:200px;object-fit:cover;flex-shrink:0}
-.pbody{padding:1.3rem;display:flex;flex-direction:column;justify-content:center}
-.pname{font-size:.95rem;font-weight:600;margin-bottom:.3rem}
+/* Partner text logos — Japanese typography style */
+.partner-logo{
+  font-family:'Noto Serif TC',serif;font-size:clamp(1.1rem,2vw,1.5rem);font-weight:600;
+  color:rgba(240,236,226,.25);letter-spacing:.12em;
+  padding:1.2rem 1.8rem;border:1px solid rgba(255,255,255,.04);
+  transition:all .5s cubic-bezier(.16,1,.3,1);cursor:default;position:relative;
+}
+.partner-logo:hover{
+  color:var(--gold);border-color:rgba(196,152,58,.3);
+  background:rgba(196,152,58,.05);text-shadow:0 0 20px rgba(196,152,58,.3);
+  transform:scale(1.08);z-index:2;
+}
+.partner-logo.lg{font-size:clamp(1.3rem,2.5vw,1.8rem);letter-spacing:.2em}
 
 /* Timeline */
 .tl{display:flex;align-items:flex-start;position:relative;gap:0}
@@ -578,15 +584,35 @@ footer a{color:var(--gold);text-decoration:none}
 </div><!-- end page 10 -->
 <div class="ppt-page" data-page="11">
 <!-- ═══ 11. PARTNERS ═══ -->
-<section style="background:var(--deep)" id="s-partners">
-  <div class="cards">
-    <h2>我們的夥伴</h2>
-    <div class="sub">The Partners — 二十年並肩</div>
-    <div class="pgrid">
-      <div class="pcard"><img class="pimg" src="images/cards/card-sushi.png" alt="日料"><div class="pbody"><div class="pname">澳門日本餐廳</div><div class="cdesc">高端日料到街坊壽司店，二十年的老夥伴。</div><div class="cquote">「二十年前第一個客戶是間小壽司店。他還在。」</div></div></div>
-      <div class="pcard"><img class="pimg" src="images/cards/partner-market.png" alt="批發"><div class="pbody"><div class="pname">批發市場零售商</div><div class="cdesc">澳門街市的水產檔口，每天準時到貨，從不斷供。</div><div class="cquote">「做批發靠的不是花巧，是每一天都做到。」</div></div></div>
-      <div class="pcard"><img class="pimg" src="images/cards/partner-hotel.png" alt="酒店"><div class="pbody"><div class="pname">五星級酒店</div><div class="cdesc">酒店宴會需要大量穩定供應。冷鏈管理達到酒店食安標準。</div><div class="cquote">「五星級的要求，二十年的標準。」</div></div></div>
-      <div class="pcard"><img class="pimg" src="images/cards/card-quality.png" alt="餐飲"><div class="pbody"><div class="pname">餐飲集團</div><div class="cdesc">連鎖餐飲需要統一品質。每一間店收到的貨一模一樣。</div><div class="cquote">「一百間店，一個標準。」</div></div></div>
+<section style="background:var(--deep);min-height:100vh;display:flex;align-items:center;justify-content:center" id="s-partners">
+  <div style="width:100%;max-width:1100px;padding:3rem 2rem;text-align:center">
+    <div class="eyebrow reveal" style="justify-content:center;display:flex">The Partners · 夥伴</div>
+    <h2 class="stitle reveal" style="text-align:center;margin-bottom:.5rem">與我們同行的人</h2>
+    <p class="ssub reveal" style="text-align:center">二十年並肩，從一間小壽司店到澳門各大餐飲品牌。</p>
+
+    <!-- Partner logos in Japanese typography style -->
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0;margin:2.5rem auto;max-width:900px" class="partner-wall">
+      <div class="partner-logo">鮨味亭</div>
+      <div class="partner-logo">騎師</div>
+      <div class="partner-logo">旗艦</div>
+      <div class="partner-logo">千笹</div>
+      <div class="partner-logo">魚一</div>
+      <div class="partner-logo">大阪京都</div>
+      <div class="partner-logo">鮮味王</div>
+      <div class="partner-logo">熊出沒</div>
+      <div class="partner-logo lg">金悅軒</div>
+      <div class="partner-logo">協城</div>
+      <div class="partner-logo">千菓子</div>
+    </div>
+
+    <div style="width:60px;height:1px;background:var(--gold);margin:2rem auto"></div>
+
+    <p class="squote reveal" style="text-align:center;font-size:1.05rem">「二十年前第一個客戶是間小壽司店。二十年後，他還在。」</p>
+
+    <div style="display:flex;justify-content:center;gap:2.5rem;margin-top:2.5rem;flex-wrap:wrap">
+      <div style="text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);font-weight:300">300+</div><div style="font-size:10px;letter-spacing:.15em;color:var(--dim)">合作客戶</div></div>
+      <div style="text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);font-weight:300">20+</div><div style="font-size:10px;letter-spacing:.15em;color:var(--dim)">年合作歷史</div></div>
+      <div style="text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);font-weight:300">日料·中餐·酒店</div><div style="font-size:10px;letter-spacing:.15em;color:var(--dim)">覆蓋業態</div></div>
     </div>
   </div>
 </section>
