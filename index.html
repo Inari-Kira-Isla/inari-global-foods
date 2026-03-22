@@ -38,6 +38,15 @@ body{font-family:'Noto Serif TC',serif;background:var(--deep);color:var(--text);
 #ppt-wrap{height:100vh;overflow-y:scroll;scroll-snap-type:y mandatory;scroll-behavior:smooth;scrollbar-width:none}
 #ppt-wrap::-webkit-scrollbar{display:none}
 .ppt-page{min-height:100vh;scroll-snap-align:start;position:relative}
+.ppt-page>section,.ppt-page>div{width:100%}
+/* Pages with overflow content: scale down to fit */
+.fit-screen{display:flex;flex-direction:column;justify-content:center;min-height:100vh}
+.fit-screen .cards{padding:2rem 2rem}
+.fit-screen .cgrid{gap:2px}
+.fit-screen .cimg{height:140px}
+.fit-screen .cbody{padding:.7rem 1rem}
+.fit-screen .ctitle{font-size:.8rem}
+.fit-screen .cdesc,.fit-screen .cfreq,.fit-screen .cquote{font-size:10px}
 
 /* Click anywhere hint */
 .click-hint{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);z-index:300;display:flex;align-items:center;gap:8px;cursor:pointer;opacity:.5;transition:opacity .3s}
@@ -297,12 +306,12 @@ footer a{color:var(--gold);text-decoration:none}
 
 </div><!-- end page 2 -->
 <div class="ppt-page" data-page="3">
-<!-- ═══ 4. EVOLUTION + STATS ═══ -->
-<section style="min-height:100vh;background:var(--ocean);display:flex;align-items:center;justify-content:center" id="s-evo">
-  <div style="width:100%;max-width:1100px;padding:3rem;text-align:center">
+<!-- ═══ 4. EVOLUTION + STATS (combined) ═══ -->
+<section style="min-height:100vh;background:var(--ocean);display:flex;flex-direction:column;align-items:center;justify-content:center" id="s-evo">
+  <div style="width:100%;max-width:1100px;padding:2rem 3rem;text-align:center">
     <div class="eyebrow reveal" style="justify-content:center;display:flex">進化 · The Evolution</div>
     <h2 class="stitle reveal" style="text-align:center">從紙筆到 <em>AI</em></h2>
-    <div class="tl" style="margin-top:2.5rem">
+    <div class="tl" style="margin-top:2rem">
       <div class="tn"><div class="tc">90s</div><div class="tera">1990s</div><div class="tname">紙筆時代</div><div class="tquote">「一支筆、一本簿<br>——當年的 ERP」</div></div>
       <div class="tn"><div class="tc">08</div><div class="tera">2008+</div><div class="tname">碼頭時代</div><div class="tquote">「凌晨三點<br>檢疫站的燈還亮著」</div></div>
       <div class="tn"><div class="tc">12</div><div class="tera">2012+</div><div class="tname">ERP 時代</div><div class="tquote">「第一次知道<br>這個月賺了多少」</div></div>
@@ -310,21 +319,19 @@ footer a{color:var(--gold);text-decoration:none}
       <div class="tn now"><div class="tc">AI</div><div class="tera">NOW</div><div class="tname">AI 時代</div><div class="tquote">「凌晨三點 AI 在工作<br>我們終於可以睡了」</div></div>
     </div>
   </div>
+  <div class="stats" id="s-stats" style="width:100%;margin-top:2rem">
+    <div class="stat"><b>20+</b><small>年經驗</small></div>
+    <div class="stat"><b>首家</b><small>澳門海膽</small></div>
+    <div class="stat"><b>3航/週</b><small>日本空運</small></div>
+    <div class="stat"><b>每日</b><small>活鮮到貨</small></div>
+    <div class="stat"><b>-2°C</b><small>全程冷鏈</small></div>
+  </div>
 </section>
-
-<!-- ═══ 5. STATS ═══ -->
-<div class="stats" id="s-stats">
-  <div class="stat"><b>20+</b><small>年經驗</small></div>
-  <div class="stat"><b>首家</b><small>澳門海膽</small></div>
-  <div class="stat"><b>3航/週</b><small>日本空運</small></div>
-  <div class="stat"><b>每日</b><small>活鮮到貨</small></div>
-  <div class="stat"><b>-2°C</b><small>全程冷鏈</small></div>
-</div>
 
 </div><!-- end page 3 -->
 <div class="ppt-page" data-page="4">
 <!-- ═══ 6. EDGE — 六大優勢（獨立圖片卡）═══ -->
-<section style="background:var(--deep);min-height:100vh;display:flex;align-items:center" id="s-edge">
+<section class="fit-screen" style="background:var(--deep)" id="s-edge">
   <div class="cards">
     <h2>為什麼選稻荷</h2>
     <div class="sub">The Edge — 六個找不到替代的理由</div>
@@ -407,11 +414,11 @@ footer a{color:var(--gold);text-decoration:none}
 </div><!-- end page 6 -->
 <div class="ppt-page" data-page="7">
 <!-- ═══ 8. PRODUCTS ═══ -->
-<section style="background:var(--deep);min-height:100vh;display:flex;align-items:center;opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease" id="products" class="fade-section">
+<section class="fit-screen" style="background:var(--deep);opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease" id="products">
   <div class="cards">
     <h2>每一樣，都是承諾</h2>
     <div class="sub">The Collection — 十二嚴選商品</div>
-    <div class="cgrid" style="grid-template-columns:repeat(5,1fr)">
+    <div class="cgrid" style="grid-template-columns:repeat(6,1fr)">
       <div class="crd"><div class="cbadge bg">每日到貨</div><img class="cimg" src="images/products/uni.png" onerror="this.src='images/cards/prod-uni.png'" alt="北海道馬糞海膽木盒裝"><div class="cbody"><div class="ctitle">海膽</div><div class="cfreq">北海道馬糞海膽 · 每日到貨</div><div class="cdesc">澳門首家，逐盒人工檢驗。</div></div></div>
       <div class="crd"><div class="cbadge br">冰鮮</div><img class="cimg" src="images/products/salmon-whole.png" onerror="this.src='images/products/salmon.png'" alt="挪威冰鮮三文魚整條"><div class="cbody"><div class="ctitle">三文魚</div><div class="cfreq">挪威冰鮮 · 每日供應</div><div class="cdesc">不是冷凍，是冰鮮。</div></div></div>
       <div class="crd"><div class="cbadge bb">空運</div><img class="cimg" src="images/products/amaebi.png" onerror="this.src='images/cards/prod-amaebi.png'" alt="日本空運甜蝦"><div class="cbody"><div class="ctitle">甜蝦</div><div class="cfreq">日本空運 · 週一三五</div><div class="cdesc">晶瑩剔透，入口即化。</div></div></div>
@@ -431,7 +438,7 @@ footer a{color:var(--gold);text-decoration:none}
 </div><!-- end page 7 -->
 <div class="ppt-page" data-page="8">
 <!-- ═══ 9. AI ═══ -->
-<section style="background:var(--ocean);min-height:100vh;display:flex;align-items:center" id="s-ai">
+<section class="fit-screen" style="background:var(--ocean)" id="s-ai">
   <div class="cards">
     <h2>一間水產公司的 AI 轉型</h2>
     <div class="sub">The Future — 智能</div>
@@ -451,7 +458,7 @@ footer a{color:var(--gold);text-decoration:none}
 </div><!-- end page 8 -->
 <div class="ppt-page" data-page="9">
 <!-- ═══ 10. SERVICES — 加工服務 ═══ -->
-<section style="background:var(--deep);min-height:100vh;display:flex;align-items:center" id="s-services">
+<section class="fit-screen" style="background:var(--deep)" id="s-services">
   <div class="cards">
     <div class="eyebrow reveal" style="justify-content:center;display:flex">The Next Chapter · 新篇章</div>
     <h2 class="reveal" style="text-align:center">從供應商到<span style="color:var(--gold)">全方位食材夥伴</span></h2>
