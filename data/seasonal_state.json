@@ -8,14 +8,14 @@
     "2026-03": {
       "path": "/Users/ki/Documents/inari-global-foods/data/plans/plan_2026-03.json",
       "topics": 8,
-      "generated_at": "2026-03-18T09:48:18.359624"
+      "generated_at": "2026-03-22T23:15:41.730515"
     }
   },
   "images": {},
   "feedback": {
-    "analyzed_at": "2026-03-18T09:48:18.545684",
-    "total_crawls": 3937,
-    "article_count": 179,
+    "analyzed_at": "2026-03-22T23:15:41.771099",
+    "total_crawls": 6925,
+    "article_count": 197,
     "suggestions": [
       "爬蟲量健康 (>500)，可以嘗試更長篇深度文章 (5000+ 字)",
       "ClaudeBot 活躍，加強長篇知識型文章 (10000+ 字)",
@@ -27,5 +27,5 @@
     }
   },
   "last_verify": "2026-03-18T01:27:39.321062",
-  "homepage_updated": "2026-03-18T01:27:39.090366"
+  "homepage_updated": "2026-03-22T23:15:41.733317"
 }
