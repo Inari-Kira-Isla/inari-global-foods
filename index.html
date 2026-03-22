@@ -40,8 +40,10 @@ body{font-family:'Noto Serif TC',serif;background:var(--deep);color:var(--text);
 .ppt-page::-webkit-scrollbar{display:none}
 .ppt-page.active{opacity:1;pointer-events:auto;transform:translateY(0);z-index:10}
 .ppt-page.prev{opacity:0;transform:translateY(-20px);z-index:5}
+/* Force all sections inside ppt-page to fill 100vh */
+.ppt-page>section{min-height:100vh;display:flex;flex-direction:column;justify-content:center}
 /* Compact layout for content-heavy pages */
-.fit-screen{display:flex;flex-direction:column;justify-content:center;height:100vh;min-height:0}
+.fit-screen{display:flex;flex-direction:column;justify-content:center;min-height:100vh}
 .fit-screen .cards{padding:1.5rem 2rem}
 .fit-screen .cgrid{gap:2px}
 .fit-screen .cimg{height:130px}
