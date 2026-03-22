@@ -32,14 +32,19 @@
   --cream:#f0ece2;--text:rgba(240,236,226,.9);--dim:rgba(240,236,226,.45);
 }
 html{scroll-behavior:smooth}
-body{font-family:'Noto Serif TC',serif;background:var(--deep);color:var(--text);overflow-x:hidden}
+body{font-family:'Noto Serif TC',serif;background:var(--deep);color:var(--text);overflow:hidden;height:100vh}
 
-/* Click-to-next hint at bottom of each section */
-.next-hint{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;z-index:10;opacity:0;transition:opacity .6s ease .5s;pointer-events:none}
-.next-hint.show{opacity:.65;pointer-events:auto}
-.next-hint:hover{opacity:1}
-.next-hint span{font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:var(--dim);font-family:'Cormorant Garamond',serif}
-.next-hint .arrow{width:12px;height:12px;border-right:1px solid var(--gold);border-bottom:1px solid var(--gold);transform:rotate(45deg);animation:bounce-down 1.5s ease-in-out infinite}
+/* PPT-style page container */
+#ppt-wrap{position:relative;width:100%;height:100vh;overflow:hidden}
+.ppt-page{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .6s ease,transform .6s ease;transform:translateY(30px);overflow-y:auto}
+.ppt-page.active{opacity:1;pointer-events:auto;transform:translateY(0);z-index:10}
+.ppt-page.prev{opacity:0;transform:translateY(-30px);z-index:5}
+
+/* Click anywhere hint */
+.click-hint{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);z-index:300;display:flex;align-items:center;gap:8px;cursor:pointer;opacity:.5;transition:opacity .3s}
+.click-hint:hover{opacity:1}
+.click-hint span{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--dim);font-family:'Cormorant Garamond',serif}
+.click-hint .arrow{width:10px;height:10px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(45deg);animation:bounce-down 1.5s ease-in-out infinite}
 @keyframes bounce-down{0%,100%{transform:rotate(45deg) translate(0,0)}50%{transform:rotate(45deg) translate(3px,3px)}}
 
 /* Side nav dots */
@@ -239,8 +244,13 @@ footer a{color:var(--gold);text-decoration:none}
 <div class="bubbles" id="bubs"></div>
 <div class="fish-layer" id="fish-layer"></div>
 <nav id="nav-dots"></nav>
-<div id="page-num"><b>01</b> / 13</div>
+<div id="page-num"><b>01</b> / 14</div>
+<div class="click-hint" id="click-hint"><span>點擊進入下一頁</span><div class="arrow"></div></div>
 
+<div id="ppt-wrap">
+
+<!-- PAGE 1 ═══ ORIGIN ═══ -->
+<div class="ppt-page active" data-page="0">
 <!-- ═══ 1. ORIGIN — 三文魚全螢幕動畫 ═══ -->
 <div class="cinema" id="s-origin" data-seq="salmon" data-frames="60">
   <div class="split-frame" id="salmon-frames"></div>
@@ -255,6 +265,8 @@ footer a{color:var(--gold);text-decoration:none}
   </div>
 </div>
 
+</div><!-- end page 0 -->
+<div class="ppt-page" data-page="1">
 <!-- ═══ 2. JOURNEY — 太平洋到餐桌（全寬）═══ -->
 <section id="s-journey" style="position:relative;min-height:80vh;background:url('images/products/salmon-ocean.png') center/cover;display:flex;align-items:center;justify-content:center">
   <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,30,61,.75) 0%,rgba(2,11,24,.85) 100%)"></div>
@@ -278,6 +290,8 @@ footer a{color:var(--gold);text-decoration:none}
   </div>
 </section>
 
+</div><!-- end page 1 -->
+<div class="ppt-page" data-page="2">
 <!-- ═══ 3. STORY — Joe 的故事（全寬）═══ -->
 <section id="s-story" style="position:relative;min-height:80vh;background:url('images/people/joe-portrait.jpg') center top/cover;display:flex;align-items:center;justify-content:center">
   <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,11,24,.7) 0%,rgba(10,30,61,.85) 100%)"></div>
@@ -294,7 +308,9 @@ footer a{color:var(--gold);text-decoration:none}
   </div>
 </section>
 
-<!-- ═══ 4. EVOLUTION — 紙筆到 AI ═══ -->
+</div><!-- end page 2 -->
+<div class="ppt-page" data-page="3">
+<!-- ═══ 4. EVOLUTION + STATS ═══ -->
 <section style="min-height:70vh;background:var(--ocean);display:flex;align-items:center;justify-content:center" id="s-evo">
   <div style="width:100%;max-width:1100px;padding:3rem;text-align:center">
     <div class="eyebrow reveal" style="justify-content:center;display:flex">進化 · The Evolution</div>
@@ -318,6 +334,8 @@ footer a{color:var(--gold);text-decoration:none}
   <div class="stat"><b>-2°C</b><small>全程冷鏈</small></div>
 </div>
 
+</div><!-- end page 3 -->
+<div class="ppt-page" data-page="4">
 <!-- ═══ 6. EDGE — 六大優勢（獨立圖片卡）═══ -->
 <section style="background:var(--deep)" id="s-edge">
   <div class="cards">
@@ -334,6 +352,8 @@ footer a{color:var(--gold);text-decoration:none}
   </div>
 </section>
 
+</div><!-- end page 4 -->
+<div class="ppt-page" data-page="5">
 <!-- ═══ 6b. GLOBAL NETWORK — 全球採購網絡 ═══ -->
 <section style="background:var(--ocean);padding:5rem 2rem" id="s-network">
   <div style="max-width:1100px;margin:0 auto;text-align:center">
@@ -380,6 +400,8 @@ footer a{color:var(--gold);text-decoration:none}
   </div>
 </section>
 
+</div><!-- end page 5 -->
+<div class="ppt-page" data-page="6">
 <!-- ═══ 7. REVEAL — 開箱全螢幕動畫 ═══ -->
 <div class="cinema" id="s-reveal" data-seq="unbox" data-frames="60">
   <div class="split-frame" id="unbox-frames"></div>
@@ -396,6 +418,8 @@ footer a{color:var(--gold);text-decoration:none}
   </div>
 </div>
 
+</div><!-- end page 6 -->
+<div class="ppt-page" data-page="7">
 <!-- ═══ 8. PRODUCTS ═══ -->
 <section style="background:var(--deep);opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease" id="products" class="fade-section">
   <div class="cards">
@@ -418,6 +442,8 @@ footer a{color:var(--gold);text-decoration:none}
   </div>
 </section>
 
+</div><!-- end page 7 -->
+<div class="ppt-page" data-page="8">
 <!-- ═══ 9. AI ═══ -->
 <section style="background:var(--ocean)" id="s-ai">
   <div class="cards">
@@ -436,6 +462,8 @@ footer a{color:var(--gold);text-decoration:none}
   </div>
 </section>
 
+</div><!-- end page 8 -->
+<div class="ppt-page" data-page="9">
 <!-- ═══ 10. SERVICES — 加工服務 ═══ -->
 <section style="background:var(--deep)" id="s-services">
   <div class="cards">
@@ -485,6 +513,8 @@ footer a{color:var(--gold);text-decoration:none}
   </div>
 </section>
 
+</div><!-- end page 9 -->
+<div class="ppt-page" data-page="10">
 <!-- ═══ 10b. GALLERY WALL — 圖片展示牆 ═══ -->
 <section style="background:var(--ocean);padding:3rem 0;overflow:hidden" id="s-gallery">
   <div style="text-align:center;margin-bottom:2rem;padding:0 2rem">
@@ -545,6 +575,8 @@ footer a{color:var(--gold);text-decoration:none}
   </div>
 </section>
 
+</div><!-- end page 10 -->
+<div class="ppt-page" data-page="11">
 <!-- ═══ 11. PARTNERS ═══ -->
 <section style="background:var(--deep)" id="s-partners">
   <div class="cards">
@@ -559,7 +591,9 @@ footer a{color:var(--gold);text-decoration:none}
   </div>
 </section>
 
-<!-- ═══ 11. CTA ═══ -->
+</div><!-- end page 11 -->
+<div class="ppt-page" data-page="12">
+<!-- ═══ 12. CTA ═══ -->
 <section class="cta-s" id="s-cta">
   <h2>品質不妥協。</h2>
   <p>不管是一盒海膽還是一千箱三文魚，稻荷的標準只有一個。</p>
@@ -573,6 +607,8 @@ footer a{color:var(--gold);text-decoration:none}
   <address style="font-style:normal"><strong>稻荷環球食品 Inari Global Foods</strong> · 澳門</address>
   <div style="margin-top:.5rem">&copy; 2026 Inari Global Foods · <a href="https://cloudpipe-landing.vercel.app">CloudPipe AEO</a></div>
 </footer>
+</div><!-- end page 12 -->
+</div><!-- end ppt-wrap -->
 
 <script>
 gsap.registerPlugin(ScrollTrigger);
@@ -783,60 +819,74 @@ gsap.to('#bar',{
 /* ═══ 5. BUBBLES ═══ */
 (function(){const w=document.getElementById('bubs');for(let i=0;i<12;i++){const b=document.createElement('div');b.className='bub';const s=3+Math.random()*10;b.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;animation-duration:${8+Math.random()*14}s;animation-delay:${Math.random()*8}s`;w.appendChild(b);}})();
 
-/* ═══ 6. PAGE NAVIGATION — click to next section ═══ */
+/* ═══ 6. PPT-STYLE PAGE CONTROLLER ═══ */
 (function(){
-  // Define navigable sections
-  const pageIds=['s-origin','s-journey','s-story','s-evo','s-stats','s-edge','s-network','s-reveal','products','s-ai','s-services','s-gallery','s-partners','s-cta'];
-  const labels=['起源','旅程','傳承','進化','數據','優勢','網絡','展示','商品','智能','加工','圖鑑','夥伴','聯繫'];
-  const pages=pageIds.map(id=>document.getElementById(id)).filter(Boolean);
+  const pages=document.querySelectorAll('.ppt-page');
   const total=pages.length;
+  const labels=['起源','旅程','傳承','進化','優勢','網絡','展示','商品','智能','加工','圖鑑','夥伴','聯繫'];
   const dotsNav=document.getElementById('nav-dots');
   const pageNum=document.getElementById('page-num');
+  const hint=document.getElementById('click-hint');
+  let cur=0, animating=false;
 
   // Create nav dots
-  pages.forEach((_,i)=>{
+  for(let i=0;i<total;i++){
     const d=document.createElement('div');
     d.className='dot'+(i===0?' active':'');
-    d.title=labels[i]||'';
-    d.addEventListener('click',()=>pages[i].scrollIntoView({behavior:'smooth'}));
+    d.title=labels[i]||`${i+1}`;
+    d.addEventListener('click',()=>goTo(i));
     dotsNav.appendChild(d);
-  });
-
-  // Add "click next" hint to each section (except last)
-  pages.forEach((page,i)=>{
-    if(i>=total-1)return;
-    const hint=document.createElement('div');
-    hint.className='next-hint';
-    hint.innerHTML=`<span>${labels[i+1]||'下一頁'}</span><div class="arrow"></div>`;
-    hint.addEventListener('click',()=>pages[i+1].scrollIntoView({behavior:'smooth'}));
-    // For cinema sections, append to the parent
-    const target=page.closest('.cinema')||page;
-    target.style.position=target.style.position||'relative';
-    target.appendChild(hint);
-  });
-
-  // Show hints after 1s
-  setTimeout(()=>document.querySelectorAll('.next-hint').forEach(h=>h.classList.add('show')),1200);
-
-  // Track current page via IntersectionObserver
+  }
   const dots=dotsNav.querySelectorAll('.dot');
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(!e.isIntersecting||e.intersectionRatio<0.3)return;
-      const idx=pages.indexOf(e.target);
-      if(idx<0)return;
-      dots.forEach((d,di)=>d.classList.toggle('active',di===idx));
-      pageNum.innerHTML=`<b>${String(idx+1).padStart(2,'0')}</b> / ${String(total).padStart(2,'0')}`;
-    });
-  },{threshold:0.3});
-  pages.forEach(p=>obs.observe(p));
 
-  // Keyboard navigation
-  document.addEventListener('keydown',e=>{
-    const cur=Array.from(dots).findIndex(d=>d.classList.contains('active'));
-    if(e.key==='ArrowDown'||e.key==='PageDown'){e.preventDefault();if(cur<total-1)pages[cur+1].scrollIntoView({behavior:'smooth'});}
-    if(e.key==='ArrowUp'||e.key==='PageUp'){e.preventDefault();if(cur>0)pages[cur-1].scrollIntoView({behavior:'smooth'});}
+  function goTo(idx){
+    if(idx===cur||idx<0||idx>=total||animating)return;
+    animating=true;
+    const prev=pages[cur];
+    const next=pages[idx];
+    prev.classList.remove('active');
+    prev.classList.add('prev');
+    next.classList.add('active');
+    // Update UI
+    dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
+    pageNum.innerHTML=`<b>${String(idx+1).padStart(2,'0')}</b> / ${String(total).padStart(2,'0')}`;
+    hint.querySelector('span').textContent=idx<total-1?(labels[idx+1]||'下一頁'):'';
+    hint.style.display=idx>=total-1?'none':'flex';
+    // Trigger GSAP reveals for new page
+    next.querySelectorAll('.reveal').forEach(el=>{
+      gsap.fromTo(el,{opacity:0,y:30},{opacity:1,y:0,duration:0.8,ease:'power3.out',delay:0.2});
+    });
+    cur=idx;
+    setTimeout(()=>{prev.classList.remove('prev');animating=false;},700);
+    // Reset scroll position of new page
+    next.scrollTop=0;
+  }
+
+  // Click anywhere on page → next
+  document.addEventListener('click',e=>{
+    // Don't trigger on buttons, links, dots, or interactive elements
+    if(e.target.closest('a,button,.dot,#nav-dots,.btn,#click-hint,footer')){
+      if(e.target.closest('#click-hint'))goTo(cur+1);
+      return;
+    }
+    goTo(cur+1);
   });
+
+  // Keyboard
+  document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '||e.key==='PageDown'||e.key==='Enter'){e.preventDefault();goTo(cur+1);}
+    if(e.key==='ArrowLeft'||e.key==='ArrowUp'||e.key==='PageUp'||e.key==='Backspace'){e.preventDefault();goTo(cur-1);}
+    if(e.key==='Home'){e.preventDefault();goTo(0);}
+    if(e.key==='End'){e.preventDefault();goTo(total-1);}
+  });
+
+  // Touch swipe (mobile)
+  let touchY=0;
+  document.addEventListener('touchstart',e=>{touchY=e.touches[0].clientY;},{passive:true});
+  document.addEventListener('touchend',e=>{
+    const dy=touchY-e.changedTouches[0].clientY;
+    if(Math.abs(dy)>50){dy>0?goTo(cur+1):goTo(cur-1);}
+  },{passive:true});
 })();
 </script>
 <!-- Referrer Tracking -->
