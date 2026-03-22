@@ -32,14 +32,14 @@
   --cream:#f0ece2;--text:rgba(240,236,226,.9);--dim:rgba(240,236,226,.45);
 }
 html{scroll-behavior:smooth}
-body{font-family:'Noto Serif TC',serif;background:var(--deep);color:var(--text);overflow-x:hidden}
+body{font-family:'Noto Serif TC',serif;background:var(--deep);color:var(--text);overflow:hidden;height:100vh}
 
-/* Scroll + click hybrid — snap scroll */
-#ppt-wrap{height:100vh;overflow-y:scroll;scroll-snap-type:y mandatory;scroll-behavior:smooth;scrollbar-width:none}
-#ppt-wrap::-webkit-scrollbar{display:none}
-.ppt-page{height:100vh;scroll-snap-align:start;position:relative;overflow:hidden}
-.ppt-page>section,.ppt-page>.hero-full,.ppt-page>.stats{height:100vh;min-height:0;overflow-y:auto;scrollbar-width:none}
-.ppt-page>section::-webkit-scrollbar{display:none}
+/* PPT mode — click to advance */
+#ppt-wrap{position:relative;width:100%;height:100vh;overflow:hidden}
+.ppt-page{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .5s ease,transform .5s ease;transform:translateY(20px);overflow-y:auto;scrollbar-width:none}
+.ppt-page::-webkit-scrollbar{display:none}
+.ppt-page.active{opacity:1;pointer-events:auto;transform:translateY(0);z-index:10}
+.ppt-page.prev{opacity:0;transform:translateY(-20px);z-index:5}
 /* Compact layout for content-heavy pages */
 .fit-screen{display:flex;flex-direction:column;justify-content:center;height:100vh;min-height:0}
 .fit-screen .cards{padding:1.5rem 2rem}
@@ -746,18 +746,16 @@ gsap.to('#bar',{
 /* ═══ 5. BUBBLES ═══ */
 (function(){const w=document.getElementById('bubs');for(let i=0;i<12;i++){const b=document.createElement('div');b.className='bub';const s=3+Math.random()*10;b.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;animation-duration:${8+Math.random()*14}s;animation-delay:${Math.random()*8}s`;w.appendChild(b);}})();
 
-/* ═══ 6. SCROLL + CLICK HYBRID NAVIGATION ═══ */
+/* ═══ 6. PPT CLICK-ONLY NAVIGATION ═══ */
 (function(){
-  const wrap=document.getElementById('ppt-wrap');
   const pages=document.querySelectorAll('.ppt-page');
   const total=pages.length;
   const labels=['起源','旅程','傳承','進化','優勢','網絡','展示','商品','智能','加工','圖鑑','夥伴','聯繫'];
   const dotsNav=document.getElementById('nav-dots');
   const pageNum=document.getElementById('page-num');
   const hint=document.getElementById('click-hint');
-  let cur=0;
+  let cur=0,busy=false;
 
-  // Create nav dots
   for(let i=0;i<total;i++){
     const d=document.createElement('div');
     d.className='dot'+(i===0?' active':'');
@@ -768,45 +766,42 @@ gsap.to('#bar',{
   const dots=dotsNav.querySelectorAll('.dot');
 
   function goTo(idx){
-    if(idx<0||idx>=total)return;
-    pages[idx].scrollIntoView({behavior:'smooth',block:'start'});
-  }
-
-  function updateUI(idx){
-    if(idx===cur)return;
-    cur=idx;
+    if(idx===cur||idx<0||idx>=total||busy)return;
+    busy=true;
+    pages[cur].classList.remove('active');
+    pages[cur].classList.add('prev');
+    pages[idx].classList.add('active');
+    pages[idx].scrollTop=0;
     dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
     pageNum.innerHTML=`<b>${String(idx+1).padStart(2,'0')}</b> / ${String(total).padStart(2,'0')}`;
     hint.querySelector('span').textContent=idx<total-1?(labels[idx+1]||'下一頁'):'';
     hint.style.display=idx>=total-1?'none':'flex';
+    const old=cur;cur=idx;
+    setTimeout(()=>{pages[old].classList.remove('prev');busy=false;},600);
   }
 
-  // Track current page via IntersectionObserver on scroll
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(!e.isIntersecting||e.intersectionRatio<0.4)return;
-      const idx=Array.from(pages).indexOf(e.target);
-      if(idx>=0)updateUI(idx);
-    });
-  },{root:wrap,threshold:0.4});
-  pages.forEach(p=>obs.observe(p));
-
-  // Click anywhere → next page
-  wrap.addEventListener('click',e=>{
+  // Click anywhere → next
+  document.addEventListener('click',e=>{
     if(e.target.closest('a,button,.dot,#nav-dots,.btn,.photo-wall img,footer'))return;
+    if(e.target.closest('#click-hint')){goTo(cur+1);return;}
     goTo(cur+1);
   });
 
-  // Click hint
-  hint.addEventListener('click',()=>goTo(cur+1));
-
   // Keyboard
   document.addEventListener('keydown',e=>{
-    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'||e.key==='Enter'){e.preventDefault();goTo(cur+1);}
-    if(e.key==='ArrowLeft'||e.key==='PageUp'||e.key==='Backspace'){e.preventDefault();goTo(cur-1);}
+    if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '||e.key==='PageDown'||e.key==='Enter'){e.preventDefault();goTo(cur+1);}
+    if(e.key==='ArrowLeft'||e.key==='ArrowUp'||e.key==='PageUp'||e.key==='Backspace'){e.preventDefault();goTo(cur-1);}
     if(e.key==='Home'){e.preventDefault();goTo(0);}
     if(e.key==='End'){e.preventDefault();goTo(total-1);}
   });
+
+  // Mobile swipe
+  let ty=0;
+  document.addEventListener('touchstart',e=>{ty=e.touches[0].clientY;},{passive:true});
+  document.addEventListener('touchend',e=>{
+    const d=ty-e.changedTouches[0].clientY;
+    if(Math.abs(d)>50){d>0?goTo(cur+1):goTo(cur-1);}
+  },{passive:true});
 })();
 </script>
 <!-- Referrer Tracking -->
