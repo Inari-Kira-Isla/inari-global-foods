@@ -107,16 +107,10 @@ body{font-family:'Noto Serif TC',serif;background:var(--deep);color:var(--text);
 @keyframes fadeUp{to{opacity:1;transform:translateY(0)}from{opacity:0;transform:translateY(30px)}}
 @keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1)}100%{transform:scaleY(0);transform-origin:bottom}}
 
-/* Cinema layout: full-screen frame + text overlay */
-.cinema{position:relative;min-height:200vh;overflow:hidden}
-.cinema .split-frame{position:sticky;top:0;width:100%;height:100vh;overflow:hidden;background:var(--deep)}
-.split-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .08s ease-out;will-change:opacity}
-.split-frame img.on{opacity:1}
-.cinema .cinema-text{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem;z-index:3;pointer-events:none;opacity:0;transition:opacity .5s ease}
-.cinema .cinema-text.visible{opacity:1;pointer-events:auto}
-.cinema .cinema-text::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(2,11,24,.85) 0%,rgba(2,11,24,.6) 50%,transparent 100%);z-index:-1}
-.cinema .cinema-text .sbody,.cinema .cinema-text .ssub{max-width:520px}
-.cinema .cinema-text .btn,.cinema .cinema-text a{pointer-events:auto}
+/* Hero section with background image */
+.hero-full{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;background-size:cover;background-position:center;overflow:hidden}
+.hero-full::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(2,11,24,.6) 0%,rgba(2,11,24,.4) 40%,rgba(2,11,24,.7) 100%)}
+.hero-full .hero-content{position:relative;z-index:2;text-align:center;padding:2rem;max-width:700px}
 
 /* Full-width section with background image */
 .section-full{position:relative;min-height:80vh;display:flex;align-items:center;justify-content:center;background-size:cover;background-position:center}
@@ -220,7 +214,6 @@ body{font-family:'Noto Serif TC',serif;background:var(--deep);color:var(--text);
 /* GSAP reveal animations */
 .reveal{opacity:0;transform:translateY(40px)}
 .reveal-left{opacity:0;transform:translateX(-30px)}
-.cinema-text>*{opacity:0;transform:translateY(25px)}
 
 /* Section divider gradient */
 .section-fade{height:120px;background:linear-gradient(180deg,var(--deep) 0%,var(--ocean) 50%,var(--deep) 100%);margin:0}
@@ -229,9 +222,6 @@ footer{text-align:center;padding:2rem;border-top:1px solid rgba(255,255,255,.06)
 footer a{color:var(--gold);text-decoration:none}
 
 @media(max-width:900px){
-  .cinema{min-height:180vh}
-  .cinema .cinema-text{padding:1.5rem}
-  .cinema .cinema-text .sbody br{display:none}
   .cgrid{grid-template-columns:1fr 1fr}
   .cgrid[style*='repeat(5']{grid-template-columns:repeat(3,1fr) !important}
   .pgrid{grid-template-columns:1fr}
@@ -257,19 +247,17 @@ footer a{color:var(--gold);text-decoration:none}
 
 <!-- PAGE 1 ═══ ORIGIN ═══ -->
 <div class="ppt-page active" data-page="0">
-<!-- ═══ 1. ORIGIN — 三文魚全螢幕動畫 ═══ -->
-<div class="cinema" id="s-origin" data-seq="salmon" data-frames="60">
-  <div class="split-frame" id="salmon-frames"></div>
-  <div class="cinema-text" id="origin-text">
-    <div class="eyebrow">Since 2008 · Macau Origin</div>
-    <h1 class="stitle" style="font-size:clamp(2rem,4vw,3.5rem)">稻荷<em>環球</em>食品</h1>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;letter-spacing:.3em;color:var(--dim);margin-bottom:1.5rem">INARI GLOBAL FOODS</p>
-    <div style="width:50px;height:1px;background:var(--gold);margin-bottom:1.5rem"></div>
-    <p class="ssub">「一切從碼頭的清晨六點開始。」</p>
-    <p class="sbody" style="text-align:center">從太平洋深處到澳門的餐桌，每一條魚都經歷了一段旅程。<br>我們的工作，是讓這段旅程盡可能短、盡可能冷、盡可能好。</p>
-    <div class="scroll-h" style="position:relative;bottom:auto;left:auto;transform:none;margin-top:2rem"><span>向下探索</span><div class="scroll-l"></div></div>
+<!-- ═══ 1. ORIGIN — 首頁 ═══ -->
+<section class="hero-full" id="s-origin" style="background-image:url('images/hero-salmon.png')">
+  <div class="hero-content">
+    <div class="eyebrow reveal" style="justify-content:center;display:flex">Since 2008 · Macau Origin</div>
+    <h1 class="stitle reveal" style="font-size:clamp(2.5rem,5vw,4rem);text-align:center">稻荷<em>環球</em>食品</h1>
+    <p class="reveal" style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;letter-spacing:.3em;color:var(--dim);margin-bottom:1.5rem">INARI GLOBAL FOODS</p>
+    <div style="width:50px;height:1px;background:var(--gold);margin:0 auto 1.5rem"></div>
+    <p class="ssub reveal" style="text-align:center">「一切從碼頭的清晨六點開始。」</p>
+    <p class="sbody reveal" style="text-align:center;max-width:520px;margin:0 auto">從太平洋深處到澳門的餐桌，每一條魚都經歷了一段旅程。<br>我們的工作，是讓這段旅程盡可能短、盡可能冷、盡可能好。</p>
   </div>
-</div>
+</section>
 
 </div><!-- end page 0 -->
 <div class="ppt-page" data-page="1">
@@ -408,21 +396,20 @@ footer a{color:var(--gold);text-decoration:none}
 
 </div><!-- end page 5 -->
 <div class="ppt-page" data-page="6">
-<!-- ═══ 7. REVEAL — 開箱全螢幕動畫 ═══ -->
-<div class="cinema" id="s-reveal" data-seq="unbox" data-frames="60">
-  <div class="split-frame" id="unbox-frames"></div>
-  <div class="cinema-text" id="reveal-text">
-    <div class="eyebrow">The Reveal · 展示</div>
-    <h2 class="stitle">打開一盒稻荷<br>就是打開<em>一片海洋</em></h2>
-    <p class="ssub">向下捲動，見證頂級海鮮從封閉到完全展現的過程。</p>
-    <p class="sbody" style="text-align:center">精緻禮盒外觀，金色燙印稻荷 Logo。盒蓋掀起的瞬間，冷霧溢出，<br>內部層次逐一展現。完全展開，澳門最鮮的海膽、赤貝主角登場。</p>
-    <div style="display:flex;gap:1.5rem;margin-top:1.5rem;font-size:11px;color:var(--dim)">
+<!-- ═══ 7. REVEAL — 展示 ═══ -->
+<section class="hero-full" id="s-reveal" style="background-image:url('images/products/uni-open.jpg');background-position:center 40%">
+  <div class="hero-content">
+    <div class="eyebrow reveal" style="justify-content:center;display:flex">The Reveal · 展示</div>
+    <h2 class="stitle reveal" style="text-align:center">打開一盒稻荷<br>就是打開<em>一片海洋</em></h2>
+    <p class="ssub reveal" style="text-align:center">精緻禮盒外觀，金色燙印稻荷 Logo。</p>
+    <p class="sbody reveal" style="text-align:center;max-width:480px;margin:0 auto">盒蓋掀起的瞬間，冷霧溢出，內部層次逐一展現。完全展開，澳門最鮮的海膽、赤貝主角登場——每件都附產地溯源。</p>
+    <div class="reveal" style="display:flex;gap:1.5rem;margin-top:1.5rem;font-size:11px;color:var(--dim);justify-content:center">
       <span>禮盒完整</span><span style="color:var(--gold)">→</span>
       <span>緩緩開啟</span><span style="color:var(--gold)">→</span>
       <span>完全展現</span>
     </div>
   </div>
-</div>
+</section>
 
 </div><!-- end page 6 -->
 <div class="ppt-page" data-page="7">
@@ -639,73 +626,9 @@ footer a{color:var(--gold);text-decoration:none}
 <script>
 gsap.registerPlugin(ScrollTrigger);
 
-/* ═══ 1. FRAME SEQUENCE ENGINE (GSAP ScrollTrigger) ═══ */
 const isMobile=window.innerWidth<=900;
-const frameStep=isMobile?3:1; // mobile: every 3rd frame (20 total), desktop: all 60
-const seqs={};
-document.querySelectorAll('[data-seq]').forEach(el=>{
-  const n=el.dataset.seq,total=parseInt(el.dataset.frames),wrap=el.querySelector('.split-frame');
-  if(!wrap)return;
-  const imgs=[];
-  for(let i=1;i<=total;i+=frameStep){
-    const img=document.createElement('img');
-    if(!isMobile)img.style.willChange='opacity';
-    const src=`frames/${n}/f${String(i).padStart(3,'0')}.jpg`;
-    if(imgs.length<5)img.src=src; else img.dataset.src=src;
-    if(imgs.length===0)img.classList.add('on');
-    wrap.appendChild(img);
-    imgs.push(img);
-  }
-  seqs[n]={el,imgs,c:imgs.length,cur:0,loaded:Math.min(5,imgs.length)};
-});
 
-function preloadAll(seq){
-  if(seq.loaded>=seq.c)return;
-  for(let i=seq.loaded;i<seq.c;i++){
-    const img=seq.imgs[i];
-    if(img.dataset.src&&!img.src)img.src=img.dataset.src;
-  }
-  seq.loaded=seq.c;
-}
-
-// Bind each cinema section to GSAP ScrollTrigger (scrub mode like Pioneer)
-Object.entries(seqs).forEach(([n,seq])=>{
-  const {el,imgs,c}=seq;
-  const textEl=el.querySelector('.cinema-text');
-
-  ScrollTrigger.create({
-    trigger:el,
-    start:'top top',
-    end:'bottom bottom',
-    scrub:0.3, // smooth scrub like Pioneer
-    onUpdate:self=>{
-      const p=self.progress;
-      const f=Math.min(c-1,Math.floor(p*c));
-      if(f!==seq.cur){
-        imgs[seq.cur]?.classList.remove('on');
-        imgs[f]?.classList.add('on');
-        seq.cur=f;
-      }
-      // Text overlay: fade in at 55%, stagger children
-      if(textEl){
-        if(p>0.5&&!textEl.classList.contains('visible')){
-          textEl.classList.add('visible');
-          gsap.fromTo(textEl.children,
-            {opacity:0,y:25},
-            {opacity:1,y:0,duration:0.6,stagger:0.12,ease:'power2.out'}
-          );
-        }else if(p<=0.45&&textEl.classList.contains('visible')){
-          textEl.classList.remove('visible');
-          gsap.set(textEl.children,{opacity:0,y:25});
-        }
-      }
-    },
-    onEnter:()=>preloadAll(seq),
-    onEnterBack:()=>preloadAll(seq),
-  });
-});
-
-/* ═══ 2. SECTION REVEAL ANIMATIONS ═══ */
+/* ═══ 1. SECTION REVEAL ANIMATIONS ═══ */
 // Staggered text reveals for each section
 gsap.utils.toArray('.reveal').forEach(el=>{
   gsap.to(el,{
