@@ -113,7 +113,7 @@ body{font-family:'Noto Serif TC',serif;background:var(--deep);color:var(--text);
 .hero-full .hero-content{position:relative;z-index:2;text-align:center;padding:2rem;max-width:700px}
 
 /* Full-width section with background image */
-.section-full{position:relative;min-height:80vh;display:flex;align-items:center;justify-content:center;background-size:cover;background-position:center}
+.section-full{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;background-size:cover;background-position:center}
 
 .eyebrow{font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
 .stitle{font-size:clamp(1.6rem,3vw,2.5rem);font-weight:600;line-height:1.3;margin-bottom:1rem}
@@ -188,7 +188,7 @@ body{font-family:'Noto Serif TC',serif;background:var(--deep);color:var(--text);
 .tquote{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--dim);font-style:italic;line-height:1.6}
 
 /* CTA */
-.cta-s{text-align:center;padding:5rem 2rem;background:linear-gradient(180deg,var(--deep),var(--ocean))}
+.cta-s{text-align:center;padding:5rem 2rem;background:linear-gradient(180deg,var(--deep),var(--ocean));min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .cta-s h2{font-size:clamp(1.4rem,3vw,2rem);margin-bottom:1rem}
 .cta-s p{color:var(--dim);max-width:480px;margin:0 auto 2rem;line-height:1.8;font-size:14px}
 .btns{display:flex;gap:1rem;justify-content:center}
@@ -262,7 +262,7 @@ footer a{color:var(--gold);text-decoration:none}
 </div><!-- end page 0 -->
 <div class="ppt-page" data-page="1">
 <!-- ═══ 2. JOURNEY — 太平洋到餐桌（全寬）═══ -->
-<section id="s-journey" style="position:relative;min-height:80vh;background:url('images/products/salmon-ocean.png') center/cover;display:flex;align-items:center;justify-content:center">
+<section id="s-journey" style="position:relative;min-height:100vh;background:url('images/products/salmon-ocean.png') center/cover;display:flex;align-items:center;justify-content:center">
   <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,30,61,.75) 0%,rgba(2,11,24,.85) 100%)"></div>
   <div style="position:relative;z-index:2;text-align:center;max-width:700px;padding:3rem 2rem">
     <div class="eyebrow reveal" style="justify-content:center;display:flex">The Journey · 旅程</div>
@@ -287,7 +287,7 @@ footer a{color:var(--gold);text-decoration:none}
 </div><!-- end page 1 -->
 <div class="ppt-page" data-page="2">
 <!-- ═══ 3. STORY — Joe 的故事（全寬）═══ -->
-<section id="s-story" style="position:relative;min-height:80vh;background:url('images/people/joe-portrait.jpg') center top/cover;display:flex;align-items:center;justify-content:center">
+<section id="s-story" style="position:relative;min-height:100vh;background:url('images/people/joe-portrait.jpg') center top/cover;display:flex;align-items:center;justify-content:center">
   <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,11,24,.7) 0%,rgba(10,30,61,.85) 100%)"></div>
   <div style="position:relative;z-index:2;text-align:center;max-width:650px;padding:3rem 2rem">
     <div class="eyebrow reveal" style="justify-content:center;display:flex">傳承 · The Successor</div>
@@ -305,7 +305,7 @@ footer a{color:var(--gold);text-decoration:none}
 </div><!-- end page 2 -->
 <div class="ppt-page" data-page="3">
 <!-- ═══ 4. EVOLUTION + STATS ═══ -->
-<section style="min-height:70vh;background:var(--ocean);display:flex;align-items:center;justify-content:center" id="s-evo">
+<section style="min-height:100vh;background:var(--ocean);display:flex;align-items:center;justify-content:center" id="s-evo">
   <div style="width:100%;max-width:1100px;padding:3rem;text-align:center">
     <div class="eyebrow reveal" style="justify-content:center;display:flex">進化 · The Evolution</div>
     <h2 class="stitle reveal" style="text-align:center">從紙筆到 <em>AI</em></h2>
@@ -331,7 +331,7 @@ footer a{color:var(--gold);text-decoration:none}
 </div><!-- end page 3 -->
 <div class="ppt-page" data-page="4">
 <!-- ═══ 6. EDGE — 六大優勢（獨立圖片卡）═══ -->
-<section style="background:var(--deep)" id="s-edge">
+<section style="background:var(--deep);min-height:100vh;display:flex;align-items:center" id="s-edge">
   <div class="cards">
     <h2>為什麼選稻荷</h2>
     <div class="sub">The Edge — 六個找不到替代的理由</div>
@@ -414,7 +414,7 @@ footer a{color:var(--gold);text-decoration:none}
 </div><!-- end page 6 -->
 <div class="ppt-page" data-page="7">
 <!-- ═══ 8. PRODUCTS ═══ -->
-<section style="background:var(--deep);opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease" id="products" class="fade-section">
+<section style="background:var(--deep);min-height:100vh;display:flex;align-items:center;opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease" id="products" class="fade-section">
   <div class="cards">
     <h2>每一樣，都是承諾</h2>
     <div class="sub">The Collection — 十二嚴選商品</div>
@@ -438,7 +438,7 @@ footer a{color:var(--gold);text-decoration:none}
 </div><!-- end page 7 -->
 <div class="ppt-page" data-page="8">
 <!-- ═══ 9. AI ═══ -->
-<section style="background:var(--ocean)" id="s-ai">
+<section style="background:var(--ocean);min-height:100vh;display:flex;align-items:center" id="s-ai">
   <div class="cards">
     <h2>一間水產公司的 AI 轉型</h2>
     <div class="sub">The Future — 智能</div>
@@ -458,7 +458,7 @@ footer a{color:var(--gold);text-decoration:none}
 </div><!-- end page 8 -->
 <div class="ppt-page" data-page="9">
 <!-- ═══ 10. SERVICES — 加工服務 ═══ -->
-<section style="background:var(--deep)" id="s-services">
+<section style="background:var(--deep);min-height:100vh;display:flex;align-items:center" id="s-services">
   <div class="cards">
     <div class="eyebrow reveal" style="justify-content:center;display:flex">The Next Chapter · 新篇章</div>
     <h2 class="reveal" style="text-align:center">從供應商到<span style="color:var(--gold)">全方位食材夥伴</span></h2>
@@ -509,7 +509,7 @@ footer a{color:var(--gold);text-decoration:none}
 </div><!-- end page 9 -->
 <div class="ppt-page" data-page="10">
 <!-- ═══ 10b. GALLERY WALL — 圖片展示牆 ═══ -->
-<section style="background:var(--ocean);padding:3rem 0;overflow:hidden" id="s-gallery">
+<section style="background:var(--ocean);min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:3rem 0;overflow:hidden" id="s-gallery">
   <div style="text-align:center;margin-bottom:2rem;padding:0 2rem">
     <div class="eyebrow reveal" style="justify-content:center;display:flex">The Gallery · 食材圖鑑</div>
     <h2 class="reveal" style="text-align:center;font-size:clamp(1.4rem,2.5vw,1.8rem);font-weight:600">每一件食材，都值得被看見</h2>
