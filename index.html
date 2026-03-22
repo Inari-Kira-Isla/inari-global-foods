@@ -39,6 +39,24 @@ body{font-family:'Noto Serif TC',serif;background:var(--deep);color:var(--text);
 .bubbles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
 .bub{position:absolute;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.06),transparent);animation:rise linear infinite}
 @keyframes rise{from{transform:translateY(100vh) scale(0);opacity:0}20%{opacity:1}to{transform:translateY(-10vh) scale(1);opacity:0}}
+
+/* Swimming fish */
+.fish-layer{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.fish{position:absolute;opacity:0;font-size:14px;color:rgba(255,255,255,.12);filter:blur(0.5px);animation:swim linear infinite}
+.fish.flip{transform:scaleX(-1)}
+@keyframes swim{
+  0%{transform:translateX(-60px);opacity:0}
+  5%{opacity:1}
+  90%{opacity:1}
+  100%{transform:translateX(calc(100vw + 60px));opacity:0}
+}
+.fish.right{animation-name:swim-r}
+@keyframes swim-r{
+  0%{transform:translateX(calc(100vw + 60px)) scaleX(-1);opacity:0}
+  5%{opacity:1}
+  90%{opacity:1}
+  100%{transform:translateX(-60px) scaleX(-1);opacity:0}
+}
 @keyframes fadeUp{to{opacity:1;transform:translateY(0)}from{opacity:0;transform:translateY(30px)}}
 @keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1)}100%{transform:scaleY(0);transform-origin:bottom}}
 
@@ -162,6 +180,7 @@ footer a{color:var(--gold);text-decoration:none}
 <body>
 <div id="bar"></div>
 <div class="bubbles" id="bubs"></div>
+<div class="fish-layer" id="fish-layer"></div>
 
 <!-- ═══ 1. ORIGIN — 三文魚全螢幕動畫 ═══ -->
 <div class="cinema" id="s-origin" data-seq="salmon" data-frames="60">
@@ -484,7 +503,31 @@ gsap.to('#bar',{
   scrollTrigger:{trigger:'body',start:'top top',end:'bottom bottom',scrub:0.3}
 });
 
-/* ═══ 4. BUBBLES ═══ */
+/* ═══ 4. SWIMMING FISH ═══ */
+(function(){
+  if(isMobile)return; // skip on mobile for performance
+  const layer=document.getElementById('fish-layer');
+  const fishChars=['🐟','🐠','🐡','🦈'];
+  const maxFish=6;
+  function spawnFish(){
+    if(layer.children.length>=maxFish)return;
+    const f=document.createElement('div');
+    f.className='fish'+(Math.random()>0.5?' right':'');
+    f.textContent=fishChars[Math.floor(Math.random()*fishChars.length)];
+    const size=10+Math.random()*14;
+    const dur=18+Math.random()*25;
+    const top=10+Math.random()*80;
+    const opacity=0.06+Math.random()*0.1;
+    f.style.cssText=`font-size:${size}px;top:${top}%;animation-duration:${dur}s;animation-delay:${Math.random()*3}s;--fish-opacity:${opacity}`;
+    f.style.color=`rgba(255,255,255,${opacity})`;
+    f.addEventListener('animationend',()=>f.remove());
+    layer.appendChild(f);
+  }
+  setInterval(spawnFish,3500);
+  for(let i=0;i<3;i++)setTimeout(spawnFish,i*1200);
+})();
+
+/* ═══ 5. BUBBLES ═══ */
 (function(){const w=document.getElementById('bubs');for(let i=0;i<12;i++){const b=document.createElement('div');b.className='bub';const s=3+Math.random()*10;b.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;animation-duration:${8+Math.random()*14}s;animation-delay:${Math.random()*8}s`;w.appendChild(b);}})();
 </script>
 <!-- Referrer Tracking -->
