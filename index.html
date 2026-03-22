@@ -517,9 +517,12 @@ gsap.to('#bar',{
   const maxFish=6;
   // SVG fish silhouette paths (small, medium, large)
   const fishSVGs=[
-    `<svg width="28" height="12" viewBox="0 0 28 12"><path d="M0 6 Q4 0 10 2 L20 1 Q26 3 28 6 Q26 9 20 11 L10 10 Q4 12 0 6Z" fill="rgba(255,255,255,0.15)"/><circle cx="22" cy="5" r="1" fill="rgba(255,255,255,0.4)"/></svg>`,
-    `<svg width="36" height="14" viewBox="0 0 36 14"><path d="M0 7 Q5 0 12 3 L26 1 Q34 4 36 7 Q34 10 26 13 L12 11 Q5 14 0 7Z" fill="rgba(255,255,255,0.12)"/><circle cx="29" cy="6" r="1.2" fill="rgba(255,255,255,0.35)"/></svg>`,
-    `<svg width="22" height="9" viewBox="0 0 22 9"><path d="M0 4.5 Q3 0 8 2 L16 1 Q20 2.5 22 4.5 Q20 6.5 16 8 L8 7 Q3 9 0 4.5Z" fill="rgba(255,255,255,0.18)"/><circle cx="17" cy="4" r=".8" fill="rgba(255,255,255,0.45)"/></svg>`
+    // Large fish — detailed body + tail fin + dorsal fin + eye
+    `<svg width="48" height="22" viewBox="0 0 48 22"><path d="M2 11 C2 5 8 2 16 3 L30 2 C38 3 44 7 46 11 C44 15 38 19 30 20 L16 19 C8 20 2 17 2 11Z" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.35)" stroke-width="0.5"/><path d="M0 11 L6 6 L6 16 Z" fill="rgba(255,255,255,0.2)"/><path d="M20 2 Q24 -2 28 2" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/><path d="M22 20 Q24 23 27 20" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" fill="none"/><circle cx="38" cy="9.5" r="1.8" fill="rgba(255,255,255,0.5)"/><circle cx="38.5" cy="9.5" r="0.8" fill="rgba(255,255,255,0.8)"/></svg>`,
+    // Medium fish — rounder body
+    `<svg width="38" height="18" viewBox="0 0 38 18"><path d="M2 9 C2 3 7 1 14 2 L24 1.5 C31 3 36 6 37 9 C36 12 31 15 24 16.5 L14 16 C7 17 2 15 2 9Z" fill="rgba(255,255,255,0.22)" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/><path d="M0 9 L5 5 L5 13 Z" fill="rgba(255,255,255,0.18)"/><path d="M16 1.5 Q18 -1 21 1.5" stroke="rgba(255,255,255,0.25)" stroke-width="0.8" fill="none"/><circle cx="30" cy="7.5" r="1.5" fill="rgba(255,255,255,0.45)"/><circle cx="30.4" cy="7.5" r="0.6" fill="rgba(255,255,255,0.75)"/></svg>`,
+    // Small fish — sleek
+    `<svg width="30" height="14" viewBox="0 0 30 14"><path d="M2 7 C2 3 6 1.5 11 2.5 L20 2 C25 3 28 5 29 7 C28 9 25 11 20 12 L11 11.5 C6 12.5 2 11 2 7Z" fill="rgba(255,255,255,0.28)" stroke="rgba(255,255,255,0.35)" stroke-width="0.5"/><path d="M0 7 L4 4 L4 10 Z" fill="rgba(255,255,255,0.22)"/><circle cx="23" cy="6" r="1.2" fill="rgba(255,255,255,0.5)"/><circle cx="23.3" cy="6" r="0.5" fill="rgba(255,255,255,0.8)"/></svg>`
   ];
   function spawnFish(){
     if(layer.children.length>=maxFish)return;
