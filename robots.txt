@@ -65,6 +65,7 @@ Sitemap: https://inari-kira-isla.github.io/inari-global-foods/sitemap.xml
 
 # AI-friendly structured content
 # llms.txt: https://inari-kira-isla.github.io/inari-global-foods/llms.txt
+Llms-Txt: https://inari-kira-isla.github.io/inari-global-foods/llms.txt
 
 # AI Crawlers Welcome
 User-agent: GPTBot
