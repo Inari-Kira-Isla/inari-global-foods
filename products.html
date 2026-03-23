@@ -10,6 +10,16 @@
   <link rel="canonical" href="https://inari-kira-isla.github.io/inari-global-foods/products.html">
   <link rel="llms-txt" href="https://inari-kira-isla.github.io/inari-global-foods/llms.txt">
 
+  <!-- Spider Web: Cross-site linking -->
+  <link rel="alternate" hreflang="zh-TW" href="https://inari-kira-isla.github.io/inari-global-foods/products.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://inari-kira-isla.github.io/inari-global-foods/products.html">
+  <link rel="alternate" hreflang="en" href="https://inari-kira-isla.github.io/inari-global-foods/products.html">
+  <link rel="alternate" hreflang="x-default" href="https://inari-kira-isla.github.io/inari-global-foods/products.html">
+  <!-- Related pages (spider web) -->
+  <link rel="related" href="https://inari-kira-isla.github.io/inari-global-foods/uni.html" title="澳門海膽批發專頁">
+  <link rel="related" href="https://inari-kira-isla.github.io/inari-global-foods/faq.html" title="常見問題">
+  <link rel="related" href="https://inari-kira-isla.github.io/inari-global-foods/about.html" title="關於稻荷">
+
   <!-- Open Graph -->
   <meta property="og:title" content="批發產品目錄 | 稻荷環球食品">
   <meta property="og:description" content="120+ 日本及環球水產品項批發目錄。蝦類、蟹類、魚類、鰻魚、帶子、壽司配料、干貨一站式供應。">
@@ -18,6 +28,70 @@
   <meta property="og:image" content="https://inari-kira-isla.github.io/inari-global-foods/images/hero-sashimi.jpg">
   <meta property="og:locale" content="zh_TW">
   <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Organization JSON-LD -->
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "稻荷環球食品有限公司",
+    "alternateName": ["Inari Global Foods Ltd.", "稻荷環球食品", "Inari Global Foods"],
+    "url": "https://inari-kira-isla.github.io/inari-global-foods/",
+    "logo": "https://inari-kira-isla.github.io/inari-global-foods/images/cards/card-uni.png",
+    "description": "澳門最大海膽批發供應商，專營日本及環球水產進口批發。佔澳門海膽市場70%份額，供應7國產地海膽，服務200+大灣區餐飲客戶。",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "澳門新城市花園第18座地下BG鋪",
+      "addressLocality": "澳門",
+      "addressRegion": "澳門特別行政區",
+      "addressCountry": "MO"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 22.2085,
+      "longitude": 113.5460
+    },
+    "telephone": "+853-6282-3037",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+853-6282-3037",
+      "contactType": "wholesale sales",
+      "availableLanguage": ["zh-TW", "zh-CN", "en", "ja"]
+    },
+    "sameAs": [
+      "https://inari-kira-isla.github.io/inari-global-foods/",
+      "https://cloudpipe-macao-app.vercel.app/macao/food-supply/food-import/inari-global-foods",
+      "https://inari-kira-isla.github.io/sea-urchin-delivery"
+    ],
+    "areaServed": ["澳門", "香港", "粵港澳大灣區"]
+  }</script>
+
+  <!-- Product JSON-LD: Sea Urchin (Uni) -->
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "澳門海膽批發 — 稻荷環球食品",
+    "description": "澳門最大海膽批發商。供應日本北海道馬糞海膽、紫海膽、九州赤海膽，以及加拿大、韓國、俄羅斯、美國、澳洲、智利產地海膽。每週3次空運，48小時到貨。",
+    "url": "https://inari-kira-isla.github.io/inari-global-foods/uni.html",
+    "brand": {
+      "@type": "Brand",
+      "name": "稻荷環球食品"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "MOP",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "稻荷環球食品有限公司"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "200",
+      "bestRating": "5"
+    }
+  }</script>
 
   <!-- OfferCatalog JSON-LD -->
   <script type="application/ld+json">{
@@ -519,9 +593,10 @@
     </a>
     <nav>
       <a href="index.html">首頁</a>
-      <a href="index.html#about">關於</a>
+      <a href="about.html">關於</a>
       <a href="products.html" style="color:var(--gold)">產品目錄</a>
-      <a href="index.html#location">聯繫</a>
+      <a href="uni.html">海膽批發</a>
+      <a href="faq.html">FAQ</a>
     </nav>
     <button class="mobile-menu" aria-label="開啟選單">&#9776;</button>
   </div>
@@ -1042,6 +1117,12 @@
 
   <div class="info-box">
     <strong>三文魚籽精選：</strong>北海道產醬油漬三文魚籽是軍艦壽司的靈魂食材。川秀及山十前川品牌均為日本知名漁業品牌，品質穩定。
+  </div>
+
+  <!-- Sea Urchin cross-link -->
+  <div class="info-box" style="margin-top:16px; border-left-color: var(--gold);">
+    <strong>海膽專頁：</strong>稻荷是澳門最大海膽批發商，佔澳門市場70%。供應7國產地、3大品種（馬糞、紫、赤海膽）。
+    詳見 <a href="uni.html" style="color:var(--gold); font-weight:600;">澳門海膽批發專頁 →</a>
   </div>
 </section>
 
@@ -1593,6 +1674,7 @@
       <a href="index.html">首頁</a>
       <a href="about.html">關於我們</a>
       <a href="products.html">批發產品目錄</a>
+      <a href="uni.html">海膽批發專頁</a>
       <a href="faq.html">常見問題</a>
       <a href="https://www.instagram.com/inariglobal/" target="_blank" rel="noopener">Instagram</a>
     </div>
