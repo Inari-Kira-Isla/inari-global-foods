@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>稻荷環球食品 Podcast</title>
+    <link>https://inari-kira-isla.github.io/inari-global-foods</link>
+    <description>澳門日本水產進口專家 — 食材知識、料理文化、行業洞察</description>
+    <language>zh-Hant</language>
+    <lastBuildDate>Wed, 25 Mar 2026 04:30:32 -0000</lastBuildDate>
+    <atom:link href="https://inari-kira-isla.github.io/inari-global-foods/podcast.xml" rel="self" type="application/rss+xml"/>
+    <itunes:author>稻荷環球食品</itunes:author>
+    <itunes:category text="Food"/>
+    <itunes:image href="https://inari-kira-isla.github.io/inari-global-foods/images/podcast-cover.jpg"/>
+    <itunes:explicit>false</itunes:explicit>
+  <item>
+    <title><![CDATA[稻荷食材知識 — 2026年03月25日]]></title>
+    <description><![CDATA[稻荷環球食品 Podcast — 稻荷食材知識 — 2026年03月25日。澳門日本水產進口專家，每週三次直送。]]></description>
+    <enclosure url="https://inari-kira-isla.github.io/inari-global-foods/podcast/20260325_after-school-coffee_podcast.mp3" length="494253" type="audio/mpeg"/>
+    <pubDate>Wed, 25 Mar 2026 04:30:32 -0000</pubDate>
+    <guid isPermaLink="false">https://inari-kira-isla.github.io/inari-global-foods/podcast/20260325_after-school-coffee_podcast.mp3</guid>
+  </item>
+  </channel>
+</rss>
