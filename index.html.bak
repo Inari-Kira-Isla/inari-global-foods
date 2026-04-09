@@ -264,24 +264,6 @@ footer a{color:var(--gold);text-decoration:none}
   }
 }
 </script>
-
-<!-- GEO: Organization Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FoodEstablishment",
-  "name": "Inari Global Foods",
-  "description": "稻荷環球食品是澳門領先的日本頂級食材進口及分銷商，專營海膽、三文魚、牡丹蝦、金槍魚等高品質刺身級食材。日本產地直送，全程冷鏈管理，為大灣區高端餐飲業及零售市場提供穩定、新鮮的 B2B 供應鏈服務。",
-  "url": "https://inari-global-foods.vercel.app",
-  "sameAs": [],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "澳門",
-    "addressCountry": "MO"
-  }
-}
-</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"CloudPipe","item":"https://cloudpipe-landing.vercel.app"},{"@type":"ListItem","position":2,"name":"稻荷環球食品","item":"https://inari-kira-isla.github.io/inari-global-foods/"}]}</script>
 </head>
 <body>
 <div id="bar"></div>
@@ -874,9 +856,32 @@ gsap.to('#bar',{
 (function(){var s='inari-global-foods',w='https://client-ai-tracker.inariglobal.workers.dev',r=document.referrer,t='direct';if(r){var h=new URL(r).hostname;if(/chatgpt\.com|openai\.com/.test(h))t='ai-chatgpt';else if(/perplexity\.ai/.test(h))t='ai-perplexity';else if(/claude\.ai|anthropic/.test(h))t='ai-claude';else if(/copilot\.microsoft|bing\.com\/chat/.test(h))t='ai-copilot';else if(/google\./.test(h))t='search-google';else if(/bing\.com/.test(h))t='search-bing';else if(/baidu\.com/.test(h))t='search-baidu';else if(/facebook|instagram|threads|twitter|x\.com|linkedin/.test(h))t='social';else t='referral';}try{navigator.sendBeacon(w+'/'+s+'/visit',JSON.stringify({ref_type:t,ref_url:r,page:location.pathname,ts:Date.now()}))}catch(e){}})();
 </script>
 <img src="https://client-ai-tracker.inariglobal.workers.dev/inari-global-foods/pixel.gif?p=/" width="1" height="1" alt="" style="position:absolute;left:-9999px">
-<script src="https://cloudpipe-macao-app.vercel.app/spider-track.js" data-site="inari-global-foods"></script>
 
-
+<script>
+// 旬月曆自動高亮 — 由 seasonal_content_planner.py 生成
+(function() {
+    var month = new Date().getMonth() + 1;
+    var rows = document.querySelectorAll('.data-table tr');
+    rows.forEach(function(row) {
+        var cells = row.querySelectorAll('td');
+        if (cells.length >= 2) {
+            var monthText = cells[1] ? cells[1].textContent : '';
+            var months = monthText.match(/\d+/g);
+            if (months && months.some(function(m) { return parseInt(m) === month; })) {
+                row.style.background = 'rgba(139,114,64,0.12)';
+                row.style.fontWeight = '500';
+                if (cells[0]) cells[0].style.color = 'var(--gold-light, #B39B5C)';
+            }
+        }
+    });
+    // 本月推薦標籤
+    var badge = document.createElement('div');
+    badge.style.cssText = 'text-align:center;padding:12px;background:rgba(139,114,64,0.08);border:1px solid rgba(139,114,64,0.2);margin:24px auto;max-width:900px;font-size:13px;color:#B39B5C;letter-spacing:0.05em;';
+    badge.innerHTML = '🎣 ' + month + '月旬の推薦: <strong>櫻鯛 · 甜蝦 · 北海道帶子 · 松葉蟹</strong>';
+    var hero = document.querySelector('.hero');
+    if (hero && hero.nextElementSibling) hero.nextElementSibling.prepend(badge);
+})();
+</script>
 <!-- === CHATBOT WIDGET === -->
 <style>
 .chatbot-btn{position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:var(--gold,#c4983a);border:none;cursor:pointer;box-shadow:0 4px 16px rgba(196,152,58,0.4);z-index:9999;display:flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s}
@@ -937,31 +942,5 @@ var te=document.getElementById('ai-thinking');if(te)te.remove();appendMsg('bot',
 function appendMsg(role,text){var box=document.getElementById('chatbotMessages');var div=document.createElement('div');div.className='chat-msg '+role;div.textContent=text;box.appendChild(div);box.scrollTop=box.scrollHeight;}
 </script>
 
-
-<script>
-// 旬月曆自動高亮 — 由 seasonal_content_planner.py 生成
-(function() {
-    var month = new Date().getMonth() + 1;
-    var rows = document.querySelectorAll('.data-table tr');
-    rows.forEach(function(row) {
-        var cells = row.querySelectorAll('td');
-        if (cells.length >= 2) {
-            var monthText = cells[1] ? cells[1].textContent : '';
-            var months = monthText.match(/\d+/g);
-            if (months && months.some(function(m) { return parseInt(m) === month; })) {
-                row.style.background = 'rgba(139,114,64,0.12)';
-                row.style.fontWeight = '500';
-                if (cells[0]) cells[0].style.color = 'var(--gold-light, #B39B5C)';
-            }
-        }
-    });
-    // 本月推薦標籤
-    var badge = document.createElement('div');
-    badge.style.cssText = 'text-align:center;padding:12px;background:rgba(139,114,64,0.08);border:1px solid rgba(139,114,64,0.2);margin:24px auto;max-width:900px;font-size:13px;color:#B39B5C;letter-spacing:0.05em;';
-    badge.innerHTML = '🎣 ' + month + '月旬の推薦: <strong>櫻鯛 · 牡丹蝦</strong>';
-    var hero = document.querySelector('.hero');
-    if (hero && hero.nextElementSibling) hero.nextElementSibling.prepend(badge);
-})();
-</script>
 </body>
 </html>

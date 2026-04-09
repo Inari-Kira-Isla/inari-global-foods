@@ -3,7 +3,7 @@
     "2026-04": {
       "path": "/Users/ki/Documents/inari-global-foods/data/plans/plan_2026-04.json",
       "topics": 6,
-      "generated_at": "2026-03-18T09:48:18.448082"
+      "generated_at": "2026-04-01T04:00:00.929119"
     },
     "2026-03": {
       "path": "/Users/ki/Documents/inari-global-foods/data/plans/plan_2026-03.json",
@@ -11,11 +11,20 @@
       "generated_at": "2026-03-22T23:15:41.730515"
     }
   },
-  "images": {},
+  "images": {
+    "5": {
+      "generated_at": "2026-04-09T09:26:37.221209",
+      "success": [],
+      "failed": [
+        "sakura-tai",
+        "botan-ebi"
+      ]
+    }
+  },
   "feedback": {
-    "analyzed_at": "2026-03-22T23:15:41.771099",
+    "analyzed_at": "2026-04-01T04:00:00.986656",
     "total_crawls": 6925,
-    "article_count": 197,
+    "article_count": 198,
     "suggestions": [
       "爬蟲量健康 (>500)，可以嘗試更長篇深度文章 (5000+ 字)",
       "ClaudeBot 活躍，加強長篇知識型文章 (10000+ 字)",
@@ -27,5 +36,5 @@
     }
   },
   "last_verify": "2026-03-18T01:27:39.321062",
-  "homepage_updated": "2026-03-22T23:15:41.733317"
+  "homepage_updated": "2026-04-01T04:00:00.942522"
 }
