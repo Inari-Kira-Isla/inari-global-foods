@@ -672,6 +672,72 @@
     footer { grid-template-columns: 1fr 1fr; }
     .nav-links { display: none; }
   }
+
+  /* ─── Mobile Responsive Fixes ─────────────── */
+  @media (max-width: 640px) {
+    nav.top { padding: 14px 20px !important; gap: 10px; }
+    .brand { gap: 5px !important; flex-shrink: 0; }
+    .brand .jp { font-size: 22px !important; line-height: 1.1; }
+    .brand > span:nth-child(2) { font-size: 16px !important; }
+    .brand .en { font-size: 8.5px !important; letter-spacing: .12em; }
+    .nav-cta { padding: 8px 12px !important; font-size: 8.5px !important; letter-spacing: .12em; white-space: nowrap; flex-shrink: 0; }
+
+    .hero { padding: 88px 20px 0 !important; }
+    .hero-meta-top { display: none !important; }
+    .hero-eyebrow { font-size: 8px !important; gap: 8px !important; }
+    .hero h1 { font-size: clamp(34px, 9vw, 52px) !important; line-height: 1.02 !important; }
+    .hero-sub { font-size: 13px !important; line-height: 1.6 !important; max-width: 100% !important; }
+    .hero-body { padding-bottom: 48px !important; }
+    .hero-mark { display: none !important; }
+    .hero-stripes { display: none; }
+    .hero-strip { grid-template-columns: 1fr !important; margin: 0 -20px !important; }
+    .hero-strip .cell { padding: 16px 20px !important; border-right: none !important; border-bottom: 1px solid var(--hair); display: flex; flex-direction: row; align-items: center; gap: 16px; justify-content: space-between; }
+    .hero-strip .cell:last-child { border-bottom: none; }
+    .hero-strip .cell .k { font-size: 36px !important; }
+    .hero-strip .cell .v { font-size: 9px !important; text-align: right; max-width: 120px; }
+
+    .statement, .pad, .chain-sec, .grid-sec, .trust, .cta-sec, footer, .foot-btm,
+    .signature-head, .chain-head, .cta-head, .trust-head { padding-left: 20px !important; padding-right: 20px !important; }
+    .statement-body { grid-template-columns: 1fr !important; gap: 40px !important; }
+    .map-box { height: 260px !important; }
+    .map-box svg { transform: none !important; }
+    .founder-note { flex-direction: column !important; gap: 4px !important; }
+
+    .chain-steps { grid-template-columns: 1fr !important; }
+    .chain-step { min-height: auto !important; padding: 24px 20px 28px !important; border-right: none !important; border-bottom: 1px solid var(--hair) !important; }
+    .chain-step:last-child { border-bottom: none !important; }
+    .chain-progress { display: none !important; }
+    .chain-stats { grid-template-columns: 1fr 1fr !important; gap: 0 !important; }
+    .chain-stat { padding: 20px 16px !important; border-bottom: 1px solid var(--hair); }
+
+    .product-grid { grid-template-columns: 1fr !important; }
+    .p-card { min-height: auto !important; padding: 24px 20px 20px !important; }
+    .p-card .img { height: 200px !important; margin-bottom: 20px !important; }
+    .price { opacity: 1 !important; transform: none !important; }
+    .price-hint { display: none !important; }
+
+    .uni-item { grid-template-columns: 1fr !important; }
+    .uni-item .media { min-height: 300px !important; border-right: none !important; border-bottom: 1px solid var(--hair) !important; }
+    .uni-item .info { padding: 36px 20px !important; }
+
+    .partners-grid { grid-template-columns: 1fr 1fr !important; }
+    .partner-card { padding: 16px 12px !important; }
+
+    .cta-cards { grid-template-columns: 1fr !important; }
+    .cta-card.left { border-right: none !important; border-bottom: 1px solid var(--hair-strong) !important; }
+    .cta-card { padding: 40px 20px !important; }
+
+    footer { grid-template-columns: 1fr !important; gap: 40px !important; padding-top: 56px !important; padding-bottom: 56px !important; }
+    .foot-brand { max-width: 100% !important; }
+    .foot-btm { flex-direction: column !important; gap: 12px !important; font-size: 9px !important; text-align: center; }
+  }
+
+  @media (max-width: 400px) {
+    .hero h1 { font-size: 30px !important; }
+    .nav-cta { display: none !important; }
+    .nav-cta-mobile { display: block !important; }
+  }
+
 </style>
 </head>
 <body>
