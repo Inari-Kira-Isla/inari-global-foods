@@ -1,1 +1,1363 @@
-"<!DOCTYPE html>\n<html lang=\"zh-Hant\">\n<head>\n\n\n<meta charset=\"UTF-8\" />\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n<title>稻荷環球食品 · Inari Global Foods</title>\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link href=\"https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap\" rel=\"stylesheet\">\n<style>\n  :root {\n    --bg: #05080E;\n    --bg-2: #0A0E16;\n    --gold: #C9A961;\n    --gold-dim: #8a7440;\n    --cream: #F5F0E8;\n    --cream-dim: rgba(245,240,232,0.62);\n    --hair: rgba(201,169,97,0.22);\n    --hair-strong: rgba(201,169,97,0.5);\n    --serif: 'Cormorant Garamond', 'Noto Serif TC', serif;\n    --serif-tc: 'Noto Serif TC', 'Cormorant Garamond', serif;\n    --sans: 'Inter', -apple-system, sans-serif;\n    --mono: 'JetBrains Mono', ui-monospace, monospace;\n  }\n  * { box-sizing: border-box; margin: 0; padding: 0; }\n  html, body {\n    background: var(--bg);\n    color: var(--cream);\n    font-family: var(--sans);\n    font-weight: 300;\n    -webkit-font-smoothing: antialiased;\n    text-rendering: optimizeLegibility;\n    overflow-x: hidden;\n  }\n  body { min-height: 100vh; }\n  ::selection { background: var(--gold); color: var(--bg); }\n\n  /* ——— NAV ——— */\n  nav.top {\n    position: fixed; top: 0; left: 0; right: 0; z-index: 50;\n    padding: 22px 56px;\n    display: flex; align-items: center; justify-content: space-between;\n    backdrop-filter: blur(14px);\n    background: rgba(5,8,14,0.55);\n    border-bottom: 1px solid transparent;\n    transition: border-color .4s, background .4s;\n  }\n  nav.top.scrolled { border-bottom-color: var(--hair); background: rgba(5,8,14,0.85); }\n  .brand {\n    display: flex; align-items: baseline; gap: 14px;\n    font-family: var(--serif); font-size: 22px; letter-spacing: .04em; color: var(--cream);\n  }\n  .brand .jp { font-family: var(--serif-tc); color: var(--gold); font-weight: 400; }\n  .brand .en { font-size: 11px; letter-spacing: .32em; text-transform: uppercase; color: var(--cream-dim); font-family: var(--sans); }\n  .nav-links { display: flex; gap: 40px; }\n  .nav-links a {\n    font-size: 11px; letter-spacing: .26em; text-transform: uppercase;\n    color: var(--cream-dim); text-decoration: none; transition: color .3s;\n    font-weight: 400;\n  }\n  .nav-links a:hover { color: var(--gold); }\n  .nav-cta {\n    font-size: 11px; letter-spacing: .26em; text-transform: uppercase;\n    color: var(--gold); padding: 10px 22px; border: 1px solid var(--hair-strong);\n    text-decoration: none; transition: all .3s; cursor: pointer;\n  }\n  .nav-cta:hover { background: var(--gold); color: var(--bg); border-color: var(--gold); }\n\n  /* ——— HERO ——— */\n  .hero {\n    height: 100vh; min-height: 760px; position: relative;\n    display: flex; flex-direction: column; justify-content: flex-end;\n    padding: 0 56px 0;\n    overflow: hidden;\n    border-bottom: 1px solid var(--hair);\n  }\n  .hero-grain {\n    position: absolute; inset: 0; pointer-events: none; z-index: 1;\n    background-image: radial-gradient(circle at 70% 40%, rgba(201,169,97,0.08), transparent 55%);\n  }\n  .hero-stripes {\n    position: absolute; inset: 0; pointer-events: none;\n    background-image: repeating-linear-gradient(180deg, rgba(201,169,97,0.03) 0 1px, transparent 1px 80px);\n    z-index: 0;\n  }\n  .hero-meta-top {\n    position: absolute; top: 120px; left: 56px; right: 56px; z-index: 3;\n    display: flex; justify-content: space-between; align-items: flex-start;\n    font-family: var(--mono); font-size: 10.5px; letter-spacing: .22em;\n    color: var(--cream-dim); text-transform: uppercase;\n  }\n  .hero-meta-top .l { display: flex; flex-direction: column; gap: 6px; }\n  .hero-meta-top .l span:first-child { color: var(--gold); }\n  .hero-meta-top .r { text-align: right; display: flex; flex-direction: column; gap: 6px; }\n  .hero-body { position: relative; z-index: 3; padding-bottom: 120px; max-width: 1400px; }\n  .hero-eyebrow {\n    display: flex; align-items: center; gap: 18px;\n    font-family: var(--mono); font-size: 11px; letter-spacing: .32em;\n    color: var(--gold); text-transform: uppercase; margin-bottom: 40px;\n  }\n  .hero-eyebrow .dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }\n  .hero-eyebrow .line { flex: 0 0 56px; height: 1px; background: var(--gold); opacity: .5; }\n  .hero h1 {\n    font-family: var(--serif);\n    font-size: clamp(56px, 7.6vw, 128px);\n    font-weight: 300;\n    line-height: 0.96;\n    letter-spacing: -0.018em;\n    color: var(--cream);\n    max-width: 18ch;\n    text-wrap: balance;\n  }\n  .hero h1 .it { font-style: italic; font-weight: 300; color: var(--gold); }\n  .hero h1 .em { font-family: var(--serif-tc); font-weight: 300; }\n  .hero-sub {\n    margin-top: 40px;\n    font-family: var(--serif); font-style: italic;\n    font-size: clamp(18px, 1.5vw, 22px);\n    color: var(--gold);\n    max-width: 58ch; line-height: 1.45; font-weight: 300;\n  }\n  .hero-strip {\n    position: relative; z-index: 3;\n    display: grid; grid-template-columns: repeat(3, 1fr);\n    border-top: 1px solid var(--hair);\n    margin: 0 -56px;\n  }\n  .hero-strip .cell {\n    padding: 32px 56px; border-right: 1px solid var(--hair);\n    display: flex; flex-direction: column; gap: 8px;\n  }\n  .hero-strip .cell:last-child { border-right: none; }\n  .hero-strip .k {\n    font-family: var(--serif); font-size: 42px; font-weight: 300;\n    color: var(--gold); line-height: 1; letter-spacing: -.01em;\n  }\n  .hero-strip .k .s { font-size: 22px; color: var(--cream-dim); margin-left: 4px; }\n  .hero-strip .v {\n    font-family: var(--mono); font-size: 10.5px;\n    letter-spacing: .28em; color: var(--cream-dim); text-transform: uppercase;\n  }\n\n  /* Uni illustrative mark (pure placeholder, geometric only) */\n  .hero-mark {\n    position: absolute; right: 56px; bottom: 220px; z-index: 2;\n    width: 320px; height: 320px;\n    border: 1px solid var(--hair);\n    display: flex; align-items: center; justify-content: center;\n    background: var(--bg-2);\n  }\n  .hero-mark::before {\n    content: ''; width: 180px; height: 180px; border-radius: 50%;\n    background: repeating-linear-gradient(45deg, rgba(201,169,97,0.15) 0 1px, transparent 1px 8px);\n    border: 1px solid var(--hair-strong);\n  }\n  .hero-mark .tag {\n    position: absolute; bottom: 18px; left: 22px;\n    font-family: var(--mono); font-size: 9.5px; letter-spacing: .24em;\n    color: var(--cream-dim); text-transform: uppercase;\n  }\n  .hero-mark .tag b { color: var(--gold); font-weight: 400; }\n\n  /* ——— SECTION UTILITIES ——— */\n  section { position: relative; }\n  .sec-label {\n    font-family: var(--mono); font-size: 10.5px; letter-spacing: .3em;\n    color: var(--gold); text-transform: uppercase;\n    display: flex; align-items: center; gap: 14px;\n  }\n  .sec-label .num { color: var(--cream-dim); }\n  .sec-label .line { flex: 0 0 40px; height: 1px; background: var(--hair-strong); }\n  h2.display {\n    font-family: var(--serif); font-weight: 300;\n    font-size: clamp(44px, 5.4vw, 84px); line-height: 1.02;\n    letter-spacing: -.015em; color: var(--cream);\n    text-wrap: balance;\n  }\n  h2.display .it { font-style: italic; color: var(--gold); }\n  h2.display .tc { font-family: var(--serif-tc); }\n  .pad { padding: 0 56px; }\n\n  /* ——— BRAND STATEMENT ——— */\n  .statement {\n    padding: 160px 56px 180px;\n    border-bottom: 1px solid var(--hair);\n    display: grid; grid-template-columns: 1fr 1.05fr; gap: 96px; align-items: start;\n  }\n  .statement .left { position: sticky; top: 140px; }\n  .statement h2 { margin-top: 32px; }\n  .statement .body {\n    padding-top: 12px;\n    border-top: 1px solid var(--hair);\n  }\n  .statement .body p {\n    font-family: var(--serif); font-weight: 300;\n    font-size: 22px; line-height: 1.55; color: var(--cream);\n    margin-top: 28px; max-width: 52ch;\n  }\n  .statement .body p.small {\n    font-family: var(--sans); font-size: 14px; color: var(--cream-dim);\n    line-height: 1.7; max-width: 54ch; letter-spacing: .01em;\n  }\n  .statement .sig {\n    margin-top: 56px; display: flex; gap: 40px; align-items: baseline;\n    font-family: var(--mono); font-size: 10.5px; letter-spacing: .26em;\n    color: var(--cream-dim); text-transform: uppercase;\n  }\n  .statement .sig b { color: var(--gold); font-weight: 400; }\n\n  /* JAPAN MAP — abstract, geometric */\n  .map-wrap {\n    margin-top: 64px;\n    border: 1px solid var(--hair);\n    aspect-ratio: 1 / 1;\n    position: relative;\n    background:\n      linear-gradient(rgba(201,169,97,0.035), rgba(201,169,97,0.035)),\n      var(--bg-2);\n  }\n  .map-wrap svg { width: 100%; height: 100%; display: block; }\n  .map-label {\n    position: absolute;\n    font-family: var(--mono); font-size: 10px; letter-spacing: .22em;\n    color: var(--cream-dim); text-transform: uppercase;\n    display: flex; flex-direction: column; gap: 4px;\n  }\n  .map-label b { color: var(--gold); font-family: var(--serif-tc); font-size: 14px; letter-spacing: .08em; font-weight: 400; }\n  .map-label::before {\n    content: ''; width: 8px; height: 8px; border: 1px solid var(--gold);\n    background: var(--bg); position: absolute;\n  }\n  .map-corner {\n    position: absolute; font-family: var(--mono); font-size: 9.5px;\n    letter-spacing: .24em; color: var(--cream-dim); text-transform: uppercase;\n  }\n\n  /* ——— SIGNATURE PRODUCT (pinned scroll) ——— */\n  .signature {\n    border-bottom: 1px solid var(--hair);\n  }\n  .signature-head {\n    padding: 140px 56px 80px; display: grid;\n    grid-template-columns: 1fr 1fr; gap: 80px; align-items: end;\n  }\n  .signature-head .right {\n    font-family: var(--serif); font-size: 22px; line-height: 1.5;\n    color: var(--cream-dim); font-weight: 300; font-style: italic;\n    max-width: 52ch;\n  }\n  .uni-item {\n    display: grid; grid-template-columns: 1fr 1fr; gap: 0;\n    border-top: 1px solid var(--hair);\n    min-height: 640px;\n  }\n  .uni-item .media {\n    position: relative;\n    background: var(--bg-2);\n    border-right: 1px solid var(--hair);\n    display: flex; align-items: center; justify-content: center;\n    overflow: hidden;\n  }\n  .uni-item .media .ph {\n    width: 72%; aspect-ratio: 1 / 1;\n    background:\n      repeating-linear-gradient(135deg, rgba(201,169,97,0.07) 0 1px, transparent 1px 14px),\n      radial-gradient(circle at 50% 50%, rgba(201,169,97,0.12), transparent 62%);\n    border: 1px solid var(--hair);\n    border-radius: 50%;\n    display: flex; align-items: center; justify-content: center;\n    position: relative;\n  }\n  .uni-item .media .ph::after {\n    content: attr(data-label);\n    font-family: var(--mono); font-size: 10px; letter-spacing: .24em;\n    color: var(--cream-dim); text-transform: uppercase;\n    position: absolute; bottom: -32px;\n  }\n  .uni-item .media .corners {\n    position: absolute; inset: 24px; pointer-events: none;\n  }\n  .uni-item .media .corners::before,\n  .uni-item .media .corners::after {\n    content: ''; position: absolute; width: 14px; height: 14px;\n    border: 1px solid var(--gold);\n  }\n  .uni-item .media .corners::before { top: 0; left: 0; border-right: none; border-bottom: none; }\n  .uni-item .media .corners::after  { bottom: 0; right: 0; border-left: none; border-top: none; }\n  .uni-item .media .frame-no {\n    position: absolute; top: 24px; right: 28px;\n    font-family: var(--mono); font-size: 10px; letter-spacing: .26em;\n    color: var(--gold); text-transform: uppercase;\n  }\n  .uni-item .info { padding: 80px 72px; display: flex; flex-direction: column; justify-content: space-between; }\n  .uni-item .info .idx {\n    font-family: var(--mono); font-size: 11px; letter-spacing: .3em;\n    color: var(--gold); text-transform: uppercase; display: flex; gap: 14px; align-items: center;\n  }\n  .uni-item .info .idx .line { flex: 0 0 40px; height: 1px; background: var(--gold); opacity: .5; }\n  .uni-item .info h3 {\n    font-family: var(--serif-tc); font-weight: 300;\n    font-size: 80px; line-height: 1; letter-spacing: -.02em;\n    color: var(--cream); margin-top: 32px;\n  }\n  .uni-item .info h3 .en {\n    display: block; font-family: var(--serif); font-style: italic;\n    font-size: 30px; color: var(--gold); letter-spacing: .01em; margin-top: 10px;\n  }\n  .uni-item .info .desc {\n    font-family: var(--serif); font-size: 18px; line-height: 1.55;\n    color: var(--cream); max-width: 42ch; margin-top: 36px; font-weight: 300;\n  }\n  .uni-item .info .specs {\n    display: grid; grid-template-columns: repeat(3, 1fr);\n    border-top: 1px solid var(--hair); margin-top: 48px;\n  }\n  .uni-item .info .specs .cell {\n    padding: 22px 18px 0 0;\n  }\n  .uni-item .info .specs .k {\n    font-family: var(--mono); font-size: 9.5px; letter-spacing: .26em;\n    color: var(--cream-dim); text-transform: uppercase;\n  }\n  .uni-item .info .specs .v {\n    font-family: var(--serif); font-size: 22px; color: var(--gold);\n    margin-top: 8px; font-weight: 300;\n  }\n\n  /* ——— PRODUCT GRID ——— */\n  .grid-sec {\n    padding: 160px 56px 180px; border-bottom: 1px solid var(--hair);\n  }\n  .grid-head {\n    display: flex; justify-content: space-between; align-items: end;\n    margin-bottom: 80px; gap: 40px;\n  }\n  .grid-head .meta {\n    font-family: var(--mono); font-size: 10.5px; letter-spacing: .26em;\n    color: var(--cream-dim); text-transform: uppercase;\n    display: flex; gap: 28px;\n  }\n  .grid-head .meta b { color: var(--gold); font-weight: 400; }\n  .product-grid {\n    display: grid; grid-template-columns: repeat(3, 1fr);\n    border-top: 1px solid var(--hair-strong);\n    border-left: 1px solid var(--hair-strong);\n  }\n  .p-card {\n    border-right: 1px solid var(--hair-strong);\n    border-bottom: 1px solid var(--hair-strong);\n    padding: 32px 32px 28px;\n    position: relative; cursor: pointer;\n    transition: background .5s;\n    min-height: 440px;\n    display: flex; flex-direction: column;\n  }\n  .p-card:hover { background: rgba(201,169,97,0.04); }\n  .p-card .region {\n    position: absolute; top: 28px; right: 28px;\n    font-family: var(--mono); font-size: 9px; letter-spacing: .26em;\n    color: var(--gold); text-transform: uppercase;\n    padding: 5px 10px; border: 1px solid var(--hair-strong);\n  }\n  .p-card .img {\n    aspect-ratio: 1 / 1; margin: 32px 0 28px;\n    background:\n      repeating-linear-gradient(45deg, rgba(201,169,97,0.06) 0 1px, transparent 1px 12px),\n      var(--bg-2);\n    border: 1px solid var(--hair);\n    position: relative;\n    display: flex; align-items: center; justify-content: center;\n    transition: border-color .4s;\n  }\n  .p-card:hover .img { border-color: var(--hair-strong); }\n  .p-card .img .mark {\n    width: 46%; height: 46%;\n    border: 1px solid var(--hair-strong);\n    border-radius: 50%;\n    background: radial-gradient(circle, rgba(201,169,97,0.10), transparent 70%);\n  }\n  .p-card .img .ref {\n    position: absolute; bottom: 10px; left: 12px;\n    font-family: var(--mono); font-size: 9px; letter-spacing: .22em;\n    color: var(--cream-dim); text-transform: uppercase;\n  }\n  .p-card .name-tc {\n    font-family: var(--serif-tc); font-size: 26px; color: var(--cream);\n    font-weight: 400; letter-spacing: .02em;\n  }\n  .p-card .name-en {\n    font-family: var(--serif); font-style: italic; font-size: 16px;\n    color: var(--cream-dim); margin-top: 4px; font-weight: 300;\n  }\n  .p-card .foot {\n    margin-top: auto; padding-top: 20px;\n    display: flex; justify-content: space-between; align-items: baseline;\n    border-top: 1px solid var(--hair);\n  }\n  .p-card .sku {\n    font-family: var(--mono); font-size: 10px; letter-spacing: .22em;\n    color: var(--cream-dim); text-transform: uppercase;\n  }\n  .p-card .price {\n    font-family: var(--serif); font-size: 22px; color: var(--gold);\n    font-weight: 300; opacity: 0; transform: translateY(4px);\n    transition: opacity .35s, transform .35s;\n  }\n  .p-card .price .cur { font-family: var(--mono); font-size: 10px; letter-spacing: .2em; color: var(--cream-dim); margin-right: 6px; }\n  .p-card:hover .price { opacity: 1; transform: translateY(0); }\n  .p-card .hidden-price { font-family: var(--mono); font-size: 10px; letter-spacing: .22em; color: var(--cream-dim); text-transform: uppercase; }\n  .p-card:hover .hidden-price { opacity: 0; }\n\n  /* ——— COLD CHAIN ——— */\n  .chain-sec {\n    padding: 160px 56px 180px; border-bottom: 1px solid var(--hair);\n    overflow: hidden;\n  }\n  .chain-head { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; margin-bottom: 100px; }\n  .chain-head .right { font-family: var(--serif); font-size: 20px; font-style: italic; color: var(--cream-dim); line-height: 1.55; max-width: 50ch; }\n  .chain-trademark { font-family: var(--serif); font-style: italic; color: var(--gold); }\n  .chain-trademark sup { font-family: var(--sans); font-size: .5em; color: var(--gold-dim); margin-left: 2px; }\n\n  .chain-rail {\n    position: relative;\n    border-top: 1px solid var(--hair-strong);\n    padding-top: 0;\n  }\n  .chain-rail .track {\n    position: absolute; top: -1px; left: 0; right: 0; height: 1px;\n    background: var(--gold); width: 0%;\n    transition: width 1.6s cubic-bezier(.2,.7,.2,1);\n  }\n  .chain-steps {\n    display: grid; grid-template-columns: repeat(6, 1fr);\n  }\n  .chain-step {\n    padding: 40px 28px 0;\n    border-right: 1px solid var(--hair);\n    position: relative;\n    min-height: 320px;\n  }\n  .chain-step:last-child { border-right: none; }\n  .chain-step::before {\n    content: ''; position: absolute; top: -5px; left: 28px;\n    width: 9px; height: 9px; border-radius: 50%;\n    background: var(--bg); border: 1px solid var(--gold);\n    transition: background .4s;\n  }\n  .chain-step.active::before { background: var(--gold); }\n  .chain-step .h {\n    font-family: var(--mono); font-size: 11px; letter-spacing: .3em;\n    color: var(--gold); text-transform: uppercase;\n  }\n  .chain-step .title {\n    font-family: var(--serif); font-weight: 300;\n    font-size: 30px; color: var(--cream); margin-top: 20px; line-height: 1.1;\n  }\n  .chain-step .title .tc { font-family: var(--serif-tc); display: block; font-size: 18px; color: var(--cream-dim); margin-top: 6px; letter-spacing: .05em; }\n  .chain-step .desc {\n    font-family: var(--sans); font-size: 13px; line-height: 1.65;\n    color: var(--cream-dim); margin-top: 18px; max-width: 26ch;\n  }\n  .chain-step .temp {\n    position: absolute; bottom: 28px; left: 28px;\n    padding: 6px 12px; border: 1px solid var(--hair-strong);\n    font-family: var(--mono); font-size: 10px; letter-spacing: .22em;\n    color: var(--gold); text-transform: uppercase;\n    display: flex; align-items: center; gap: 8px;\n  }\n  .chain-step .temp .dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; }\n\n  .chain-foot {\n    margin-top: 80px; padding-top: 32px; border-top: 1px solid var(--hair);\n    display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px;\n  }\n  .chain-foot .cell .k {\n    font-family: var(--mono); font-size: 10px; letter-spacing: .26em;\n    color: var(--cream-dim); text-transform: uppercase;\n  }\n  .chain-foot .cell .v {\n    font-family: var(--serif); font-size: 28px; font-weight: 300;\n    color: var(--gold); margin-top: 10px; letter-spacing: -.005em;\n  }\n  .chain-foot .cell .v small { font-family: var(--mono); font-size: 11px; color: var(--cream-dim); letter-spacing: .2em; margin-left: 6px; }\n\n  /* ——— TRUST (cream break) ——— */\n  .trust {\n    background: var(--cream); color: var(--bg);\n    padding: 160px 56px 180px;\n    position: relative;\n  }\n  .trust::before, .trust::after {\n    content: ''; position: absolute; left: 0; right: 0; height: 1px;\n    background: rgba(5,8,14,0.1);\n  }\n  .trust::before { top: 0; } .trust::after { bottom: 0; }\n  .trust-head {\n    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end;\n    margin-bottom: 100px;\n  }\n  .trust .sec-label { color: #7a6a4a; }\n  .trust .sec-label .num { color: rgba(5,8,14,0.4); }\n  .trust .sec-label .line { background: rgba(5,8,14,0.25); }\n  .trust h2.display { color: var(--bg); }\n  .trust h2.display .it { color: #8a7440; }\n  .trust .right { font-family: var(--serif); font-size: 20px; font-style: italic; color: rgba(5,8,14,0.65); line-height: 1.55; max-width: 50ch; }\n\n  .partners-grid {\n    display: grid; grid-template-columns: repeat(6, 1fr);\n    border-top: 1px solid rgba(5,8,14,0.12);\n    border-left: 1px solid rgba(5,8,14,0.12);\n  }\n  .partner {\n    aspect-ratio: 5/3;\n    border-right: 1px solid rgba(5,8,14,0.12);\n    border-bottom: 1px solid rgba(5,8,14,0.12);\n    display: flex; flex-direction: column; align-items: center; justify-content: center;\n    padding: 20px; text-align: center;\n    transition: background .4s;\n  }\n  .partner:hover { background: rgba(5,8,14,0.03); }\n  .partner .n {\n    font-family: var(--serif); font-size: 20px; font-weight: 400;\n    color: var(--bg); letter-spacing: .01em; line-height: 1.1;\n  }\n  .partner .t {\n    font-family: var(--mono); font-size: 9px; letter-spacing: .26em;\n    color: rgba(5,8,14,0.5); text-transform: uppercase; margin-top: 8px;\n  }\n  .partner .star { color: #8a7440; font-size: 11px; margin-top: 4px; letter-spacing: .4em; }\n\n  .trust-quote {\n    margin-top: 120px;\n    display: grid; grid-template-columns: 180px 1fr; gap: 60px;\n    padding-top: 60px; border-top: 1px solid rgba(5,8,14,0.15);\n  }\n  .trust-quote .attr {\n    font-family: var(--mono); font-size: 10px; letter-spacing: .26em;\n    color: rgba(5,8,14,0.6); text-transform: uppercase;\n  }\n  .trust-quote .attr b { display: block; color: var(--bg); font-family: var(--serif); font-size: 16px; text-transform: none; letter-spacing: .02em; margin-bottom: 6px; font-weight: 400; }\n  .trust-quote blockquote {\n    font-family: var(--serif); font-weight: 300; font-style: italic;\n    font-size: clamp(28px, 3vw, 44px); line-height: 1.18;\n    color: var(--bg); max-width: 32ch; letter-spacing: -.01em;\n  }\n  .trust-quote blockquote::before { content: '“'; color: #8a7440; margin-right: 6px; font-style: normal; }\n  .trust-quote blockquote::after { content: '”'; color: #8a7440; margin-left: 4px; font-style: normal; }\n\n  /* ——— B2B CTA ——— */\n  .cta-sec {\n    padding: 160px 56px 140px;\n    border-bottom: 1px solid var(--hair);\n  }\n  .cta-head { margin-bottom: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; }\n  .cta-head .right { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--cream-dim); line-height: 1.55; max-width: 50ch; }\n  .cta-cards {\n    display: grid; grid-template-columns: 1fr 1fr; gap: 0;\n    border: 1px solid var(--hair-strong);\n  }\n  .cta-card {\n    padding: 64px 56px;\n    position: relative;\n    min-height: 520px;\n    display: flex; flex-direction: column;\n  }\n  .cta-card.left { border-right: 1px solid var(--hair-strong); }\n  .cta-card.primary { background: var(--bg-2); }\n  .cta-card .tag {\n    font-family: var(--mono); font-size: 10.5px; letter-spacing: .3em;\n    color: var(--gold); text-transform: uppercase;\n    display: flex; align-items: center; gap: 14px;\n  }\n  .cta-card .tag .line { flex: 0 0 32px; height: 1px; background: var(--gold); opacity: .5; }\n  .cta-card h3 {\n    font-family: var(--serif-tc); font-weight: 300;\n    font-size: 52px; color: var(--cream); margin-top: 28px; letter-spacing: -.01em; line-height: 1.05;\n  }\n  .cta-card h3 .en {\n    display: block; font-family: var(--serif); font-style: italic;\n    font-size: 26px; color: var(--gold); margin-top: 12px;\n  }\n  .cta-card p {\n    font-family: var(--serif); font-size: 19px; line-height: 1.55;\n    color: var(--cream); margin-top: 32px; max-width: 40ch; font-weight: 300;\n  }\n  .cta-card ul {\n    list-style: none; margin-top: 36px;\n    display: flex; flex-direction: column; gap: 14px;\n  }\n  .cta-card ul li {\n    font-family: var(--sans); font-size: 13px; color: var(--cream-dim);\n    letter-spacing: .02em; display: flex; gap: 14px; align-items: baseline;\n    padding-bottom: 12px; border-bottom: 1px solid var(--hair);\n  }\n  .cta-card ul li::before {\n    content: '—'; color: var(--gold); font-family: var(--mono);\n  }\n  .cta-card .btn-row {\n    margin-top: auto; padding-top: 48px;\n    display: flex; gap: 18px; align-items: center;\n  }\n  .btn-solid {\n    padding: 20px 36px; border: 1px solid var(--gold); background: var(--gold);\n    color: var(--bg); font-family: var(--sans); font-size: 11px;\n    letter-spacing: .3em; text-transform: uppercase; cursor: pointer;\n    transition: all .35s; font-weight: 500;\n  }\n  .btn-solid:hover { background: transparent; color: var(--gold); }\n  .btn-ghost {\n    padding: 20px 36px; border: 1px solid var(--hair-strong); background: transparent;\n    color: var(--cream); font-family: var(--sans); font-size: 11px;\n    letter-spacing: .3em; text-transform: uppercase; cursor: pointer;\n    transition: all .35s; font-weight: 500;\n  }\n  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }\n  .cta-card .fine {\n    margin-top: 20px; font-family: var(--mono); font-size: 10px;\n    letter-spacing: .22em; color: var(--cream-dim); text-transform: uppercase;\n  }\n  .cta-card .serial {\n    position: absolute; top: 32px; right: 40px;\n    font-family: var(--mono); font-size: 10px; letter-spacing: .26em;\n    color: var(--cream-dim); text-transform: uppercase;\n  }\n\n  /* ——— FOOTER ——— */\n  footer {\n    padding: 80px 56px 56px;\n    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 56px;\n  }\n  footer .brand-f { font-family: var(--serif); font-size: 26px; letter-spacing: .02em; }\n  footer .brand-f .jp { font-family: var(--serif-tc); color: var(--gold); font-weight: 400; display: block; margin-bottom: 6px; }\n  footer .brand-f .en { font-size: 11px; letter-spacing: .3em; color: var(--cream-dim); text-transform: uppercase; font-family: var(--sans); margin-top: 24px; display: block; max-width: 40ch; line-height: 1.8; }\n  footer h5 {\n    font-family: var(--mono); font-size: 10px; letter-spacing: .3em;\n    color: var(--gold); text-transform: uppercase; font-weight: 400;\n    margin-bottom: 22px;\n  }\n  footer ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }\n  footer ul li { font-family: var(--sans); font-size: 13px; color: var(--cream-dim); }\n  footer ul li a { color: var(--cream-dim); text-decoration: none; transition: color .3s; }\n  footer ul li a:hover { color: var(--gold); }\n  .foot-btm {\n    margin: 56px 56px 0; padding: 28px 0;\n    border-top: 1px solid var(--hair);\n    display: flex; justify-content: space-between;\n    font-family: var(--mono); font-size: 10px; letter-spacing: .22em;\n    color: var(--cream-dim); text-transform: uppercase;\n  }\n\n  /* reveal */\n  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 1s, transform 1s; }\n  .reveal.in { opacity: 1; transform: none; }\n\n  @media (max-width: 1100px) {\n    nav.top, .hero, .pad, .statement, .signature-head, .grid-sec, .chain-sec, .trust, .cta-sec, footer, .foot-btm { padding-left: 32px !important; padding-right: 32px !important; }\n    .hero-meta-top { left: 32px; right: 32px; }\n    .hero-strip { margin: 0 -32px; }\n    .statement, .chain-head, .signature-head, .cta-head, .trust-head { grid-template-columns: 1fr !important; gap: 48px !important; }\n    .statement .left { position: static; }\n    .uni-item { grid-template-columns: 1fr; }\n    .uni-item .media { border-right: none; border-bottom: 1px solid var(--hair); min-height: 420px; }\n    .uni-item .info { padding: 56px 32px; }\n    .product-grid, .partners-grid { grid-template-columns: repeat(2, 1fr); }\n    .chain-steps { grid-template-columns: repeat(2, 1fr); }\n    .chain-step { border-bottom: 1px solid var(--hair); }\n    .cta-cards { grid-template-columns: 1fr; }\n    .cta-card.left { border-right: none; border-bottom: 1px solid var(--hair-strong); }\n    .hero-mark { display: none; }\n    footer { grid-template-columns: 1fr 1fr; }\n    .nav-links { display: none; }\n  }\n</style>\n</head>\n<body>\n\n<!-- NAV -->\n<nav class=\"top\" id=\"nav\">\n  <div class=\"brand\">\n    <span class=\"jp\">稻荷</span>\n    <span>Inari</span>\n    <span class=\"en\">Global Foods · Est. 2008</span>\n  </div>\n  <div class=\"nav-links\">\n    <a href=\"#statement\">Philosophy</a>\n    <a href=\"#signature\">Signature</a>\n    <a href=\"#catalogue\">Catalogue</a>\n    <a href=\"#chain\">Cold Chain</a>\n    <a href=\"#trust\">Partners</a>\n  </div>\n  <a href=\"#cta\" class=\"nav-cta\">批發申請 · Wholesale</a>\n</nav>\n\n<!-- HERO -->\n<section class=\"hero\">\n  <div class=\"hero-stripes\"></div>\n  <div class=\"hero-grain\"></div>\n\n  <div class=\"hero-meta-top\">\n    <div class=\"l\">\n      <span>⊛ Ref. INR–MFM–2008</span>\n      <span>Macau SAR · Since 2008</span>\n    </div>\n    <div class=\"r\">\n      <span>Cold Chain Active · 3.2°C</span>\n      <span>北海道 / 青森 / 長崎</span>\n    </div>\n  </div>\n\n  <div class=\"hero-mark\">\n    <div class=\"tag\"><span>Plate 01 / <b>雲丹</b> · UNI</span></div>\n  </div>\n\n  <div class=\"hero-body\">\n    <div class=\"hero-eyebrow\">\n      <span class=\"dot\"></span>\n      <span>Japan's Finest, Delivered to Macau</span>\n      <span class=\"line\"></span>\n      <span>Chapter 001</span>\n    </div>\n    <h1>From Hokkaido <span class=\"it\">fisheries</span><br>to Macau's <span class=\"em\">米其林</span> tables<br>in <span class=\"it\">48 hours.</span></h1>\n    <p class=\"hero-sub\">A single cold chain, maintained at two to five degrees — from the <b style=\"font-family:var(--serif-tc);font-weight:400;color:var(--gold)\">漁業協同組合</b> dockside auctions to the hands of Macau's most demanding chefs.</p>\n  </div>\n\n  <div class=\"hero-strip\">\n    <div class=\"cell\">\n      <span class=\"k\">70<span class=\"s\">%</span></span>\n      <span class=\"v\">Macau Market Share · B2B Uni</span>\n    </div>\n    <div class=\"cell\">\n      <span class=\"k\">100<span class=\"s\">+</span></span>\n      <span class=\"v\">Michelin & Black Pearl Kitchens</span>\n    </div>\n    <div class=\"cell\">\n      <span class=\"k\">48<span class=\"s\">h</span></span>\n      <span class=\"v\">Cold Chain · 2–5°C Monitored</span>\n    </div>\n  </div>\n</section>\n\n<!-- BRAND STATEMENT -->\n<section class=\"statement\" id=\"statement\">\n  <div class=\"left\">\n    <div class=\"sec-label\"><span class=\"num\">002 —</span><span>Philosophy</span><span class=\"line\"></span></div>\n    <h2 class=\"display\">We don't ship <span class=\"it\">seafood.</span><br>We ship <span class=\"tc it\">信任</span><span class=\"it\">.</span></h2>\n  </div>\n  <div class=\"right\">\n    <div class=\"body\">\n      <p>Eighteen years ago, we were a single ice chest on a late-night flight out of New Chitose. One chef. One order. One promise: that what arrived in Macau would taste of the sea it was lifted from that morning.</p>\n      <p class=\"small\">Today,稻荷環球食品 supplies more than one hundred of the city's Michelin-starred and Black Pearl kitchens. The ice chest has become a monitored cold chain. The promise is unchanged. Every tray leaves Hokkaido, Aomori or Nagasaki under the same protocol — two to five degrees Celsius, IoT-verified, documented from auction floor to stainless counter.</p>\n      <p class=\"small\">Our cooperatives select the board. Our couriers carry the weight. Our chefs do the rest.</p>\n    </div>\n    <div class=\"sig\">\n      <span><b>Tanaka Ryō</b><br>Founder · 創業者</span>\n      <span>Macau · Hong Kong · Tokyo</span>\n    </div>\n\n    <!-- JAPAN ABSTRACT MAP -->\n    <div class=\"map-wrap\">\n      <svg viewBox=\"0 0 600 600\" preserveAspectRatio=\"none\">\n        <defs>\n          <pattern id=\"dots\" width=\"12\" height=\"12\" patternUnits=\"userSpaceOnUse\">\n            <circle cx=\"1\" cy=\"1\" r=\"0.6\" fill=\"rgba(201,169,97,0.28)\" />\n          </pattern>\n        </defs>\n        <!-- subtle grid -->\n        <g stroke=\"rgba(201,169,97,0.08)\" stroke-width=\"0.5\">\n          <line x1=\"0\" y1=\"150\" x2=\"600\" y2=\"150\"/>\n          <line x1=\"0\" y1=\"300\" x2=\"600\" y2=\"300\"/>\n          <line x1=\"0\" y1=\"450\" x2=\"600\" y2=\"450\"/>\n          <line x1=\"150\" y1=\"0\" x2=\"150\" y2=\"600\"/>\n          <line x1=\"300\" y1=\"0\" x2=\"300\" y2=\"600\"/>\n          <line x1=\"450\" y1=\"0\" x2=\"450\" y2=\"600\"/>\n        </g>\n        <!-- Abstract Japan archipelago: rectangles angled, representing islands generically -->\n        <g fill=\"url(#dots)\" stroke=\"rgba(201,169,97,0.4)\" stroke-width=\"0.75\">\n          <!-- Hokkaido -->\n          <path d=\"M 360 90 L 470 100 L 500 160 L 470 200 L 400 210 L 360 180 Z\"/>\n          <!-- Honshu -->\n          <path d=\"M 250 220 L 340 230 L 400 280 L 440 340 L 430 380 L 360 380 L 300 340 L 240 280 Z\"/>\n          <!-- Shikoku -->\n          <path d=\"M 260 390 L 320 395 L 320 420 L 260 420 Z\"/>\n          <!-- Kyushu -->\n          <path d=\"M 150 380 L 220 390 L 240 440 L 210 490 L 170 490 L 140 450 Z\"/>\n        </g>\n\n        <!-- Routes to Macau (bottom-left corner) -->\n        <g stroke=\"rgba(201,169,97,0.55)\" stroke-width=\"0.8\" fill=\"none\" stroke-dasharray=\"4 4\">\n          <path d=\"M 430 150 C 300 250, 200 400, 60 560\"/>\n          <path d=\"M 320 260 C 260 340, 180 430, 60 560\"/>\n          <path d=\"M 195 420 C 160 470, 120 520, 60 560\"/>\n        </g>\n\n        <!-- Origin dots -->\n        <g>\n          <circle cx=\"430\" cy=\"150\" r=\"5\" fill=\"#C9A961\"/>\n          <circle cx=\"320\" cy=\"260\" r=\"5\" fill=\"#C9A961\"/>\n          <circle cx=\"195\" cy=\"420\" r=\"5\" fill=\"#C9A961\"/>\n          <!-- Macau -->\n          <rect x=\"55\" y=\"555\" width=\"10\" height=\"10\" fill=\"#C9A961\"/>\n        </g>\n      </svg>\n      <div class=\"map-label\" style=\"top: 16%; right: 12%;\"><b>北海道</b><span style=\"margin-top:14px\">Hokkaido · 01</span></div>\n      <div class=\"map-label\" style=\"top: 40%; left: 55%;\"><b>青森</b><span style=\"margin-top:14px\">Aomori · 02</span></div>\n      <div class=\"map-label\" style=\"bottom: 20%; left: 34%;\"><b>長崎</b><span style=\"margin-top:14px\">Nagasaki · 03</span></div>\n      <div class=\"map-label\" style=\"bottom: 5%; left: 14%;\"><b>澳門</b><span style=\"margin-top:14px\">Macau · Arrival</span></div>\n\n      <div class=\"map-corner\" style=\"top: 14px; left: 14px;\">⊛ Sourcing Atlas</div>\n      <div class=\"map-corner\" style=\"top: 14px; right: 14px;\">N 43° / E 141°</div>\n      <div class=\"map-corner\" style=\"bottom: 14px; left: 14px;\">3 cooperatives</div>\n      <div class=\"map-corner\" style=\"bottom: 14px; right: 14px;\">2,847 km route</div>\n    </div>\n  </div>\n</section>\n\n<!-- SIGNATURE PRODUCT -->\n<section class=\"signature\" id=\"signature\">\n  <div class=\"signature-head\">\n    <div>\n      <div class=\"sec-label\"><span class=\"num\">003 —</span><span>Signature · 雲丹三種</span><span class=\"line\"></span></div>\n      <h2 class=\"display\" style=\"margin-top:32px;\">Three houses.<br>One <span class=\"it\">sea.</span></h2>\n    </div>\n    <div class=\"right\">\n      Uni is not a commodity. It is a signature — of cooperative, of season, of current. We carry three. Each arrives within hours of the auction bell.\n    </div>\n  </div>\n\n  <div class=\"uni-item\">\n    <div class=\"media\">\n      <div class=\"frame-no\">01 / 03 · Bafun</div>\n      <div class=\"corners\"></div>\n      <div class=\"ph\" data-label=\"Product plate · Bafun uni in wooden tray\"></div>\n    </div>\n    <div class=\"info\">\n      <div>\n        <div class=\"idx\"><span class=\"line\"></span><span>N° 01 · Hokkaido</span></div>\n        <h3>馬糞海膽<span class=\"en\">Bafun Uni</span></h3>\n        <p class=\"desc\">A short, dense roe. The color of setting sun. Deep umami, buttered finish — the grade Ginza counters reserve for the season's most considered omakase.</p>\n      </div>\n      <div class=\"specs\">\n        <div class=\"cell\"><div class=\"k\">Origin</div><div class=\"v\">Rishiri</div></div>\n        <div class=\"cell\"><div class=\"k\">Season</div><div class=\"v\">Jun – Aug</div></div>\n        <div class=\"cell\"><div class=\"k\">Grade</div><div class=\"v\">A⁺ Board</div></div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"uni-item\">\n    <div class=\"media\">\n      <div class=\"frame-no\">02 / 03 · Murasaki</div>\n      <div class=\"corners\"></div>\n      <div class=\"ph\" data-label=\"Product plate · Murasaki uni, pale amber\"></div>\n    </div>\n    <div class=\"info\">\n      <div>\n        <div class=\"idx\"><span class=\"line\"></span><span>N° 02 · Aomori</span></div>\n        <h3>紫海膽<span class=\"en\">Murasaki Uni</span></h3>\n        <p class=\"desc\">Long, fair, almost ivory. Clean brine, orchid-sweet, the restraint of a whispered course. Favoured by chefs composing delicate openings and cold preparations.</p>\n      </div>\n      <div class=\"specs\">\n        <div class=\"cell\"><div class=\"k\">Origin</div><div class=\"v\">Mutsu Bay</div></div>\n        <div class=\"cell\"><div class=\"k\">Season</div><div class=\"v\">Apr – Oct</div></div>\n        <div class=\"cell\"><div class=\"k\">Grade</div><div class=\"v\">A Board</div></div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"uni-item\">\n    <div class=\"media\">\n      <div class=\"frame-no\">03 / 03 · Aka</div>\n      <div class=\"corners\"></div>\n      <div class=\"ph\" data-label=\"Product plate · Aka uni, deep vermilion\"></div>\n    </div>\n    <div class=\"info\">\n      <div>\n        <div class=\"idx\"><span class=\"line\"></span><span>N° 03 · Nagasaki</span></div>\n        <h3>赤海膽<span class=\"en\">Aka Uni</span></h3>\n        <p class=\"desc\">The cardinal's robe. Warm Kyushu waters yield a roe of uncommon concentration — low volume, high character. A chef's-choice flagship, scarce by design.</p>\n      </div>\n      <div class=\"specs\">\n        <div class=\"cell\"><div class=\"k\">Origin</div><div class=\"v\">Iki Island</div></div>\n        <div class=\"cell\"><div class=\"k\">Season</div><div class=\"v\">Sep – Mar</div></div>\n        <div class=\"cell\"><div class=\"k\">Grade</div><div class=\"v\">Reserve</div></div>\n      </div>\n    </div>\n  </div>\n</section>\n\n<!-- PRODUCT GRID -->\n<section class=\"grid-sec\" id=\"catalogue\">\n  <div class=\"grid-head\">\n    <div>\n      <div class=\"sec-label\"><span class=\"num\">004 —</span><span>Catalogue · 產品目錄</span><span class=\"line\"></span></div>\n      <h2 class=\"display\" style=\"margin-top:32px;\">The full <span class=\"it\">board.</span></h2>\n    </div>\n    <div class=\"meta\">\n      <span><b>09</b> Active SKU</span>\n      <span><b>03</b> Prefectures</span>\n      <span><b>B2B</b> Access Tier</span>\n    </div>\n  </div>\n\n  <div class=\"product-grid\">\n    <!-- 1 -->\n    <div class=\"p-card\">\n      <div class=\"region\">HOKKAIDO · 北海道</div>\n      <div class=\"img\"><div class=\"mark\"></div><span class=\"ref\">PLT–001 / BFN</span></div>\n      <div class=\"name-tc\">馬糞海膽 · A⁺</div>\n      <div class=\"name-en\">Bafun Uni — Rishiri Reserve</div>\n      <div class=\"foot\">\n        <span class=\"sku\">SKU · INR-BFN-AP</span>\n        <span class=\"hidden-price\">Hover · 懸停</span>\n        <span class=\"price\"><span class=\"cur\">HKD</span>2,880 / 100g</span>\n      </div>\n    </div>\n    <!-- 2 -->\n    <div class=\"p-card\">\n      <div class=\"region\">AOMORI · 青森</div>\n      <div class=\"img\"><div class=\"mark\"></div><span class=\"ref\">PLT–002 / MRS</span></div>\n      <div class=\"name-tc\">紫海膽 · A</div>\n      <div class=\"name-en\">Murasaki — Mutsu Bay</div>\n      <div class=\"foot\">\n        <span class=\"sku\">SKU · INR-MRS-A</span>\n        <span class=\"hidden-price\">Hover · 懸停</span>\n        <span class=\"price\"><span class=\"cur\">HKD</span>1,980 / 100g</span>\n      </div>\n    </div>\n    <!-- 3 -->\n    <div class=\"p-card\">\n      <div class=\"region\">NAGASAKI · 長崎</div>\n      <div class=\"img\"><div class=\"mark\"></div><span class=\"ref\">PLT–003 / AKA</span></div>\n      <div class=\"name-tc\">赤海膽 · 特</div>\n      <div class=\"name-en\">Aka Uni — Iki Reserve</div>\n      <div class=\"foot\">\n        <span class=\"sku\">SKU · INR-AKA-R</span>\n        <span class=\"hidden-price\">Hover · 懸停</span>\n        <span class=\"price\"><span class=\"cur\">HKD</span>3,680 / 100g</span>\n      </div>\n    </div>\n    <!-- 4 -->\n    <div class=\"p-card\">\n      <div class=\"region\">HOKKAIDO · 北海道</div>\n      <div class=\"img\"><div class=\"mark\"></div><span class=\"ref\">PLT–004 / EZO</span></div>\n      <div class=\"name-tc\">蝦夷鮑魚</div>\n      <div class=\"name-en\">Ezo Abalone — Live</div>\n      <div class=\"foot\">\n        <span class=\"sku\">SKU · INR-EZO-L</span>\n        <span class=\"hidden-price\">Hover · 懸停</span>\n        <span class=\"price\"><span class=\"cur\">HKD</span>1,240 / pc</span>\n      </div>\n    </div>\n    <!-- 5 -->\n    <div class=\"p-card\">\n      <div class=\"region\">TOYAMA · 富山</div>\n      <div class=\"img\"><div class=\"mark\"></div><span class=\"ref\">PLT–005 / AMB</span></div>\n      <div class=\"name-tc\">白蝦 · 生食級</div>\n      <div class=\"name-en\">Shiroebi — Sashimi Grade</div>\n      <div class=\"foot\">\n        <span class=\"sku\">SKU · INR-SRB-S</span>\n        <span class=\"hidden-price\">Hover · 懸停</span>\n        <span class=\"price\"><span class=\"cur\">HKD</span>980 / 100g</span>\n      </div>\n    </div>\n    <!-- 6 -->\n    <div class=\"p-card\">\n      <div class=\"region\">KAGOSHIMA · 鹿兒島</div>\n      <div class=\"img\"><div class=\"mark\"></div><span class=\"ref\">PLT–006 / OTR</span></div>\n      <div class=\"name-tc\">本鮪大腹</div>\n      <div class=\"name-en\">Bluefin Ōtoro — Reserve</div>\n      <div class=\"foot\">\n        <span class=\"sku\">SKU · INR-OTR-R</span>\n        <span class=\"hidden-price\">Hover · 懸停</span>\n        <span class=\"price\"><span class=\"cur\">HKD</span>4,200 / 500g</span>\n      </div>\n    </div>\n    <!-- 7 -->\n    <div class=\"p-card\">\n      <div class=\"region\">HOKKAIDO · 北海道</div>\n      <div class=\"img\"><div class=\"mark\"></div><span class=\"ref\">PLT–007 / IKR</span></div>\n      <div class=\"name-tc\">醬油漬鮭卵</div>\n      <div class=\"name-en\">Ikura — Soy-Cured</div>\n      <div class=\"foot\">\n        <span class=\"sku\">SKU · INR-IKR-SC</span>\n        <span class=\"hidden-price\">Hover · 懸停</span>\n        <span class=\"price\"><span class=\"cur\">HKD</span>860 / 100g</span>\n      </div>\n    </div>\n    <!-- 8 -->\n    <div class=\"p-card\">\n      <div class=\"region\">EHIME · 愛媛</div>\n      <div class=\"img\"><div class=\"mark\"></div><span class=\"ref\">PLT–008 / MDI</span></div>\n      <div class=\"name-tc\">真鯛 · 活締</div>\n      <div class=\"name-en\">Madai — Ikejime, Live-Stored</div>\n      <div class=\"foot\">\n        <span class=\"sku\">SKU · INR-MDI-IK</span>\n        <span class=\"hidden-price\">Hover · 懸停</span>\n        <span class=\"price\"><span class=\"cur\">HKD</span>1,480 / kg</span>\n      </div>\n    </div>\n    <!-- 9 -->\n    <div class=\"p-card\">\n      <div class=\"region\">HYŌGO · 兵庫</div>\n      <div class=\"img\"><div class=\"mark\"></div><span class=\"ref\">PLT–009 / AWB</span></div>\n      <div class=\"name-tc\">明石真子</div>\n      <div class=\"name-en\">Akashi Octopus — Day Boat</div>\n      <div class=\"foot\">\n        <span class=\"sku\">SKU · INR-AWB-DB</span>\n        <span class=\"hidden-price\">Hover · 懸停</span>\n        <span class=\"price\"><span class=\"cur\">HKD</span>920 / kg</span>\n      </div>\n    </div>\n  </div>\n</section>\n\n<!-- COLD CHAIN -->\n<section class=\"chain-sec\" id=\"chain\">\n  <div class=\"chain-head\">\n    <div>\n      <div class=\"sec-label\"><span class=\"num\">005 —</span><span>Cold Chain Protocol<sup style=\"color:var(--gold-dim)\">™</sup></span><span class=\"line\"></span></div>\n      <h2 class=\"display\" style=\"margin-top:32px;\">Forty-eight <span class=\"it\">hours.</span><br>Two to five <span class=\"it tc\">度</span>.<br>Zero compromise.</h2>\n    </div>\n    <div class=\"right\">\n      A single unbroken chain from dockside auction to Macau kitchen — monitored by IoT sensors every sixty seconds and countersigned at four human checkpoints.\n    </div>\n  </div>\n\n  <div class=\"chain-rail\">\n    <div class=\"track\" id=\"track\"></div>\n    <div class=\"chain-steps\">\n      <div class=\"chain-step\" data-step=\"0\">\n        <div class=\"h\">0 h · Dockside</div>\n        <div class=\"title\">Auction<span class=\"tc\">漁港競り</span></div>\n        <div class=\"desc\">Cooperative auction. Each specimen tagged at the moment of selection — origin, boat, time.</div>\n        <div class=\"temp\"><span class=\"dot\"></span>Ambient · packed on ice</div>\n      </div>\n      <div class=\"chain-step\" data-step=\"1\">\n        <div class=\"h\">4 h · Processing</div>\n        <div class=\"title\">Grading<span class=\"tc\">選別</span></div>\n        <div class=\"desc\">Hand-graded in cooperative facility. Cold room set to 3°C. First IoT sensor attached.</div>\n        <div class=\"temp\"><span class=\"dot\"></span>3.0 °C · sensor active</div>\n      </div>\n      <div class=\"chain-step\" data-step=\"2\">\n        <div class=\"h\">12 h · Haneda</div>\n        <div class=\"title\">Tarmac<span class=\"tc\">航空便</span></div>\n        <div class=\"desc\">Direct freight to HND / NRT. Reefer ULD containers pre-chilled to 2.5°C before load.</div>\n        <div class=\"temp\"><span class=\"dot\"></span>2.5 °C · reefer ULD</div>\n      </div>\n      <div class=\"chain-step\" data-step=\"3\">\n        <div class=\"h\">24 h · Hong Kong</div>\n        <div class=\"title\">Customs<span class=\"tc\">通關</span></div>\n        <div class=\"desc\">Priority clearance at HKG. Bonded cold room hold, four-minute dwell before cross-border dispatch.</div>\n        <div class=\"temp\"><span class=\"dot\"></span>3.2 °C · bonded hold</div>\n      </div>\n      <div class=\"chain-step\" data-step=\"4\">\n        <div class=\"h\">40 h · Macau</div>\n        <div class=\"title\">Facility<span class=\"tc\">澳門冷庫</span></div>\n        <div class=\"desc\">Arrival at Inari's Macau cold facility. Temperature log signed, chef portal notified.</div>\n        <div class=\"temp\"><span class=\"dot\"></span>2.8 °C · signed off</div>\n      </div>\n      <div class=\"chain-step\" data-step=\"5\">\n        <div class=\"h\">48 h · Kitchen</div>\n        <div class=\"title\">Counter<span class=\"tc\">主廚檯</span></div>\n        <div class=\"desc\">Hand-delivered to the pass. Chef countersigns on tablet. Chain closes.</div>\n        <div class=\"temp\"><span class=\"dot\"></span>4.0 °C · received</div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"chain-foot\">\n    <div class=\"cell\"><div class=\"k\">Sensor Reads</div><div class=\"v\">2,880<small>per shipment</small></div></div>\n    <div class=\"cell\"><div class=\"k\">Human Sign-offs</div><div class=\"v\">4<small>checkpoints</small></div></div>\n    <div class=\"cell\"><div class=\"k\">Target Window</div><div class=\"v\">2–5<small>°C held</small></div></div>\n    <div class=\"cell\"><div class=\"k\">On-Time · 12mo</div><div class=\"v\">99.6<small>%</small></div></div>\n  </div>\n</section>\n\n<!-- TRUST -->\n<section class=\"trust\" id=\"trust\">\n  <div class=\"trust-head\">\n    <div>\n      <div class=\"sec-label\"><span class=\"num\">006 —</span><span>Elite Kitchens · 信賴</span><span class=\"line\"></span></div>\n      <h2 class=\"display\">Trusted by one hundred<br><span class=\"it\">of Macau's most</span><br>considered kitchens.</h2>\n    </div>\n    <div class=\"right\">\n      A partial list. Members of our chef programme prefer discretion; the counter speaks for itself.\n    </div>\n  </div>\n\n  <div class=\"partners-grid\">\n    <div class=\"partner\"><div class=\"n\">Omakase Tsukiji</div><div class=\"t\">Cotai · Omakase</div><div class=\"star\">★★★</div></div>\n    <div class=\"partner\"><div class=\"n\">Ryū no Hana</div><div class=\"t\">Taipa · Kaiseki</div><div class=\"star\">★★</div></div>\n    <div class=\"partner\"><div class=\"n\">Maison Aubrac</div><div class=\"t\">Macau · French</div><div class=\"star\">★★</div></div>\n    <div class=\"partner\"><div class=\"n\">The Pearl Counter</div><div class=\"t\">Cotai · Sushi</div><div class=\"star\">★ BP</div></div>\n    <div class=\"partner\"><div class=\"n\">Sakura-tei</div><div class=\"t\">Coloane · Kappō</div><div class=\"star\">★</div></div>\n    <div class=\"partner\"><div class=\"n\">Hotel Lisboa · 天香</div><div class=\"t\">Macau · Cantonese</div><div class=\"star\">★★</div></div>\n    <div class=\"partner\"><div class=\"n\">Il Giardino</div><div class=\"t\">Cotai · Italian</div><div class=\"star\">★</div></div>\n    <div class=\"partner\"><div class=\"n\">Counter by K.</div><div class=\"t\">Taipa · Omakase</div><div class=\"star\">★★</div></div>\n    <div class=\"partner\"><div class=\"n\">Jade Harbour Club</div><div class=\"t\">Macau · Private</div><div class=\"star\">BP</div></div>\n    <div class=\"partner\"><div class=\"n\">Ginza Noda</div><div class=\"t\">Cotai · Sushi-ya</div><div class=\"star\">★★★</div></div>\n    <div class=\"partner\"><div class=\"n\">Maison Belle Époque</div><div class=\"t\">Macau · French</div><div class=\"star\">★</div></div>\n    <div class=\"partner\"><div class=\"n\">+ 89 more</div><div class=\"t\">Programme Members</div><div class=\"star\">NDA</div></div>\n  </div>\n\n  <div class=\"trust-quote\">\n    <div class=\"attr\">\n      <b>Chef M. Kurosawa</b>\n      Head Chef<br>Omakase Tsukiji, Cotai<br>—<br>Sep · 2025\n    </div>\n    <blockquote>Inari is the one shipment I open without inspecting. In eleven years, they have never asked me to.</blockquote>\n  </div>\n</section>\n\n<!-- CTA -->\n<section class=\"cta-sec\" id=\"cta\">\n  <div class=\"cta-head\">\n    <div>\n      <div class=\"sec-label\"><span class=\"num\">007 —</span><span>Access · 訂購</span><span class=\"line\"></span></div>\n      <h2 class=\"display\" style=\"margin-top:32px;\">Two doors.<br>The same <span class=\"it\">sea.</span></h2>\n    </div>\n    <div class=\"right\">\n      The wholesale programme opens a standing line to our sourcing desk. The private order is for the table that knows exactly what it wants.\n    </div>\n  </div>\n\n  <div class=\"cta-cards\">\n    <div class=\"cta-card left primary\">\n      <div class=\"serial\">Tier · 001 Wholesale</div>\n      <div class=\"tag\"><span class=\"line\"></span><span>For Kitchens</span></div>\n      <h3>餐廳批發計劃<span class=\"en\">The Wholesale Programme</span></h3>\n      <p>A direct line to our Hokkaido sourcing desk, weekly allocation windows, dedicated courier, and chef-portal sign-off for every tray.</p>\n      <ul>\n        <li>Weekly allocation — Tue / Fri windows</li>\n        <li>Dedicated account manager · WhatsApp line</li>\n        <li>Net-30 terms after trial quarter</li>\n        <li>First access to seasonal cooperatives</li>\n      </ul>\n      <div class=\"btn-row\">\n        <button class=\"btn-solid\">Apply · 提交申請</button>\n        <button class=\"btn-ghost\">Download Catalogue</button>\n      </div>\n      <div class=\"fine\">By invitation + vetting · 2–5 business days</div>\n    </div>\n\n    <div class=\"cta-card\">\n      <div class=\"serial\">Tier · 002 Private</div>\n      <div class=\"tag\"><span class=\"line\"></span><span>For the Table</span></div>\n      <h3>個人訂購<span class=\"en\">The Private Order</span></h3>\n      <p>A smaller, considered selection for private dining and discerning residences. Hand-delivered across Macau within twelve hours of arrival.</p>\n      <ul>\n        <li>Minimum order · HKD 3,800</li>\n        <li>Scheduled delivery · Macau peninsula & Cotai</li>\n        <li>Gift packaging in cedar box · on request</li>\n        <li>Concierge line for menu consultation</li>\n      </ul>\n      <div class=\"btn-row\">\n        <button class=\"btn-ghost\">Browse Selection</button>\n      </div>\n      <div class=\"fine\">No account required · order from HKD 3,800</div>\n    </div>\n  </div>\n</section>\n\n<!-- FOOTER -->\n<footer>\n  <div>\n    <div class=\"brand-f\">\n      <span class=\"jp\">稻荷環球食品</span>\n      Inari Global Foods\n      <span class=\"en\">Macau's principal supplier of Japanese uni to Michelin-starred, Black Pearl and five-star kitchens. Established 2008. Headquartered in Macau SAR with sourcing offices in Sapporo and Aomori.</span>\n    </div>\n  </div>\n  <div>\n    <h5>Offices</h5>\n    <ul>\n      <li>Macau SAR (HQ)</li>\n      <li>Sapporo, 北海道</li>\n      <li>Aomori, 青森</li>\n      <li>Hong Kong Bonded</li>\n    </ul>\n  </div>\n  <div>\n    <h5>Programme</h5>\n    <ul>\n      <li><a href=\"#cta\">Wholesale Application</a></li>\n      <li><a href=\"#\">Private Order</a></li>\n      <li><a href=\"#\">Chef Portal</a></li>\n      <li><a href=\"#\">Cold Chain Audit</a></li>\n    </ul>\n  </div>\n  <div>\n    <h5>Contact</h5>\n    <ul>\n      <li><a href=\"/cdn-cgi/l/email-protection\" class=\"__cf_email__\" data-cfemail=\"83f7f1e2e7e6c3eaede2f1eaaee5ecece7f0adeeec\">[email&#160;protected]</a></li>\n      <li>+853 2833 0088</li>\n      <li>Av. de Almeida Ribeiro 203, Macau</li>\n      <li>Mon – Sat · 09:00–20:00</li>\n    </ul>\n  </div>\n</footer>\n\n<div class=\"foot-btm\">\n  <span>© 2008 – 2026 Inari Global Foods Ltd. · 稻荷環球食品有限公司</span>\n  <span>Cold Chain Protocol™ is a registered trademark.</span>\n  <span>Ref. INR–MFM–2008 / Build 04·26</span>\n</div>\n\n<!-- TWEAKS PANEL -->\n<div id=\"tweaks\" style=\"display:none; position:fixed; right:28px; bottom:28px; z-index:100; width:300px; background:rgba(5,8,14,0.96); border:1px solid var(--hair-strong); color:var(--cream); font-family:var(--sans); backdrop-filter:blur(12px);\">\n  <div style=\"padding:16px 20px; border-bottom:1px solid var(--hair); display:flex; justify-content:space-between; align-items:center;\">\n    <span style=\"font-family:var(--mono); font-size:10px; letter-spacing:.26em; color:var(--gold); text-transform:uppercase;\">Tweaks</span>\n    <span style=\"font-family:var(--mono); font-size:9px; letter-spacing:.2em; color:var(--cream-dim);\">EDIT MODE</span>\n  </div>\n  <div style=\"padding:18px 20px; display:flex; flex-direction:column; gap:16px;\">\n    <div>\n      <label style=\"display:block; font-family:var(--mono); font-size:9.5px; letter-spacing:.24em; color:var(--cream-dim); text-transform:uppercase; margin-bottom:8px;\">Accent · Gold</label>\n      <input type=\"color\" id=\"tw-gold\" style=\"width:100%; height:32px; background:transparent; border:1px solid var(--hair); cursor:pointer;\">\n    </div>\n    <div>\n      <label style=\"display:block; font-family:var(--mono); font-size:9.5px; letter-spacing:.24em; color:var(--cream-dim); text-transform:uppercase; margin-bottom:8px;\">Background</label>\n      <input type=\"color\" id=\"tw-bg\" style=\"width:100%; height:32px; background:transparent; border:1px solid var(--hair); cursor:pointer;\">\n    </div>\n    <div>\n      <label style=\"display:block; font-family:var(--mono); font-size:9.5px; letter-spacing:.24em; color:var(--cream-dim); text-transform:uppercase; margin-bottom:8px;\">Hero Scale · <span id=\"tw-scale-v\">1.0×</span></label>\n      <input type=\"range\" id=\"tw-scale\" min=\"0.85\" max=\"1.25\" step=\"0.01\" style=\"width:100%;\">\n    </div>\n    <div>\n      <label style=\"display:block; font-family:var(--mono); font-size:9.5px; letter-spacing:.24em; color:var(--cream-dim); text-transform:uppercase; margin-bottom:8px;\">Hero Headline Style</label>\n      <select id=\"tw-heroStyle\" style=\"width:100%; padding:8px 10px; background:var(--bg-2); color:var(--cream); border:1px solid var(--hair); font-family:var(--sans); font-size:12px;\">\n        <option value=\"mixed\">Mixed (Default)</option>\n        <option value=\"allSerif\">All Serif · Italic Gold</option>\n        <option value=\"allTC\">All 繁體中文</option>\n      </select>\n    </div>\n    <div>\n      <label style=\"display:block; font-family:var(--mono); font-size:9.5px; letter-spacing:.24em; color:var(--cream-dim); text-transform:uppercase; margin-bottom:8px;\">Grid Hover</label>\n      <select id=\"tw-grid\" style=\"width:100%; padding:8px 10px; background:var(--bg-2); color:var(--cream); border:1px solid var(--hair); font-family:var(--sans); font-size:12px;\">\n        <option value=\"price\">Reveal Price</option>\n        <option value=\"tint\">Gold Tint Only</option>\n        <option value=\"invert\">Invert Card</option>\n      </select>\n    </div>\n  </div>\n</div>\n\n<script data-cfasync=\"false\" src=\"/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js\"></script><script>\n  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{\n    \"gold\": \"#C9A961\",\n    \"bg\": \"#05080E\",\n    \"heroScale\": 1.0,\n    \"heroStyle\": \"mixed\",\n    \"gridHover\": \"price\"\n  }/*EDITMODE-END*/;\n  let TW = {...TWEAK_DEFAULTS};\n\n  // Nav scroll\n  const nav = document.getElementById('nav');\n  const onScroll = () => {\n    if (window.scrollY > 40) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');\n  };\n  document.addEventListener('scroll', onScroll);\n\n  // Reveal\n  const io = new IntersectionObserver((entries) => {\n    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });\n  }, { threshold: 0.15 });\n  document.querySelectorAll('section, .uni-item, .p-card, .partner, .chain-step').forEach(el => {\n    el.classList.add('reveal'); io.observe(el);\n  });\n\n  // Cold chain animation\n  const chainSec = document.getElementById('chain');\n  const steps = document.querySelectorAll('.chain-step');\n  const track = document.getElementById('track');\n  const chainIO = new IntersectionObserver((entries) => {\n    entries.forEach(e => {\n      if (e.isIntersecting) {\n        track.style.width = '100%';\n        steps.forEach((s, i) => setTimeout(() => s.classList.add('active'), 180 + i * 220));\n      }\n    });\n  }, { threshold: 0.35 });\n  chainIO.observe(chainSec);\n\n  // ——— TWEAKS ———\n  function applyTweaks() {\n    document.documentElement.style.setProperty('--gold', TW.gold);\n    document.documentElement.style.setProperty('--bg', TW.bg);\n    document.documentElement.style.setProperty('--hair', hexToRGBA(TW.gold, 0.22));\n    document.documentElement.style.setProperty('--hair-strong', hexToRGBA(TW.gold, 0.5));\n\n    // hero scale\n    const h1 = document.querySelector('.hero h1');\n    if (h1) h1.style.transform = `scale(${TW.heroScale})`;\n    if (h1) h1.style.transformOrigin = 'left bottom';\n\n    // hero style\n    const heroH1 = document.querySelector('.hero h1');\n    if (heroH1) {\n      if (TW.heroStyle === 'allSerif') {\n        heroH1.innerHTML = 'From <span class=\"it\">Hokkaido fisheries</span> to Macau\\'s <span class=\"it\">Michelin</span> tables in <span class=\"it\">48 hours.</span>';\n      } else if (TW.heroStyle === 'allTC') {\n        heroH1.innerHTML = '<span class=\"em\">由北海道漁港</span><br>送抵澳門<span class=\"em it\">米其林</span>餐桌<br><span class=\"it\">僅需四十八小時。</span>';\n      } else {\n        heroH1.innerHTML = 'From Hokkaido <span class=\"it\">fisheries</span><br>to Macau\\'s <span class=\"em\">米其林</span> tables<br>in <span class=\"it\">48 hours.</span>';\n      }\n    }\n\n    // grid hover\n    document.body.dataset.gridHover = TW.gridHover;\n    document.querySelectorAll('.p-card').forEach(c => {\n      c.onmouseenter = null; c.onmouseleave = null;\n      if (TW.gridHover === 'invert') {\n        c.onmouseenter = () => { c.style.background = 'var(--cream)'; c.style.color = 'var(--bg)'; c.querySelectorAll('.name-tc, .name-en, .sku, .region, .ref, .price, .hidden-price').forEach(el => el.style.color = 'var(--bg)'); };\n        c.onmouseleave = () => { c.style.background = ''; c.style.color = ''; c.querySelectorAll('.name-tc, .name-en, .sku, .region, .ref, .price, .hidden-price').forEach(el => el.style.color = ''); };\n      }\n    });\n  }\n\n  function hexToRGBA(hex, a) {\n    const h = hex.replace('#','');\n    const r = parseInt(h.substring(0,2),16);\n    const g = parseInt(h.substring(2,4),16);\n    const b = parseInt(h.substring(4,6),16);\n    return `rgba(${r},${g},${b},${a})`;\n  }\n\n  function persist() {\n    try { window.parent.postMessage({type:'__edit_mode_set_keys', edits: TW}, '*'); } catch(e){}\n  }\n\n  function bindTweaks() {\n    const gold = document.getElementById('tw-gold');\n    const bg = document.getElementById('tw-bg');\n    const scale = document.getElementById('tw-scale');\n    const scaleV = document.getElementById('tw-scale-v');\n    const heroStyle = document.getElementById('tw-heroStyle');\n    const grid = document.getElementById('tw-grid');\n    gold.value = TW.gold; bg.value = TW.bg; scale.value = TW.heroScale; scaleV.textContent = (+TW.heroScale).toFixed(2) + '×';\n    heroStyle.value = TW.heroStyle; grid.value = TW.gridHover;\n\n    gold.oninput = () => { TW.gold = gold.value; applyTweaks(); persist(); };\n    bg.oninput = () => { TW.bg = bg.value; applyTweaks(); persist(); };\n    scale.oninput = () => { TW.heroScale = +scale.value; scaleV.textContent = TW.heroScale.toFixed(2) + '×'; applyTweaks(); persist(); };\n    heroStyle.onchange = () => { TW.heroStyle = heroStyle.value; applyTweaks(); persist(); };\n    grid.onchange = () => { TW.gridHover = grid.value; applyTweaks(); persist(); };\n  }\n\n  // Edit mode wiring (FIRST register listener, THEN announce)\n  const tweaksPanel = document.getElementById('tweaks');\n  window.addEventListener('message', (ev) => {\n    const d = ev.data || {};\n    if (d.type === '__activate_edit_mode') tweaksPanel.style.display = 'block';\n    if (d.type === '__deactivate_edit_mode') tweaksPanel.style.display = 'none';\n  });\n  try { window.parent.postMessage({type:'__edit_mode_available'}, '*'); } catch(e){}\n\n  applyTweaks();\n  bindTweaks();\n</script>\n</body>\n</html>\n"
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>稻荷環球食品 · Inari Global Foods</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #05080E;
+    --bg-2: #0A0E16;
+    --gold: #C9A961;
+    --gold-dim: #8a7440;
+    --cream: #F5F0E8;
+    --cream-dim: rgba(245,240,232,0.62);
+    --hair: rgba(201,169,97,0.22);
+    --hair-strong: rgba(201,169,97,0.5);
+    --serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+    --serif-tc: 'Noto Serif TC', 'Cormorant Garamond', serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: var(--sans);
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  body { min-height: 100vh; }
+  ::selection { background: var(--gold); color: var(--bg); }
+
+  /* ——— NAV ——— */
+  nav.top {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    padding: 22px 56px;
+    display: flex; align-items: center; justify-content: space-between;
+    backdrop-filter: blur(14px);
+    background: rgba(5,8,14,0.55);
+    border-bottom: 1px solid transparent;
+    transition: border-color .4s, background .4s;
+  }
+  nav.top.scrolled { border-bottom-color: var(--hair); background: rgba(5,8,14,0.85); }
+  .brand {
+    display: flex; align-items: baseline; gap: 14px;
+    font-family: var(--serif); font-size: 22px; letter-spacing: .04em; color: var(--cream);
+  }
+  .brand .jp { font-family: var(--serif-tc); color: var(--gold); font-weight: 400; }
+  .brand .en { font-size: 11px; letter-spacing: .32em; text-transform: uppercase; color: var(--cream-dim); font-family: var(--sans); }
+  .nav-links { display: flex; gap: 40px; }
+  .nav-links a {
+    font-size: 11px; letter-spacing: .26em; text-transform: uppercase;
+    color: var(--cream-dim); text-decoration: none; transition: color .3s;
+    font-weight: 400;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    font-size: 11px; letter-spacing: .26em; text-transform: uppercase;
+    color: var(--gold); padding: 10px 22px; border: 1px solid var(--hair-strong);
+    text-decoration: none; transition: all .3s; cursor: pointer;
+  }
+  .nav-cta:hover { background: var(--gold); color: var(--bg); border-color: var(--gold); }
+
+  /* ——— HERO ——— */
+  .hero {
+    height: 100vh; min-height: 760px; position: relative;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 0 56px 0;
+    overflow: hidden;
+    border-bottom: 1px solid var(--hair);
+  }
+  .hero-grain {
+    position: absolute; inset: 0; pointer-events: none; z-index: 1;
+    background-image: radial-gradient(circle at 70% 40%, rgba(201,169,97,0.08), transparent 55%);
+  }
+  .hero-stripes {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image: repeating-linear-gradient(180deg, rgba(201,169,97,0.03) 0 1px, transparent 1px 80px);
+    z-index: 0;
+  }
+  .hero-meta-top {
+    position: absolute; top: 120px; left: 56px; right: 56px; z-index: 3;
+    display: flex; justify-content: space-between; align-items: flex-start;
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .22em;
+    color: var(--cream-dim); text-transform: uppercase;
+  }
+  .hero-meta-top .l { display: flex; flex-direction: column; gap: 6px; }
+  .hero-meta-top .l span:first-child { color: var(--gold); }
+  .hero-meta-top .r { text-align: right; display: flex; flex-direction: column; gap: 6px; }
+  .hero-body { position: relative; z-index: 3; padding-bottom: 120px; max-width: 1400px; }
+  .hero-eyebrow {
+    display: flex; align-items: center; gap: 18px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: .32em;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 40px;
+  }
+  .hero-eyebrow .dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+  .hero-eyebrow .line { flex: 0 0 56px; height: 1px; background: var(--gold); opacity: .5; }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(56px, 7.6vw, 128px);
+    font-weight: 300;
+    line-height: 0.96;
+    letter-spacing: -0.018em;
+    color: var(--cream);
+    max-width: 18ch;
+    text-wrap: balance;
+  }
+  .hero h1 .it { font-style: italic; font-weight: 300; color: var(--gold); }
+  .hero h1 .em { font-family: var(--serif-tc); font-weight: 300; }
+  .hero-sub {
+    margin-top: 40px;
+    font-family: var(--serif); font-style: italic;
+    font-size: clamp(18px, 1.5vw, 22px);
+    color: var(--gold);
+    max-width: 58ch; line-height: 1.45; font-weight: 300;
+  }
+  .hero-strip {
+    position: relative; z-index: 3;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--hair);
+    margin: 0 -56px;
+  }
+  .hero-strip .cell {
+    padding: 32px 56px; border-right: 1px solid var(--hair);
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .hero-strip .cell:last-child { border-right: none; }
+  .hero-strip .k {
+    font-family: var(--serif); font-size: 42px; font-weight: 300;
+    color: var(--gold); line-height: 1; letter-spacing: -.01em;
+  }
+  .hero-strip .k .s { font-size: 22px; color: var(--cream-dim); margin-left: 4px; }
+  .hero-strip .v {
+    font-family: var(--mono); font-size: 10.5px;
+    letter-spacing: .28em; color: var(--cream-dim); text-transform: uppercase;
+  }
+
+  /* Uni illustrative mark (pure placeholder, geometric only) */
+  .hero-mark {
+    position: absolute; right: 56px; bottom: 220px; z-index: 2;
+    width: 320px; height: 320px;
+    border: 1px solid var(--hair);
+    display: flex; align-items: center; justify-content: center;
+    background: var(--bg-2);
+  }
+  .hero-mark::before {
+    content: ''; width: 180px; height: 180px; border-radius: 50%;
+    background: repeating-linear-gradient(45deg, rgba(201,169,97,0.15) 0 1px, transparent 1px 8px);
+    border: 1px solid var(--hair-strong);
+  }
+  .hero-mark .tag {
+    position: absolute; bottom: 18px; left: 22px;
+    font-family: var(--mono); font-size: 9.5px; letter-spacing: .24em;
+    color: var(--cream-dim); text-transform: uppercase;
+  }
+  .hero-mark .tag b { color: var(--gold); font-weight: 400; }
+
+  /* ——— SECTION UTILITIES ——— */
+  section { position: relative; }
+  .sec-label {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .3em;
+    color: var(--gold); text-transform: uppercase;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .sec-label .num { color: var(--cream-dim); }
+  .sec-label .line { flex: 0 0 40px; height: 1px; background: var(--hair-strong); }
+  h2.display {
+    font-family: var(--serif); font-weight: 300;
+    font-size: clamp(44px, 5.4vw, 84px); line-height: 1.02;
+    letter-spacing: -.015em; color: var(--cream);
+    text-wrap: balance;
+  }
+  h2.display .it { font-style: italic; color: var(--gold); }
+  h2.display .tc { font-family: var(--serif-tc); }
+  .pad { padding: 0 56px; }
+
+  /* ——— BRAND STATEMENT ——— */
+  .statement {
+    padding: 160px 56px 180px;
+    border-bottom: 1px solid var(--hair);
+    display: grid; grid-template-columns: 1fr 1.05fr; gap: 96px; align-items: start;
+  }
+  .statement .left { position: sticky; top: 140px; }
+  .statement h2 { margin-top: 32px; }
+  .statement .body {
+    padding-top: 12px;
+    border-top: 1px solid var(--hair);
+  }
+  .statement .body p {
+    font-family: var(--serif); font-weight: 300;
+    font-size: 22px; line-height: 1.55; color: var(--cream);
+    margin-top: 28px; max-width: 52ch;
+  }
+  .statement .body p.small {
+    font-family: var(--sans); font-size: 14px; color: var(--cream-dim);
+    line-height: 1.7; max-width: 54ch; letter-spacing: .01em;
+  }
+  .statement .sig {
+    margin-top: 56px; display: flex; gap: 40px; align-items: baseline;
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .26em;
+    color: var(--cream-dim); text-transform: uppercase;
+  }
+  .statement .sig b { color: var(--gold); font-weight: 400; }
+
+  /* JAPAN MAP — abstract, geometric */
+  .map-wrap {
+    margin-top: 64px;
+    border: 1px solid var(--hair);
+    aspect-ratio: 1 / 1;
+    position: relative;
+    background:
+      linear-gradient(rgba(201,169,97,0.035), rgba(201,169,97,0.035)),
+      var(--bg-2);
+  }
+  .map-wrap svg { width: 100%; height: 100%; display: block; }
+  .map-label {
+    position: absolute;
+    font-family: var(--mono); font-size: 10px; letter-spacing: .22em;
+    color: var(--cream-dim); text-transform: uppercase;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .map-label b { color: var(--gold); font-family: var(--serif-tc); font-size: 14px; letter-spacing: .08em; font-weight: 400; }
+  .map-label::before {
+    content: ''; width: 8px; height: 8px; border: 1px solid var(--gold);
+    background: var(--bg); position: absolute;
+  }
+  .map-corner {
+    position: absolute; font-family: var(--mono); font-size: 9.5px;
+    letter-spacing: .24em; color: var(--cream-dim); text-transform: uppercase;
+  }
+
+  /* ——— SIGNATURE PRODUCT (pinned scroll) ——— */
+  .signature {
+    border-bottom: 1px solid var(--hair);
+  }
+  .signature-head {
+    padding: 140px 56px 80px; display: grid;
+    grid-template-columns: 1fr 1fr; gap: 80px; align-items: end;
+  }
+  .signature-head .right {
+    font-family: var(--serif); font-size: 22px; line-height: 1.5;
+    color: var(--cream-dim); font-weight: 300; font-style: italic;
+    max-width: 52ch;
+  }
+  .uni-item {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    border-top: 1px solid var(--hair);
+    min-height: 640px;
+  }
+  .uni-item .media {
+    position: relative;
+    background: var(--bg-2);
+    border-right: 1px solid var(--hair);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .uni-item .media .ph {
+    width: 72%; aspect-ratio: 1 / 1;
+    background:
+      repeating-linear-gradient(135deg, rgba(201,169,97,0.07) 0 1px, transparent 1px 14px),
+      radial-gradient(circle at 50% 50%, rgba(201,169,97,0.12), transparent 62%);
+    border: 1px solid var(--hair);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .uni-item .media .ph::after {
+    content: attr(data-label);
+    font-family: var(--mono); font-size: 10px; letter-spacing: .24em;
+    color: var(--cream-dim); text-transform: uppercase;
+    position: absolute; bottom: -32px;
+  }
+  .uni-item .media .corners {
+    position: absolute; inset: 24px; pointer-events: none;
+  }
+  .uni-item .media .corners::before,
+  .uni-item .media .corners::after {
+    content: ''; position: absolute; width: 14px; height: 14px;
+    border: 1px solid var(--gold);
+  }
+  .uni-item .media .corners::before { top: 0; left: 0; border-right: none; border-bottom: none; }
+  .uni-item .media .corners::after  { bottom: 0; right: 0; border-left: none; border-top: none; }
+  .uni-item .media .frame-no {
+    position: absolute; top: 24px; right: 28px;
+    font-family: var(--mono); font-size: 10px; letter-spacing: .26em;
+    color: var(--gold); text-transform: uppercase;
+  }
+  .uni-item .info { padding: 80px 72px; display: flex; flex-direction: column; justify-content: space-between; }
+  .uni-item .info .idx {
+    font-family: var(--mono); font-size: 11px; letter-spacing: .3em;
+    color: var(--gold); text-transform: uppercase; display: flex; gap: 14px; align-items: center;
+  }
+  .uni-item .info .idx .line { flex: 0 0 40px; height: 1px; background: var(--gold); opacity: .5; }
+  .uni-item .info h3 {
+    font-family: var(--serif-tc); font-weight: 300;
+    font-size: 80px; line-height: 1; letter-spacing: -.02em;
+    color: var(--cream); margin-top: 32px;
+  }
+  .uni-item .info h3 .en {
+    display: block; font-family: var(--serif); font-style: italic;
+    font-size: 30px; color: var(--gold); letter-spacing: .01em; margin-top: 10px;
+  }
+  .uni-item .info .desc {
+    font-family: var(--serif); font-size: 18px; line-height: 1.55;
+    color: var(--cream); max-width: 42ch; margin-top: 36px; font-weight: 300;
+  }
+  .uni-item .info .specs {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--hair); margin-top: 48px;
+  }
+  .uni-item .info .specs .cell {
+    padding: 22px 18px 0 0;
+  }
+  .uni-item .info .specs .k {
+    font-family: var(--mono); font-size: 9.5px; letter-spacing: .26em;
+    color: var(--cream-dim); text-transform: uppercase;
+  }
+  .uni-item .info .specs .v {
+    font-family: var(--serif); font-size: 22px; color: var(--gold);
+    margin-top: 8px; font-weight: 300;
+  }
+
+  /* ——— PRODUCT GRID ——— */
+  .grid-sec {
+    padding: 160px 56px 180px; border-bottom: 1px solid var(--hair);
+  }
+  .grid-head {
+    display: flex; justify-content: space-between; align-items: end;
+    margin-bottom: 80px; gap: 40px;
+  }
+  .grid-head .meta {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .26em;
+    color: var(--cream-dim); text-transform: uppercase;
+    display: flex; gap: 28px;
+  }
+  .grid-head .meta b { color: var(--gold); font-weight: 400; }
+  .product-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--hair-strong);
+    border-left: 1px solid var(--hair-strong);
+  }
+  .p-card {
+    border-right: 1px solid var(--hair-strong);
+    border-bottom: 1px solid var(--hair-strong);
+    padding: 32px 32px 28px;
+    position: relative; cursor: pointer;
+    transition: background .5s;
+    min-height: 440px;
+    display: flex; flex-direction: column;
+  }
+  .p-card:hover { background: rgba(201,169,97,0.04); }
+  .p-card .region {
+    position: absolute; top: 28px; right: 28px;
+    font-family: var(--mono); font-size: 9px; letter-spacing: .26em;
+    color: var(--gold); text-transform: uppercase;
+    padding: 5px 10px; border: 1px solid var(--hair-strong);
+  }
+  .p-card .img {
+    aspect-ratio: 1 / 1; margin: 32px 0 28px;
+    background:
+      repeating-linear-gradient(45deg, rgba(201,169,97,0.06) 0 1px, transparent 1px 12px),
+      var(--bg-2);
+    border: 1px solid var(--hair);
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color .4s;
+  }
+  .p-card:hover .img { border-color: var(--hair-strong); }
+  .p-card .img .mark {
+    width: 46%; height: 46%;
+    border: 1px solid var(--hair-strong);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,169,97,0.10), transparent 70%);
+  }
+  .p-card .img .ref {
+    position: absolute; bottom: 10px; left: 12px;
+    font-family: var(--mono); font-size: 9px; letter-spacing: .22em;
+    color: var(--cream-dim); text-transform: uppercase;
+  }
+  .p-card .name-tc {
+    font-family: var(--serif-tc); font-size: 26px; color: var(--cream);
+    font-weight: 400; letter-spacing: .02em;
+  }
+  .p-card .name-en {
+    font-family: var(--serif); font-style: italic; font-size: 16px;
+    color: var(--cream-dim); margin-top: 4px; font-weight: 300;
+  }
+  .p-card .foot {
+    margin-top: auto; padding-top: 20px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    border-top: 1px solid var(--hair);
+  }
+  .p-card .sku {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .22em;
+    color: var(--cream-dim); text-transform: uppercase;
+  }
+  .p-card .price {
+    font-family: var(--serif); font-size: 22px; color: var(--gold);
+    font-weight: 300; opacity: 0; transform: translateY(4px);
+    transition: opacity .35s, transform .35s;
+  }
+  .p-card .price .cur { font-family: var(--mono); font-size: 10px; letter-spacing: .2em; color: var(--cream-dim); margin-right: 6px; }
+  .p-card:hover .price { opacity: 1; transform: translateY(0); }
+  .p-card .hidden-price { font-family: var(--mono); font-size: 10px; letter-spacing: .22em; color: var(--cream-dim); text-transform: uppercase; }
+  .p-card:hover .hidden-price { opacity: 0; }
+
+  /* ——— COLD CHAIN ——— */
+  .chain-sec {
+    padding: 160px 56px 180px; border-bottom: 1px solid var(--hair);
+    overflow: hidden;
+  }
+  .chain-head { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; margin-bottom: 100px; }
+  .chain-head .right { font-family: var(--serif); font-size: 20px; font-style: italic; color: var(--cream-dim); line-height: 1.55; max-width: 50ch; }
+  .chain-trademark { font-family: var(--serif); font-style: italic; color: var(--gold); }
+  .chain-trademark sup { font-family: var(--sans); font-size: .5em; color: var(--gold-dim); margin-left: 2px; }
+
+  .chain-rail {
+    position: relative;
+    border-top: 1px solid var(--hair-strong);
+    padding-top: 0;
+  }
+  .chain-rail .track {
+    position: absolute; top: -1px; left: 0; right: 0; height: 1px;
+    background: var(--gold); width: 0%;
+    transition: width 1.6s cubic-bezier(.2,.7,.2,1);
+  }
+  .chain-steps {
+    display: grid; grid-template-columns: repeat(6, 1fr);
+  }
+  .chain-step {
+    padding: 40px 28px 0;
+    border-right: 1px solid var(--hair);
+    position: relative;
+    min-height: 320px;
+  }
+  .chain-step:last-child { border-right: none; }
+  .chain-step::before {
+    content: ''; position: absolute; top: -5px; left: 28px;
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--bg); border: 1px solid var(--gold);
+    transition: background .4s;
+  }
+  .chain-step.active::before { background: var(--gold); }
+  .chain-step .h {
+    font-family: var(--mono); font-size: 11px; letter-spacing: .3em;
+    color: var(--gold); text-transform: uppercase;
+  }
+  .chain-step .title {
+    font-family: var(--serif); font-weight: 300;
+    font-size: 30px; color: var(--cream); margin-top: 20px; line-height: 1.1;
+  }
+  .chain-step .title .tc { font-family: var(--serif-tc); display: block; font-size: 18px; color: var(--cream-dim); margin-top: 6px; letter-spacing: .05em; }
+  .chain-step .desc {
+    font-family: var(--sans); font-size: 13px; line-height: 1.65;
+    color: var(--cream-dim); margin-top: 18px; max-width: 26ch;
+  }
+  .chain-step .temp {
+    position: absolute; bottom: 28px; left: 28px;
+    padding: 6px 12px; border: 1px solid var(--hair-strong);
+    font-family: var(--mono); font-size: 10px; letter-spacing: .22em;
+    color: var(--gold); text-transform: uppercase;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .chain-step .temp .dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; }
+
+  .chain-foot {
+    margin-top: 80px; padding-top: 32px; border-top: 1px solid var(--hair);
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px;
+  }
+  .chain-foot .cell .k {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .26em;
+    color: var(--cream-dim); text-transform: uppercase;
+  }
+  .chain-foot .cell .v {
+    font-family: var(--serif); font-size: 28px; font-weight: 300;
+    color: var(--gold); margin-top: 10px; letter-spacing: -.005em;
+  }
+  .chain-foot .cell .v small { font-family: var(--mono); font-size: 11px; color: var(--cream-dim); letter-spacing: .2em; margin-left: 6px; }
+
+  /* ——— TRUST (cream break) ——— */
+  .trust {
+    background: var(--cream); color: var(--bg);
+    padding: 160px 56px 180px;
+    position: relative;
+  }
+  .trust::before, .trust::after {
+    content: ''; position: absolute; left: 0; right: 0; height: 1px;
+    background: rgba(5,8,14,0.1);
+  }
+  .trust::before { top: 0; } .trust::after { bottom: 0; }
+  .trust-head {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end;
+    margin-bottom: 100px;
+  }
+  .trust .sec-label { color: #7a6a4a; }
+  .trust .sec-label .num { color: rgba(5,8,14,0.4); }
+  .trust .sec-label .line { background: rgba(5,8,14,0.25); }
+  .trust h2.display { color: var(--bg); }
+  .trust h2.display .it { color: #8a7440; }
+  .trust .right { font-family: var(--serif); font-size: 20px; font-style: italic; color: rgba(5,8,14,0.65); line-height: 1.55; max-width: 50ch; }
+
+  .partners-grid {
+    display: grid; grid-template-columns: repeat(6, 1fr);
+    border-top: 1px solid rgba(5,8,14,0.12);
+    border-left: 1px solid rgba(5,8,14,0.12);
+  }
+  .partner {
+    aspect-ratio: 5/3;
+    border-right: 1px solid rgba(5,8,14,0.12);
+    border-bottom: 1px solid rgba(5,8,14,0.12);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 20px; text-align: center;
+    transition: background .4s;
+  }
+  .partner:hover { background: rgba(5,8,14,0.03); }
+  .partner .n {
+    font-family: var(--serif); font-size: 20px; font-weight: 400;
+    color: var(--bg); letter-spacing: .01em; line-height: 1.1;
+  }
+  .partner .t {
+    font-family: var(--mono); font-size: 9px; letter-spacing: .26em;
+    color: rgba(5,8,14,0.5); text-transform: uppercase; margin-top: 8px;
+  }
+  .partner .star { color: #8a7440; font-size: 11px; margin-top: 4px; letter-spacing: .4em; }
+
+  .trust-quote {
+    margin-top: 120px;
+    display: grid; grid-template-columns: 180px 1fr; gap: 60px;
+    padding-top: 60px; border-top: 1px solid rgba(5,8,14,0.15);
+  }
+  .trust-quote .attr {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .26em;
+    color: rgba(5,8,14,0.6); text-transform: uppercase;
+  }
+  .trust-quote .attr b { display: block; color: var(--bg); font-family: var(--serif); font-size: 16px; text-transform: none; letter-spacing: .02em; margin-bottom: 6px; font-weight: 400; }
+  .trust-quote blockquote {
+    font-family: var(--serif); font-weight: 300; font-style: italic;
+    font-size: clamp(28px, 3vw, 44px); line-height: 1.18;
+    color: var(--bg); max-width: 32ch; letter-spacing: -.01em;
+  }
+  .trust-quote blockquote::before { content: '“'; color: #8a7440; margin-right: 6px; font-style: normal; }
+  .trust-quote blockquote::after { content: '”'; color: #8a7440; margin-left: 4px; font-style: normal; }
+
+  /* ——— B2B CTA ——— */
+  .cta-sec {
+    padding: 160px 56px 140px;
+    border-bottom: 1px solid var(--hair);
+  }
+  .cta-head { margin-bottom: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; }
+  .cta-head .right { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--cream-dim); line-height: 1.55; max-width: 50ch; }
+  .cta-cards {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    border: 1px solid var(--hair-strong);
+  }
+  .cta-card {
+    padding: 64px 56px;
+    position: relative;
+    min-height: 520px;
+    display: flex; flex-direction: column;
+  }
+  .cta-card.left { border-right: 1px solid var(--hair-strong); }
+  .cta-card.primary { background: var(--bg-2); }
+  .cta-card .tag {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .3em;
+    color: var(--gold); text-transform: uppercase;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .cta-card .tag .line { flex: 0 0 32px; height: 1px; background: var(--gold); opacity: .5; }
+  .cta-card h3 {
+    font-family: var(--serif-tc); font-weight: 300;
+    font-size: 52px; color: var(--cream); margin-top: 28px; letter-spacing: -.01em; line-height: 1.05;
+  }
+  .cta-card h3 .en {
+    display: block; font-family: var(--serif); font-style: italic;
+    font-size: 26px; color: var(--gold); margin-top: 12px;
+  }
+  .cta-card p {
+    font-family: var(--serif); font-size: 19px; line-height: 1.55;
+    color: var(--cream); margin-top: 32px; max-width: 40ch; font-weight: 300;
+  }
+  .cta-card ul {
+    list-style: none; margin-top: 36px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .cta-card ul li {
+    font-family: var(--sans); font-size: 13px; color: var(--cream-dim);
+    letter-spacing: .02em; display: flex; gap: 14px; align-items: baseline;
+    padding-bottom: 12px; border-bottom: 1px solid var(--hair);
+  }
+  .cta-card ul li::before {
+    content: '—'; color: var(--gold); font-family: var(--mono);
+  }
+  .cta-card .btn-row {
+    margin-top: auto; padding-top: 48px;
+    display: flex; gap: 18px; align-items: center;
+  }
+  .btn-solid {
+    padding: 20px 36px; border: 1px solid var(--gold); background: var(--gold);
+    color: var(--bg); font-family: var(--sans); font-size: 11px;
+    letter-spacing: .3em; text-transform: uppercase; cursor: pointer;
+    transition: all .35s; font-weight: 500;
+  }
+  .btn-solid:hover { background: transparent; color: var(--gold); }
+  .btn-ghost {
+    padding: 20px 36px; border: 1px solid var(--hair-strong); background: transparent;
+    color: var(--cream); font-family: var(--sans); font-size: 11px;
+    letter-spacing: .3em; text-transform: uppercase; cursor: pointer;
+    transition: all .35s; font-weight: 500;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+  .cta-card .fine {
+    margin-top: 20px; font-family: var(--mono); font-size: 10px;
+    letter-spacing: .22em; color: var(--cream-dim); text-transform: uppercase;
+  }
+  .cta-card .serial {
+    position: absolute; top: 32px; right: 40px;
+    font-family: var(--mono); font-size: 10px; letter-spacing: .26em;
+    color: var(--cream-dim); text-transform: uppercase;
+  }
+
+  /* ——— FOOTER ——— */
+  footer {
+    padding: 80px 56px 56px;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 56px;
+  }
+  footer .brand-f { font-family: var(--serif); font-size: 26px; letter-spacing: .02em; }
+  footer .brand-f .jp { font-family: var(--serif-tc); color: var(--gold); font-weight: 400; display: block; margin-bottom: 6px; }
+  footer .brand-f .en { font-size: 11px; letter-spacing: .3em; color: var(--cream-dim); text-transform: uppercase; font-family: var(--sans); margin-top: 24px; display: block; max-width: 40ch; line-height: 1.8; }
+  footer h5 {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .3em;
+    color: var(--gold); text-transform: uppercase; font-weight: 400;
+    margin-bottom: 22px;
+  }
+  footer ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  footer ul li { font-family: var(--sans); font-size: 13px; color: var(--cream-dim); }
+  footer ul li a { color: var(--cream-dim); text-decoration: none; transition: color .3s; }
+  footer ul li a:hover { color: var(--gold); }
+  .foot-btm {
+    margin: 56px 56px 0; padding: 28px 0;
+    border-top: 1px solid var(--hair);
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 10px; letter-spacing: .22em;
+    color: var(--cream-dim); text-transform: uppercase;
+  }
+
+  /* reveal */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 1s, transform 1s; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 1100px) {
+    nav.top, .hero, .pad, .statement, .signature-head, .grid-sec, .chain-sec, .trust, .cta-sec, footer, .foot-btm { padding-left: 32px !important; padding-right: 32px !important; }
+    .hero-meta-top { left: 32px; right: 32px; }
+    .hero-strip { margin: 0 -32px; }
+    .statement, .chain-head, .signature-head, .cta-head, .trust-head { grid-template-columns: 1fr !important; gap: 48px !important; }
+    .statement .left { position: static; }
+    .uni-item { grid-template-columns: 1fr; }
+    .uni-item .media { border-right: none; border-bottom: 1px solid var(--hair); min-height: 420px; }
+    .uni-item .info { padding: 56px 32px; }
+    .product-grid, .partners-grid { grid-template-columns: repeat(2, 1fr); }
+    .chain-steps { grid-template-columns: repeat(2, 1fr); }
+    .chain-step { border-bottom: 1px solid var(--hair); }
+    .cta-cards { grid-template-columns: 1fr; }
+    .cta-card.left { border-right: none; border-bottom: 1px solid var(--hair-strong); }
+    .hero-mark { display: none; }
+    footer { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top" id="nav">
+  <div class="brand">
+    <span class="jp">稻荷</span>
+    <span>Inari</span>
+    <span class="en">Global Foods · Est. 2008</span>
+  </div>
+  <div class="nav-links">
+    <a href="#statement">Philosophy</a>
+    <a href="#signature">Signature</a>
+    <a href="#catalogue">Catalogue</a>
+    <a href="#chain">Cold Chain</a>
+    <a href="#trust">Partners</a>
+  </div>
+  <a href="#cta" class="nav-cta">批發申請 · Wholesale</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-stripes"></div>
+  <div class="hero-grain"></div>
+
+  <div class="hero-meta-top">
+    <div class="l">
+      <span>⊛ Ref. INR–MFM–2008</span>
+      <span>Macau SAR · Since 2008</span>
+    </div>
+    <div class="r">
+      <span>Cold Chain Active · 3.2°C</span>
+      <span>北海道 / 青森 / 長崎</span>
+    </div>
+  </div>
+
+  <div class="hero-mark">
+    <div class="tag"><span>Plate 01 / <b>雲丹</b> · UNI</span></div>
+  </div>
+
+  <div class="hero-body">
+    <div class="hero-eyebrow">
+      <span class="dot"></span>
+      <span>Japan's Finest, Delivered to Macau</span>
+      <span class="line"></span>
+      <span>Chapter 001</span>
+    </div>
+    <h1>From Hokkaido <span class="it">fisheries</span><br>to Macau's <span class="em">米其林</span> tables<br>in <span class="it">48 hours.</span></h1>
+    <p class="hero-sub">A single cold chain, maintained at two to five degrees — from the <b style="font-family:var(--serif-tc);font-weight:400;color:var(--gold)">漁業協同組合</b> dockside auctions to the hands of Macau's most demanding chefs.</p>
+  </div>
+
+  <div class="hero-strip">
+    <div class="cell">
+      <span class="k">70<span class="s">%</span></span>
+      <span class="v">Macau Market Share · B2B Uni</span>
+    </div>
+    <div class="cell">
+      <span class="k">100<span class="s">+</span></span>
+      <span class="v">Michelin & Black Pearl Kitchens</span>
+    </div>
+    <div class="cell">
+      <span class="k">48<span class="s">h</span></span>
+      <span class="v">Cold Chain · 2–5°C Monitored</span>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND STATEMENT -->
+<section class="statement" id="statement">
+  <div class="left">
+    <div class="sec-label"><span class="num">002 —</span><span>Philosophy</span><span class="line"></span></div>
+    <h2 class="display">We don't ship <span class="it">seafood.</span><br>We ship <span class="tc it">信任</span><span class="it">.</span></h2>
+  </div>
+  <div class="right">
+    <div class="body">
+      <p>Eighteen years ago, we were a single ice chest on a late-night flight out of New Chitose. One chef. One order. One promise: that what arrived in Macau would taste of the sea it was lifted from that morning.</p>
+      <p class="small">Today,稻荷環球食品 supplies more than one hundred of the city's Michelin-starred and Black Pearl kitchens. The ice chest has become a monitored cold chain. The promise is unchanged. Every tray leaves Hokkaido, Aomori or Nagasaki under the same protocol — two to five degrees Celsius, IoT-verified, documented from auction floor to stainless counter.</p>
+      <p class="small">Our cooperatives select the board. Our couriers carry the weight. Our chefs do the rest.</p>
+    </div>
+    <div class="sig">
+      <span><b>Tanaka Ryō</b><br>Founder · 創業者</span>
+      <span>Macau · Hong Kong · Tokyo</span>
+    </div>
+
+    <!-- JAPAN ABSTRACT MAP -->
+    <div class="map-wrap">
+      <svg viewBox="0 0 600 600" preserveAspectRatio="none">
+        <defs>
+          <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse">
+            <circle cx="1" cy="1" r="0.6" fill="rgba(201,169,97,0.28)" />
+          </pattern>
+        </defs>
+        <!-- subtle grid -->
+        <g stroke="rgba(201,169,97,0.08)" stroke-width="0.5">
+          <line x1="0" y1="150" x2="600" y2="150"/>
+          <line x1="0" y1="300" x2="600" y2="300"/>
+          <line x1="0" y1="450" x2="600" y2="450"/>
+          <line x1="150" y1="0" x2="150" y2="600"/>
+          <line x1="300" y1="0" x2="300" y2="600"/>
+          <line x1="450" y1="0" x2="450" y2="600"/>
+        </g>
+        <!-- Abstract Japan archipelago: rectangles angled, representing islands generically -->
+        <g fill="url(#dots)" stroke="rgba(201,169,97,0.4)" stroke-width="0.75">
+          <!-- Hokkaido -->
+          <path d="M 360 90 L 470 100 L 500 160 L 470 200 L 400 210 L 360 180 Z"/>
+          <!-- Honshu -->
+          <path d="M 250 220 L 340 230 L 400 280 L 440 340 L 430 380 L 360 380 L 300 340 L 240 280 Z"/>
+          <!-- Shikoku -->
+          <path d="M 260 390 L 320 395 L 320 420 L 260 420 Z"/>
+          <!-- Kyushu -->
+          <path d="M 150 380 L 220 390 L 240 440 L 210 490 L 170 490 L 140 450 Z"/>
+        </g>
+
+        <!-- Routes to Macau (bottom-left corner) -->
+        <g stroke="rgba(201,169,97,0.55)" stroke-width="0.8" fill="none" stroke-dasharray="4 4">
+          <path d="M 430 150 C 300 250, 200 400, 60 560"/>
+          <path d="M 320 260 C 260 340, 180 430, 60 560"/>
+          <path d="M 195 420 C 160 470, 120 520, 60 560"/>
+        </g>
+
+        <!-- Origin dots -->
+        <g>
+          <circle cx="430" cy="150" r="5" fill="#C9A961"/>
+          <circle cx="320" cy="260" r="5" fill="#C9A961"/>
+          <circle cx="195" cy="420" r="5" fill="#C9A961"/>
+          <!-- Macau -->
+          <rect x="55" y="555" width="10" height="10" fill="#C9A961"/>
+        </g>
+      </svg>
+      <div class="map-label" style="top: 16%; right: 12%;"><b>北海道</b><span style="margin-top:14px">Hokkaido · 01</span></div>
+      <div class="map-label" style="top: 40%; left: 55%;"><b>青森</b><span style="margin-top:14px">Aomori · 02</span></div>
+      <div class="map-label" style="bottom: 20%; left: 34%;"><b>長崎</b><span style="margin-top:14px">Nagasaki · 03</span></div>
+      <div class="map-label" style="bottom: 5%; left: 14%;"><b>澳門</b><span style="margin-top:14px">Macau · Arrival</span></div>
+
+      <div class="map-corner" style="top: 14px; left: 14px;">⊛ Sourcing Atlas</div>
+      <div class="map-corner" style="top: 14px; right: 14px;">N 43° / E 141°</div>
+      <div class="map-corner" style="bottom: 14px; left: 14px;">3 cooperatives</div>
+      <div class="map-corner" style="bottom: 14px; right: 14px;">2,847 km route</div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE PRODUCT -->
+<section class="signature" id="signature">
+  <div class="signature-head">
+    <div>
+      <div class="sec-label"><span class="num">003 —</span><span>Signature · 雲丹三種</span><span class="line"></span></div>
+      <h2 class="display" style="margin-top:32px;">Three houses.<br>One <span class="it">sea.</span></h2>
+    </div>
+    <div class="right">
+      Uni is not a commodity. It is a signature — of cooperative, of season, of current. We carry three. Each arrives within hours of the auction bell.
+    </div>
+  </div>
+
+  <div class="uni-item">
+    <div class="media">
+      <div class="frame-no">01 / 03 · Bafun</div>
+      <div class="corners"></div>
+      <div class="ph" data-label="Product plate · Bafun uni in wooden tray"></div>
+    </div>
+    <div class="info">
+      <div>
+        <div class="idx"><span class="line"></span><span>N° 01 · Hokkaido</span></div>
+        <h3>馬糞海膽<span class="en">Bafun Uni</span></h3>
+        <p class="desc">A short, dense roe. The color of setting sun. Deep umami, buttered finish — the grade Ginza counters reserve for the season's most considered omakase.</p>
+      </div>
+      <div class="specs">
+        <div class="cell"><div class="k">Origin</div><div class="v">Rishiri</div></div>
+        <div class="cell"><div class="k">Season</div><div class="v">Jun – Aug</div></div>
+        <div class="cell"><div class="k">Grade</div><div class="v">A⁺ Board</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="uni-item">
+    <div class="media">
+      <div class="frame-no">02 / 03 · Murasaki</div>
+      <div class="corners"></div>
+      <div class="ph" data-label="Product plate · Murasaki uni, pale amber"></div>
+    </div>
+    <div class="info">
+      <div>
+        <div class="idx"><span class="line"></span><span>N° 02 · Aomori</span></div>
+        <h3>紫海膽<span class="en">Murasaki Uni</span></h3>
+        <p class="desc">Long, fair, almost ivory. Clean brine, orchid-sweet, the restraint of a whispered course. Favoured by chefs composing delicate openings and cold preparations.</p>
+      </div>
+      <div class="specs">
+        <div class="cell"><div class="k">Origin</div><div class="v">Mutsu Bay</div></div>
+        <div class="cell"><div class="k">Season</div><div class="v">Apr – Oct</div></div>
+        <div class="cell"><div class="k">Grade</div><div class="v">A Board</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="uni-item">
+    <div class="media">
+      <div class="frame-no">03 / 03 · Aka</div>
+      <div class="corners"></div>
+      <div class="ph" data-label="Product plate · Aka uni, deep vermilion"></div>
+    </div>
+    <div class="info">
+      <div>
+        <div class="idx"><span class="line"></span><span>N° 03 · Nagasaki</span></div>
+        <h3>赤海膽<span class="en">Aka Uni</span></h3>
+        <p class="desc">The cardinal's robe. Warm Kyushu waters yield a roe of uncommon concentration — low volume, high character. A chef's-choice flagship, scarce by design.</p>
+      </div>
+      <div class="specs">
+        <div class="cell"><div class="k">Origin</div><div class="v">Iki Island</div></div>
+        <div class="cell"><div class="k">Season</div><div class="v">Sep – Mar</div></div>
+        <div class="cell"><div class="k">Grade</div><div class="v">Reserve</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT GRID -->
+<section class="grid-sec" id="catalogue">
+  <div class="grid-head">
+    <div>
+      <div class="sec-label"><span class="num">004 —</span><span>Catalogue · 產品目錄</span><span class="line"></span></div>
+      <h2 class="display" style="margin-top:32px;">The full <span class="it">board.</span></h2>
+    </div>
+    <div class="meta">
+      <span><b>09</b> Active SKU</span>
+      <span><b>03</b> Prefectures</span>
+      <span><b>B2B</b> Access Tier</span>
+    </div>
+  </div>
+
+  <div class="product-grid">
+    <!-- 1 -->
+    <div class="p-card">
+      <div class="region">HOKKAIDO · 北海道</div>
+      <div class="img"><div class="mark"></div><span class="ref">PLT–001 / BFN</span></div>
+      <div class="name-tc">馬糞海膽 · A⁺</div>
+      <div class="name-en">Bafun Uni — Rishiri Reserve</div>
+      <div class="foot">
+        <span class="sku">SKU · INR-BFN-AP</span>
+        <span class="hidden-price">Hover · 懸停</span>
+        <span class="price"><span class="cur">HKD</span>2,880 / 100g</span>
+      </div>
+    </div>
+    <!-- 2 -->
+    <div class="p-card">
+      <div class="region">AOMORI · 青森</div>
+      <div class="img"><div class="mark"></div><span class="ref">PLT–002 / MRS</span></div>
+      <div class="name-tc">紫海膽 · A</div>
+      <div class="name-en">Murasaki — Mutsu Bay</div>
+      <div class="foot">
+        <span class="sku">SKU · INR-MRS-A</span>
+        <span class="hidden-price">Hover · 懸停</span>
+        <span class="price"><span class="cur">HKD</span>1,980 / 100g</span>
+      </div>
+    </div>
+    <!-- 3 -->
+    <div class="p-card">
+      <div class="region">NAGASAKI · 長崎</div>
+      <div class="img"><div class="mark"></div><span class="ref">PLT–003 / AKA</span></div>
+      <div class="name-tc">赤海膽 · 特</div>
+      <div class="name-en">Aka Uni — Iki Reserve</div>
+      <div class="foot">
+        <span class="sku">SKU · INR-AKA-R</span>
+        <span class="hidden-price">Hover · 懸停</span>
+        <span class="price"><span class="cur">HKD</span>3,680 / 100g</span>
+      </div>
+    </div>
+    <!-- 4 -->
+    <div class="p-card">
+      <div class="region">HOKKAIDO · 北海道</div>
+      <div class="img"><div class="mark"></div><span class="ref">PLT–004 / EZO</span></div>
+      <div class="name-tc">蝦夷鮑魚</div>
+      <div class="name-en">Ezo Abalone — Live</div>
+      <div class="foot">
+        <span class="sku">SKU · INR-EZO-L</span>
+        <span class="hidden-price">Hover · 懸停</span>
+        <span class="price"><span class="cur">HKD</span>1,240 / pc</span>
+      </div>
+    </div>
+    <!-- 5 -->
+    <div class="p-card">
+      <div class="region">TOYAMA · 富山</div>
+      <div class="img"><div class="mark"></div><span class="ref">PLT–005 / AMB</span></div>
+      <div class="name-tc">白蝦 · 生食級</div>
+      <div class="name-en">Shiroebi — Sashimi Grade</div>
+      <div class="foot">
+        <span class="sku">SKU · INR-SRB-S</span>
+        <span class="hidden-price">Hover · 懸停</span>
+        <span class="price"><span class="cur">HKD</span>980 / 100g</span>
+      </div>
+    </div>
+    <!-- 6 -->
+    <div class="p-card">
+      <div class="region">KAGOSHIMA · 鹿兒島</div>
+      <div class="img"><div class="mark"></div><span class="ref">PLT–006 / OTR</span></div>
+      <div class="name-tc">本鮪大腹</div>
+      <div class="name-en">Bluefin Ōtoro — Reserve</div>
+      <div class="foot">
+        <span class="sku">SKU · INR-OTR-R</span>
+        <span class="hidden-price">Hover · 懸停</span>
+        <span class="price"><span class="cur">HKD</span>4,200 / 500g</span>
+      </div>
+    </div>
+    <!-- 7 -->
+    <div class="p-card">
+      <div class="region">HOKKAIDO · 北海道</div>
+      <div class="img"><div class="mark"></div><span class="ref">PLT–007 / IKR</span></div>
+      <div class="name-tc">醬油漬鮭卵</div>
+      <div class="name-en">Ikura — Soy-Cured</div>
+      <div class="foot">
+        <span class="sku">SKU · INR-IKR-SC</span>
+        <span class="hidden-price">Hover · 懸停</span>
+        <span class="price"><span class="cur">HKD</span>860 / 100g</span>
+      </div>
+    </div>
+    <!-- 8 -->
+    <div class="p-card">
+      <div class="region">EHIME · 愛媛</div>
+      <div class="img"><div class="mark"></div><span class="ref">PLT–008 / MDI</span></div>
+      <div class="name-tc">真鯛 · 活締</div>
+      <div class="name-en">Madai — Ikejime, Live-Stored</div>
+      <div class="foot">
+        <span class="sku">SKU · INR-MDI-IK</span>
+        <span class="hidden-price">Hover · 懸停</span>
+        <span class="price"><span class="cur">HKD</span>1,480 / kg</span>
+      </div>
+    </div>
+    <!-- 9 -->
+    <div class="p-card">
+      <div class="region">HYŌGO · 兵庫</div>
+      <div class="img"><div class="mark"></div><span class="ref">PLT–009 / AWB</span></div>
+      <div class="name-tc">明石真子</div>
+      <div class="name-en">Akashi Octopus — Day Boat</div>
+      <div class="foot">
+        <span class="sku">SKU · INR-AWB-DB</span>
+        <span class="hidden-price">Hover · 懸停</span>
+        <span class="price"><span class="cur">HKD</span>920 / kg</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLD CHAIN -->
+<section class="chain-sec" id="chain">
+  <div class="chain-head">
+    <div>
+      <div class="sec-label"><span class="num">005 —</span><span>Cold Chain Protocol<sup style="color:var(--gold-dim)">™</sup></span><span class="line"></span></div>
+      <h2 class="display" style="margin-top:32px;">Forty-eight <span class="it">hours.</span><br>Two to five <span class="it tc">度</span>.<br>Zero compromise.</h2>
+    </div>
+    <div class="right">
+      A single unbroken chain from dockside auction to Macau kitchen — monitored by IoT sensors every sixty seconds and countersigned at four human checkpoints.
+    </div>
+  </div>
+
+  <div class="chain-rail">
+    <div class="track" id="track"></div>
+    <div class="chain-steps">
+      <div class="chain-step" data-step="0">
+        <div class="h">0 h · Dockside</div>
+        <div class="title">Auction<span class="tc">漁港競り</span></div>
+        <div class="desc">Cooperative auction. Each specimen tagged at the moment of selection — origin, boat, time.</div>
+        <div class="temp"><span class="dot"></span>Ambient · packed on ice</div>
+      </div>
+      <div class="chain-step" data-step="1">
+        <div class="h">4 h · Processing</div>
+        <div class="title">Grading<span class="tc">選別</span></div>
+        <div class="desc">Hand-graded in cooperative facility. Cold room set to 3°C. First IoT sensor attached.</div>
+        <div class="temp"><span class="dot"></span>3.0 °C · sensor active</div>
+      </div>
+      <div class="chain-step" data-step="2">
+        <div class="h">12 h · Haneda</div>
+        <div class="title">Tarmac<span class="tc">航空便</span></div>
+        <div class="desc">Direct freight to HND / NRT. Reefer ULD containers pre-chilled to 2.5°C before load.</div>
+        <div class="temp"><span class="dot"></span>2.5 °C · reefer ULD</div>
+      </div>
+      <div class="chain-step" data-step="3">
+        <div class="h">24 h · Hong Kong</div>
+        <div class="title">Customs<span class="tc">通關</span></div>
+        <div class="desc">Priority clearance at HKG. Bonded cold room hold, four-minute dwell before cross-border dispatch.</div>
+        <div class="temp"><span class="dot"></span>3.2 °C · bonded hold</div>
+      </div>
+      <div class="chain-step" data-step="4">
+        <div class="h">40 h · Macau</div>
+        <div class="title">Facility<span class="tc">澳門冷庫</span></div>
+        <div class="desc">Arrival at Inari's Macau cold facility. Temperature log signed, chef portal notified.</div>
+        <div class="temp"><span class="dot"></span>2.8 °C · signed off</div>
+      </div>
+      <div class="chain-step" data-step="5">
+        <div class="h">48 h · Kitchen</div>
+        <div class="title">Counter<span class="tc">主廚檯</span></div>
+        <div class="desc">Hand-delivered to the pass. Chef countersigns on tablet. Chain closes.</div>
+        <div class="temp"><span class="dot"></span>4.0 °C · received</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chain-foot">
+    <div class="cell"><div class="k">Sensor Reads</div><div class="v">2,880<small>per shipment</small></div></div>
+    <div class="cell"><div class="k">Human Sign-offs</div><div class="v">4<small>checkpoints</small></div></div>
+    <div class="cell"><div class="k">Target Window</div><div class="v">2–5<small>°C held</small></div></div>
+    <div class="cell"><div class="k">On-Time · 12mo</div><div class="v">99.6<small>%</small></div></div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust" id="trust">
+  <div class="trust-head">
+    <div>
+      <div class="sec-label"><span class="num">006 —</span><span>Elite Kitchens · 信賴</span><span class="line"></span></div>
+      <h2 class="display">Trusted by one hundred<br><span class="it">of Macau's most</span><br>considered kitchens.</h2>
+    </div>
+    <div class="right">
+      A partial list. Members of our chef programme prefer discretion; the counter speaks for itself.
+    </div>
+  </div>
+
+  <div class="partners-grid">
+    <div class="partner"><div class="n">Omakase Tsukiji</div><div class="t">Cotai · Omakase</div><div class="star">★★★</div></div>
+    <div class="partner"><div class="n">Ryū no Hana</div><div class="t">Taipa · Kaiseki</div><div class="star">★★</div></div>
+    <div class="partner"><div class="n">Maison Aubrac</div><div class="t">Macau · French</div><div class="star">★★</div></div>
+    <div class="partner"><div class="n">The Pearl Counter</div><div class="t">Cotai · Sushi</div><div class="star">★ BP</div></div>
+    <div class="partner"><div class="n">Sakura-tei</div><div class="t">Coloane · Kappō</div><div class="star">★</div></div>
+    <div class="partner"><div class="n">Hotel Lisboa · 天香</div><div class="t">Macau · Cantonese</div><div class="star">★★</div></div>
+    <div class="partner"><div class="n">Il Giardino</div><div class="t">Cotai · Italian</div><div class="star">★</div></div>
+    <div class="partner"><div class="n">Counter by K.</div><div class="t">Taipa · Omakase</div><div class="star">★★</div></div>
+    <div class="partner"><div class="n">Jade Harbour Club</div><div class="t">Macau · Private</div><div class="star">BP</div></div>
+    <div class="partner"><div class="n">Ginza Noda</div><div class="t">Cotai · Sushi-ya</div><div class="star">★★★</div></div>
+    <div class="partner"><div class="n">Maison Belle Époque</div><div class="t">Macau · French</div><div class="star">★</div></div>
+    <div class="partner"><div class="n">+ 89 more</div><div class="t">Programme Members</div><div class="star">NDA</div></div>
+  </div>
+
+  <div class="trust-quote">
+    <div class="attr">
+      <b>Chef M. Kurosawa</b>
+      Head Chef<br>Omakase Tsukiji, Cotai<br>—<br>Sep · 2025
+    </div>
+    <blockquote>Inari is the one shipment I open without inspecting. In eleven years, they have never asked me to.</blockquote>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec" id="cta">
+  <div class="cta-head">
+    <div>
+      <div class="sec-label"><span class="num">007 —</span><span>Access · 訂購</span><span class="line"></span></div>
+      <h2 class="display" style="margin-top:32px;">Two doors.<br>The same <span class="it">sea.</span></h2>
+    </div>
+    <div class="right">
+      The wholesale programme opens a standing line to our sourcing desk. The private order is for the table that knows exactly what it wants.
+    </div>
+  </div>
+
+  <div class="cta-cards">
+    <div class="cta-card left primary">
+      <div class="serial">Tier · 001 Wholesale</div>
+      <div class="tag"><span class="line"></span><span>For Kitchens</span></div>
+      <h3>餐廳批發計劃<span class="en">The Wholesale Programme</span></h3>
+      <p>A direct line to our Hokkaido sourcing desk, weekly allocation windows, dedicated courier, and chef-portal sign-off for every tray.</p>
+      <ul>
+        <li>Weekly allocation — Tue / Fri windows</li>
+        <li>Dedicated account manager · WhatsApp line</li>
+        <li>Net-30 terms after trial quarter</li>
+        <li>First access to seasonal cooperatives</li>
+      </ul>
+      <div class="btn-row">
+        <button class="btn-solid">Apply · 提交申請</button>
+        <button class="btn-ghost">Download Catalogue</button>
+      </div>
+      <div class="fine">By invitation + vetting · 2–5 business days</div>
+    </div>
+
+    <div class="cta-card">
+      <div class="serial">Tier · 002 Private</div>
+      <div class="tag"><span class="line"></span><span>For the Table</span></div>
+      <h3>個人訂購<span class="en">The Private Order</span></h3>
+      <p>A smaller, considered selection for private dining and discerning residences. Hand-delivered across Macau within twelve hours of arrival.</p>
+      <ul>
+        <li>Minimum order · HKD 3,800</li>
+        <li>Scheduled delivery · Macau peninsula & Cotai</li>
+        <li>Gift packaging in cedar box · on request</li>
+        <li>Concierge line for menu consultation</li>
+      </ul>
+      <div class="btn-row">
+        <button class="btn-ghost">Browse Selection</button>
+      </div>
+      <div class="fine">No account required · order from HKD 3,800</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="brand-f">
+      <span class="jp">稻荷環球食品</span>
+      Inari Global Foods
+      <span class="en">Macau's principal supplier of Japanese uni to Michelin-starred, Black Pearl and five-star kitchens. Established 2008. Headquartered in Macau SAR with sourcing offices in Sapporo and Aomori.</span>
+    </div>
+  </div>
+  <div>
+    <h5>Offices</h5>
+    <ul>
+      <li>Macau SAR (HQ)</li>
+      <li>Sapporo, 北海道</li>
+      <li>Aomori, 青森</li>
+      <li>Hong Kong Bonded</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Programme</h5>
+    <ul>
+      <li><a href="#cta">Wholesale Application</a></li>
+      <li><a href="#">Private Order</a></li>
+      <li><a href="#">Chef Portal</a></li>
+      <li><a href="#">Cold Chain Audit</a></li>
+    </ul>
+  </div>
+  <div>
+    <h5>Contact</h5>
+    <ul>
+      <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="83f7f1e2e7e6c3eaede2f1eaaee5ecece7f0adeeec">[email&#160;protected]</a></li>
+      <li>+853 2833 0088</li>
+      <li>Av. de Almeida Ribeiro 203, Macau</li>
+      <li>Mon – Sat · 09:00–20:00</li>
+    </ul>
+  </div>
+</footer>
+
+<div class="foot-btm">
+  <span>© 2008 – 2026 Inari Global Foods Ltd. · 稻荷環球食品有限公司</span>
+  <span>Cold Chain Protocol™ is a registered trademark.</span>
+  <span>Ref. INR–MFM–2008 / Build 04·26</span>
+</div>
+
+<!-- TWEAKS PANEL -->
+<div id="tweaks" style="display:none; position:fixed; right:28px; bottom:28px; z-index:100; width:300px; background:rgba(5,8,14,0.96); border:1px solid var(--hair-strong); color:var(--cream); font-family:var(--sans); backdrop-filter:blur(12px);">
+  <div style="padding:16px 20px; border-bottom:1px solid var(--hair); display:flex; justify-content:space-between; align-items:center;">
+    <span style="font-family:var(--mono); font-size:10px; letter-spacing:.26em; color:var(--gold); text-transform:uppercase;">Tweaks</span>
+    <span style="font-family:var(--mono); font-size:9px; letter-spacing:.2em; color:var(--cream-dim);">EDIT MODE</span>
+  </div>
+  <div style="padding:18px 20px; display:flex; flex-direction:column; gap:16px;">
+    <div>
+      <label style="display:block; font-family:var(--mono); font-size:9.5px; letter-spacing:.24em; color:var(--cream-dim); text-transform:uppercase; margin-bottom:8px;">Accent · Gold</label>
+      <input type="color" id="tw-gold" style="width:100%; height:32px; background:transparent; border:1px solid var(--hair); cursor:pointer;">
+    </div>
+    <div>
+      <label style="display:block; font-family:var(--mono); font-size:9.5px; letter-spacing:.24em; color:var(--cream-dim); text-transform:uppercase; margin-bottom:8px;">Background</label>
+      <input type="color" id="tw-bg" style="width:100%; height:32px; background:transparent; border:1px solid var(--hair); cursor:pointer;">
+    </div>
+    <div>
+      <label style="display:block; font-family:var(--mono); font-size:9.5px; letter-spacing:.24em; color:var(--cream-dim); text-transform:uppercase; margin-bottom:8px;">Hero Scale · <span id="tw-scale-v">1.0×</span></label>
+      <input type="range" id="tw-scale" min="0.85" max="1.25" step="0.01" style="width:100%;">
+    </div>
+    <div>
+      <label style="display:block; font-family:var(--mono); font-size:9.5px; letter-spacing:.24em; color:var(--cream-dim); text-transform:uppercase; margin-bottom:8px;">Hero Headline Style</label>
+      <select id="tw-heroStyle" style="width:100%; padding:8px 10px; background:var(--bg-2); color:var(--cream); border:1px solid var(--hair); font-family:var(--sans); font-size:12px;">
+        <option value="mixed">Mixed (Default)</option>
+        <option value="allSerif">All Serif · Italic Gold</option>
+        <option value="allTC">All 繁體中文</option>
+      </select>
+    </div>
+    <div>
+      <label style="display:block; font-family:var(--mono); font-size:9.5px; letter-spacing:.24em; color:var(--cream-dim); text-transform:uppercase; margin-bottom:8px;">Grid Hover</label>
+      <select id="tw-grid" style="width:100%; padding:8px 10px; background:var(--bg-2); color:var(--cream); border:1px solid var(--hair); font-family:var(--sans); font-size:12px;">
+        <option value="price">Reveal Price</option>
+        <option value="tint">Gold Tint Only</option>
+        <option value="invert">Invert Card</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "gold": "#C9A961",
+    "bg": "#05080E",
+    "heroScale": 1.0,
+    "heroStyle": "mixed",
+    "gridHover": "price"
+  }/*EDITMODE-END*/;
+  let TW = {...TWEAK_DEFAULTS};
+
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 40) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+  };
+  document.addEventListener('scroll', onScroll);
+
+  // Reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('section, .uni-item, .p-card, .partner, .chain-step').forEach(el => {
+    el.classList.add('reveal'); io.observe(el);
+  });
+
+  // Cold chain animation
+  const chainSec = document.getElementById('chain');
+  const steps = document.querySelectorAll('.chain-step');
+  const track = document.getElementById('track');
+  const chainIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        track.style.width = '100%';
+        steps.forEach((s, i) => setTimeout(() => s.classList.add('active'), 180 + i * 220));
+      }
+    });
+  }, { threshold: 0.35 });
+  chainIO.observe(chainSec);
+
+  // ——— TWEAKS ———
+  function applyTweaks() {
+    document.documentElement.style.setProperty('--gold', TW.gold);
+    document.documentElement.style.setProperty('--bg', TW.bg);
+    document.documentElement.style.setProperty('--hair', hexToRGBA(TW.gold, 0.22));
+    document.documentElement.style.setProperty('--hair-strong', hexToRGBA(TW.gold, 0.5));
+
+    // hero scale
+    const h1 = document.querySelector('.hero h1');
+    if (h1) h1.style.transform = `scale(${TW.heroScale})`;
+    if (h1) h1.style.transformOrigin = 'left bottom';
+
+    // hero style
+    const heroH1 = document.querySelector('.hero h1');
+    if (heroH1) {
+      if (TW.heroStyle === 'allSerif') {
+        heroH1.innerHTML = 'From <span class="it">Hokkaido fisheries</span> to Macau\'s <span class="it">Michelin</span> tables in <span class="it">48 hours.</span>';
+      } else if (TW.heroStyle === 'allTC') {
+        heroH1.innerHTML = '<span class="em">由北海道漁港</span><br>送抵澳門<span class="em it">米其林</span>餐桌<br><span class="it">僅需四十八小時。</span>';
+      } else {
+        heroH1.innerHTML = 'From Hokkaido <span class="it">fisheries</span><br>to Macau\'s <span class="em">米其林</span> tables<br>in <span class="it">48 hours.</span>';
+      }
+    }
+
+    // grid hover
+    document.body.dataset.gridHover = TW.gridHover;
+    document.querySelectorAll('.p-card').forEach(c => {
+      c.onmouseenter = null; c.onmouseleave = null;
+      if (TW.gridHover === 'invert') {
+        c.onmouseenter = () => { c.style.background = 'var(--cream)'; c.style.color = 'var(--bg)'; c.querySelectorAll('.name-tc, .name-en, .sku, .region, .ref, .price, .hidden-price').forEach(el => el.style.color = 'var(--bg)'); };
+        c.onmouseleave = () => { c.style.background = ''; c.style.color = ''; c.querySelectorAll('.name-tc, .name-en, .sku, .region, .ref, .price, .hidden-price').forEach(el => el.style.color = ''); };
+      }
+    });
+  }
+
+  function hexToRGBA(hex, a) {
+    const h = hex.replace('#','');
+    const r = parseInt(h.substring(0,2),16);
+    const g = parseInt(h.substring(2,4),16);
+    const b = parseInt(h.substring(4,6),16);
+    return `rgba(${r},${g},${b},${a})`;
+  }
+
+  function persist() {
+    try { window.parent.postMessage({type:'__edit_mode_set_keys', edits: TW}, '*'); } catch(e){}
+  }
+
+  function bindTweaks() {
+    const gold = document.getElementById('tw-gold');
+    const bg = document.getElementById('tw-bg');
+    const scale = document.getElementById('tw-scale');
+    const scaleV = document.getElementById('tw-scale-v');
+    const heroStyle = document.getElementById('tw-heroStyle');
+    const grid = document.getElementById('tw-grid');
+    gold.value = TW.gold; bg.value = TW.bg; scale.value = TW.heroScale; scaleV.textContent = (+TW.heroScale).toFixed(2) + '×';
+    heroStyle.value = TW.heroStyle; grid.value = TW.gridHover;
+
+    gold.oninput = () => { TW.gold = gold.value; applyTweaks(); persist(); };
+    bg.oninput = () => { TW.bg = bg.value; applyTweaks(); persist(); };
+    scale.oninput = () => { TW.heroScale = +scale.value; scaleV.textContent = TW.heroScale.toFixed(2) + '×'; applyTweaks(); persist(); };
+    heroStyle.onchange = () => { TW.heroStyle = heroStyle.value; applyTweaks(); persist(); };
+    grid.onchange = () => { TW.gridHover = grid.value; applyTweaks(); persist(); };
+  }
+
+  // Edit mode wiring (FIRST register listener, THEN announce)
+  const tweaksPanel = document.getElementById('tweaks');
+  window.addEventListener('message', (ev) => {
+    const d = ev.data || {};
+    if (d.type === '__activate_edit_mode') tweaksPanel.style.display = 'block';
+    if (d.type === '__deactivate_edit_mode') tweaksPanel.style.display = 'none';
+  });
+  try { window.parent.postMessage({type:'__edit_mode_available'}, '*'); } catch(e){}
+
+  applyTweaks();
+  bindTweaks();
+</script>
+</body>
+</html>
