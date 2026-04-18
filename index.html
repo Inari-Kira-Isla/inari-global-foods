@@ -1123,6 +1123,54 @@ footer{
   .footer-grid{grid-template-columns:1fr;gap:2.5rem}
 }
 </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "稻荷環球食品供應哪些產地的日本海膽？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "我們供應日本三大優質海膽產地：北海道、青森及長崎。其中北海道海膽以其濃郁甘甜的口感聞名，是米芝蓮餐廳的首選。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "最快可多快送達？冷鏈如何確保品質？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "我們提供48小時冷鏈送達服務，從日本產地直採後立即以專業冷鏈設備運輸，確保海膽保持最佳鮮度與風味。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "最低訂貨量是多少？支援零售嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "我們主要服務B2B餐飲客戶，包括米芝蓮及黑珍珠餐廳。具體訂貨量及批發條款請直接透過WhatsApp +853-6282-3037 聯絡我們的銷售團隊。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如何確保海膽品質符合餐廳標準？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "我們嚴格執行品質管控，所有海膽均來自認證供應商，並提供品質保證。作為澳門市佔70%以上的供應商，我們熟知高端餐廳的需求與標準。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "你們支援哪些付款方式？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "我們接受多種付款方式，包括銀行轉帳、PayMe及現金。具體付款條款可與我們的銷售團隊協商。如有疑問，請WhatsApp聯絡。"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -1729,30 +1777,56 @@ footer{
 })();
 </script>
 
-<!-- AI Referral Tracker -->
+<!-- AI Referral Tracker v2 — fixed field mapping + Blob content-type -->
 <script>
 (function(){
   var ref = document.referrer || '';
-  var AI_ORIGINS = [
-    'perplexity.ai','chatgpt.com','claude.ai','gemini.google.com',
-    'copilot.microsoft.com','doubao.com','kimi.moonshot.cn',
-    'you.com','phind.com','poe.com'
+  // Map referrer domain → API referrer_source value
+  var AI_MAP = [
+    ['perplexity.ai','perplexity'],
+    ['chatgpt.com','chatgpt'],['chat.openai.com','chatgpt'],
+    ['claude.ai','claude'],
+    ['gemini.google.com','gemini'],['bard.google.com','gemini'],
+    ['copilot.microsoft.com','copilot'],['bing.com','copilot'],
+    ['grok.com','grok'],['x.com/i/grok','grok'],
+    ['you.com','you'],
+    ['phind.com','phind'],
+    ['kagi.com','kagi'],
+    ['doubao.com','other_ai'],['kimi.moonshot.cn','other_ai'],
+    ['poe.com','other_ai'],['character.ai','other_ai'],
   ];
-  var isAI = AI_ORIGINS.some(function(o){ return ref.includes(o); });
-  if(isAI || (ref === '' && document.cookie.indexOf('_ai_ref') === -1)){
-    var payload = {
-      brand_slug:'inari-global-foods',
-      referrer:ref,
-      page:location.href,
-      ua:navigator.userAgent.slice(0,120),
-      ts:Date.now()
-    };
-    if(typeof navigator.sendBeacon === 'function'){
-      navigator.sendBeacon(
-        'https://cloudpipe-macao-app.vercel.app/api/v1/track-ai-referral',
-        JSON.stringify(payload)
-      );
-    }
+  var source = null;
+  for(var i=0;i<AI_MAP.length;i++){
+    if(ref.indexOf(AI_MAP[i][0])!==-1){ source=AI_MAP[i][1]; break; }
+  }
+  // Fallback: check utm_source param (e.g. ?utm_source=perplexity)
+  if(!source){
+    try{
+      var utm=(new URLSearchParams(location.search)).get('utm_source')||'';
+      var u=utm.toLowerCase();
+      if(u.indexOf('perplexity')!==-1) source='perplexity';
+      else if(u.indexOf('chatgpt')!==-1||u.indexOf('openai')!==-1) source='chatgpt';
+      else if(u.indexOf('claude')!==-1) source='claude';
+      else if(u.indexOf('gemini')!==-1) source='gemini';
+      else if(u.indexOf('copilot')!==-1||u.indexOf('bing')!==-1) source='copilot';
+      else if(u.indexOf('grok')!==-1) source='grok';
+      else if(u.length>0&&u.indexOf('ai')!==-1) source='other_ai';
+    }catch(e){}
+  }
+  if(!source) return; // Only track confirmed AI referrals
+  var payload = {
+    referrer_source: source,
+    referrer_url: ref.slice(0,500),
+    path: location.pathname,
+    site: 'inari-global-foods',
+    page_type: 'page',
+    ua_raw: navigator.userAgent.slice(0,200)
+  };
+  if(typeof navigator.sendBeacon==='function'){
+    navigator.sendBeacon(
+      'https://cloudpipe-macao-app.vercel.app/api/v1/track-ai-referral',
+      new Blob([JSON.stringify(payload)],{type:'application/json'})
+    );
   }
 })();
 </script>
