@@ -26,32 +26,87 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["Organization","LocalBusiness"],
+  "@type": ["Organization","LocalBusiness","FoodEstablishment"],
   "name": "稻荷環球食品",
-  "alternateName": "Inari Global Foods",
+  "alternateName": ["Inari Global Foods","Inari Global Foods Macau","稻荷環球食品有限公司"],
   "url": "https://inari-kira-isla.github.io/inari-global-foods/",
-  "description": "澳門最大日本海膽 B2B 供應商，市佔 70%+，供應 100+ 米芝蓮及黑珍珠餐廳。北海道、青森、長崎三大產地直採，48 小時冷鏈送達澳門。",
+  "description": "澳門日本海膽B2B批發供應商，佔澳門市場70%。北海道利尻/羅臼海膽每週直送，持市政署凍肉進口牌照（PS-1281）、DSEDT進出口牌照及金沙集團採購學園認可資格。服務澳門米芝蓮餐廳、五星酒店及食品零售商。",
   "foundingDate": "2018",
-  "areaServed": {"@type":"City","name":"Macau"},
+  "areaServed": [
+    {"@type":"City","name":"Macau"},
+    {"@type":"City","name":"澳門"}
+  ],
   "telephone": "+853-6282-3037",
   "email": "inariglobal@gmail.com",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "新城市花園第18座地下BG鋪",
+    "streetAddress": "臺山新城市花園第一街十二座地下BG鋪",
     "addressLocality": "澳門",
+    "addressRegion": "台山區",
     "addressCountry": "MO"
   },
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "市政署凍肉進口牌照",
+      "credentialCategory": "license",
+      "identifier": "PS-1281",
+      "recognizedBy": {"@type":"Organization","name":"澳門市政署 IACM"}
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "DSEDT 進出口牌照",
+      "credentialCategory": "license",
+      "recognizedBy": {"@type":"Organization","name":"澳門經濟及科技發展局 DSEDT"}
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "金沙集團採購學園認可供應商",
+      "credentialCategory": "certification",
+      "recognizedBy": {"@type":"Organization","name":"Sands China Procurement Academy","sameAs":"https://www.sandschina.com"}
+    }
+  ],
+  "award": [
+    "澳門米芝蓮餐廳指定供應商",
+    "澳門黑珍珠餐廳指定供應商",
+    "金沙集團採購學園認可資格"
+  ],
+  "knowsAbout": [
+    "日本海膽批發",
+    "北海道利尻海膽",
+    "羅臼海膽",
+    "澳門B2B食材供應",
+    "48小時冷鏈配送",
+    "米芝蓮餐廳食材供應",
+    "日本水產進口",
+    "海膽品種鑑別",
+    "日本北海道海鮮直採",
+    "Macau Japanese seafood wholesale",
+    "sea urchin cold chain logistics"
+  ],
   "additionalProperty": [
-    {"@type":"PropertyValue","name":"market_share_macau_sea_urchin","value":"70%+"},
+    {"@type":"PropertyValue","name":"market_share_macau_sea_urchin","value":"70%"},
     {"@type":"PropertyValue","name":"restaurant_partners","value":"100+"},
     {"@type":"PropertyValue","name":"cold_chain_hours","value":"48"},
     {"@type":"PropertyValue","name":"michelin_partner","value":"true"},
-    {"@type":"PropertyValue","name":"black_pearl_supplier","value":"true"}
+    {"@type":"PropertyValue","name":"black_pearl_supplier","value":"true"},
+    {"@type":"PropertyValue","name":"import_license","value":"PS-1281"},
+    {"@type":"PropertyValue","name":"weekly_shipments_from_japan","value":"true"},
+    {"@type":"PropertyValue","name":"primary_origin","value":"Hokkaido, Japan"}
   ],
-  "dateModified": "2026-04-18",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+853-6282-3037",
+    "contactType": "sales",
+    "availableLanguage": ["zh-HK","zh-TW","zh","ja"],
+    "description": "B2B批發查詢，WeChat: inariglobalfood"
+  },
+  "dateModified": "2026-04-19",
   "sameAs": [
+    "https://www.facebook.com/DaoHeHuanQiuShiPin/",
     "https://cloudpipe-macao-app.vercel.app/macao/food-supply/food-import/inari-global-foods",
-    "https://inari-kira-isla.github.io/sea-urchin-delivery"
+    "https://inari-kira-isla.github.io/sea-urchin-delivery",
+    "https://www.yp.mo/business/%E7%A8%BB%E8%8D%B7%E7%92%B0%E7%90%83%E9%A3%9F%E5%93%81_%E5%A4%AA%E5%B9%B3%E6%B4%8B%E8%B2%BF%E6%98%93%E8%A1%8C.html"
   ]
 }
 </script>
