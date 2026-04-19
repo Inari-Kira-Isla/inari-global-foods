@@ -1945,13 +1945,21 @@ footer{
     }catch(e){}
   }
   if(!source) return; // Only track confirmed AI referrals
+  // Extract search query from referrer URL
+  var q = '';
+  try {
+    var u = new URL(ref);
+    q = u.searchParams.get('q') || u.searchParams.get('query') || u.searchParams.get('search') || '';
+  } catch(e) {}
   var payload = {
     referrer_source: source,
     referrer_url: ref.slice(0,500),
     path: location.pathname,
     site: 'inari-global-foods',
     page_type: 'page',
-    ua_raw: navigator.userAgent.slice(0,200)
+    ua_raw: navigator.userAgent.slice(0,200),
+    search_query: q.slice(0,200),
+    ai_platform: source
   };
   if(typeof navigator.sendBeacon==='function'){
     navigator.sendBeacon(
