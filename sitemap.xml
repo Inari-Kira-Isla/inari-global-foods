@@ -1602,4 +1602,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://inari-kira-isla.github.io/inari-global-foods/articles/2026-05-19_松阪牛-vs-神戶牛-vs-近江牛-三大名牛完全比較.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://inari-kira-isla.github.io/inari-global-foods/articles/2026-05-19_A5-和牛-為什麼這麼貴-等級系統完全解析.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

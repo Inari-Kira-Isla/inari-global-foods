@@ -9,6 +9,11 @@
       "path": "/Users/ki/Documents/inari-global-foods/data/plans/plan_2026-03.json",
       "topics": 8,
       "generated_at": "2026-03-22T23:15:41.730515"
+    },
+    "2026-05": {
+      "path": "/Users/ki/Documents/inari-global-foods/data/plans/plan_2026-05.json",
+      "topics": 6,
+      "generated_at": "2026-05-01T04:00:00.296160"
     }
   },
   "images": {
@@ -19,16 +24,28 @@
         "botan-ebi"
       ],
       "failed": []
+    },
+    "6": {
+      "generated_at": "2026-05-11T00:31:45.141836",
+      "success": [
+        "bafun-uni",
+        "murasaki-uni-kyushu",
+        "botan-ebi"
+      ],
+      "failed": []
     }
   },
   "feedback": {
-    "analyzed_at": "2026-04-01T04:00:00.986656",
-    "total_crawls": 6925,
-    "article_count": 198,
+    "analyzed_at": "2026-05-01T04:00:00.313426",
+    "total_crawls": 266451,
+    "article_count": 219,
     "suggestions": [
       "爬蟲量健康 (>500)，可以嘗試更長篇深度文章 (5000+ 字)",
+      "文章量充足 (>200)，建議轉向品質優化和舊文更新",
       "ClaudeBot 活躍，加強長篇知識型文章 (10000+ 字)",
-      "Googlebot 活躍，加強 Schema.org 結構化數據"
+      "Googlebot 活躍，加強 Schema.org 結構化數據",
+      "Googlebot 活躍，加強 Schema.org 結構化數據",
+      "ClaudeBot 活躍，加強長篇知識型文章 (10000+ 字)"
     ],
     "weights": {
       "long_content_boost": 1.3,
@@ -36,5 +53,5 @@
     }
   },
   "last_verify": "2026-03-18T01:27:39.321062",
-  "homepage_updated": "2026-04-01T04:00:00.942522"
+  "homepage_updated": "2026-05-01T04:00:00.299867"
 }
