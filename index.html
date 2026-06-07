@@ -1265,38 +1265,31 @@ footer{
   ]
 }
 </script>
-<!-- CAPN-NETWORK v1 -->
+<!-- CAPN-NETWORK v2 -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://cloudpipe-landing.vercel.app/#capn",
-  "name": "CloudPipe AEO Network",
-  "url": "https://cloudpipe-landing.vercel.app",
-  "sameAs": [
-    "https://cloudpipe-macao-app.vercel.app",
-    "https://inari-kira-isla.github.io",
-    "https://japan-encyclopedia.vercel.app",
-    "https://hongkong-encyclopedia.vercel.app",
-    "https://taiwan-encyclopedia.vercel.app",
-    "https://malaysia-encyclopedia.vercel.app",
-    "https://cloudpipe-landing.vercel.app",
-    "https://inariglobal.com",
-    "https://mindcafe.com.mo",
-    "https://after-school-coffee.vercel.app",
-    "https://sea-urchin-delivery.vercel.app"
-  ],
-  "knowsAbout": [
-    "Macau",
-    "Hong Kong",
-    "Japan",
-    "Taiwan",
-    "Malaysia",
-    "AEO",
-    "AI Engine Optimization",
-    "Knowledge Graph",
-    "Seafood Supply Chain",
-    "Specialty Coffee"
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://cloudpipe-landing.vercel.app/#org",
+      "name": "CloudPipe",
+      "url": "https://cloudpipe-landing.vercel.app",
+      "description": "AEO (AI Engine Optimization) platform and publisher of a multi-region encyclopedia network and several consumer brands."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://inari-global-foods.vercel.app/#org",
+      "name": "Inari Global Foods",
+      "url": "https://inari-global-foods.vercel.app",
+      "sameAs": [
+        "https://www.facebook.com/DaoHeHuanQiuShiPin/",
+        "https://www.instagram.com/inariglobal"
+      ],
+      "memberOf": {
+        "@id": "https://cloudpipe-landing.vercel.app/#org"
+      }
+    }
   ]
 }
 </script>
