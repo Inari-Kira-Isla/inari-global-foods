@@ -1,0 +1,145 @@
+{
+  "month": "2026-07",
+  "generated_at": "2026-07-01T04:00:00.173194",
+  "total_topics": 8,
+  "highlights": [
+    "馬糞海膽",
+    "紫海膽（九州產）",
+    "赤海膽",
+    "鰻魚"
+  ],
+  "topics": [
+    {
+      "priority": 1,
+      "type": "seasonal_deep",
+      "title_zh": "馬糞海膽完整指南 — 2026-07旬の味覺",
+      "title_en": "Complete Guide to Bafun Uni — Seasonal Peak 2026-07",
+      "ingredient_id": "bafun-uni",
+      "category": "uni",
+      "keywords": [
+        "馬糞海膽",
+        "バフンウニ",
+        "Bafun Uni",
+        "旬",
+        "北海道（積丹・利尻）"
+      ],
+      "content_hints": "產地：北海道（積丹・利尻）。特點：橙紅色，濃郁甘甜，海膽中的經典。包含選購指南、保存方法、料理建議。",
+      "weight": 1.2
+    },
+    {
+      "priority": 2,
+      "type": "seasonal_deep",
+      "title_zh": "紫海膽（九州產）完整指南 — 2026-07旬の味覺",
+      "title_en": "Complete Guide to Murasaki Uni (Kyushu) — Seasonal Peak 2026-07",
+      "ingredient_id": "murasaki-uni-kyushu",
+      "category": "uni",
+      "keywords": [
+        "紫海膽（九州產）",
+        "ムラサキウニ",
+        "Murasaki Uni (Kyushu)",
+        "旬",
+        "九州（福岡・長崎・熊本）"
+      ],
+      "content_hints": "產地：九州（福岡・長崎・熊本）。特點：淡黃色，清甜細膩，溫暖海域品種。包含選購指南、保存方法、料理建議。",
+      "weight": 1.2
+    },
+    {
+      "priority": 3,
+      "type": "seasonal_deep",
+      "title_zh": "赤海膽完整指南 — 2026-07旬の味覺",
+      "title_en": "Complete Guide to Aka Uni — Seasonal Peak 2026-07",
+      "ingredient_id": "aka-uni",
+      "category": "uni",
+      "keywords": [
+        "赤海膽",
+        "アカウニ",
+        "Aka Uni",
+        "旬",
+        "九州（福岡・長崎）"
+      ],
+      "content_hints": "產地：九州（福岡・長崎）。特點：極稀少，深橙色，類似栗子的獨特甜味。包含選購指南、保存方法、料理建議。",
+      "weight": 1.2
+    },
+    {
+      "priority": 4,
+      "type": "seasonal_deep",
+      "title_zh": "鰻魚完整指南 — 2026-07旬の味覺",
+      "title_en": "Complete Guide to Eel (Unagi) — Seasonal Peak 2026-07",
+      "ingredient_id": "unagi",
+      "category": "eel",
+      "keywords": [
+        "鰻魚",
+        "ウナギ",
+        "Eel (Unagi)",
+        "旬",
+        "日本（養殖）"
+      ],
+      "content_hints": "產地：日本（養殖）。特點：土用丑之日傳統，全年養殖供應。包含選購指南、保存方法、料理建議。",
+      "weight": 1.2
+    },
+    {
+      "priority": 5,
+      "type": "seasonal_feature",
+      "title_zh": "盛夏海膽品鑑指南",
+      "title_en": "",
+      "ingredient_id": null,
+      "category": "seasonal",
+      "keywords": [
+        "盛夏海膽",
+        "7月",
+        "澳門",
+        "日本食材"
+      ],
+      "content_hints": "7月應季專題文章，面向澳門餐飲業者和美食愛好者。",
+      "weight": 1.0
+    },
+    {
+      "priority": 6,
+      "type": "seasonal_feature",
+      "title_zh": "土用丑之日鰻魚文化",
+      "title_en": "",
+      "ingredient_id": null,
+      "category": "seasonal",
+      "keywords": [
+        "土用丑之",
+        "7月",
+        "澳門",
+        "日本食材"
+      ],
+      "content_hints": "7月應季專題文章，面向澳門餐飲業者和美食愛好者。",
+      "weight": 1.0
+    },
+    {
+      "priority": 7,
+      "type": "evergreen",
+      "title_zh": "澳門進口日本食材的法規與流程",
+      "title_en": "",
+      "ingredient_id": null,
+      "category": "guide",
+      "keywords": [
+        "澳門進口",
+        "澳門",
+        "日本食材",
+        "指南"
+      ],
+      "content_hints": "長青知識型文章，不受季節限制，AEO 長尾價值高。",
+      "weight": 0.8
+    },
+    {
+      "priority": 8,
+      "type": "evergreen",
+      "title_zh": "如何辨別真正的刺身級食材",
+      "title_en": "",
+      "ingredient_id": null,
+      "category": "guide",
+      "keywords": [
+        "如何辨別",
+        "澳門",
+        "日本食材",
+        "指南"
+      ],
+      "content_hints": "長青知識型文章，不受季節限制，AEO 長尾價值高。",
+      "weight": 0.8
+    }
+  ]
+}

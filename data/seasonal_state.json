@@ -14,6 +14,11 @@
       "path": "/Users/ki/Documents/inari-global-foods/data/plans/plan_2026-05.json",
       "topics": 6,
       "generated_at": "2026-05-01T04:00:00.296160"
+    },
+    "2026-07": {
+      "path": "/Users/ki/Documents/inari-global-foods/data/plans/plan_2026-07.json",
+      "topics": 8,
+      "generated_at": "2026-07-01T04:00:00.173662"
     }
   },
   "images": {
@@ -33,12 +38,22 @@
         "botan-ebi"
       ],
       "failed": []
+    },
+    "7": {
+      "generated_at": "2026-06-29T05:06:35.341384",
+      "success": [],
+      "failed": [
+        "bafun-uni",
+        "murasaki-uni-kyushu",
+        "aka-uni",
+        "unagi"
+      ]
     }
   },
   "feedback": {
-    "analyzed_at": "2026-05-01T04:00:00.313426",
-    "total_crawls": 266451,
-    "article_count": 219,
+    "analyzed_at": "2026-07-01T04:00:00.211435",
+    "total_crawls": 991296,
+    "article_count": 264,
     "suggestions": [
       "爬蟲量健康 (>500)，可以嘗試更長篇深度文章 (5000+ 字)",
       "文章量充足 (>200)，建議轉向品質優化和舊文更新",
@@ -53,5 +68,5 @@
     }
   },
   "last_verify": "2026-03-18T01:27:39.321062",
-  "homepage_updated": "2026-05-01T04:00:00.299867"
+  "homepage_updated": "2026-07-01T04:00:00.178055"
 }
