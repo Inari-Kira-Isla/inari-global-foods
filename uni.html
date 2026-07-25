@@ -1052,5 +1052,17 @@ footer {
 </footer>
 
 <script src="/inari-global-foods/ai-referral-tracker.js" defer></script>
+
+<!-- Referrer Tracking -->
+<script>
+(function(){var s='inari-global-foods',w='https://client-ai-tracker.inariglobal.workers.dev',r=document.referrer,t='direct';if(r){var h=new URL(r).hostname;if(/chatgpt\.com|openai\.com/.test(h))t='ai-chatgpt';else if(/perplexity\.ai/.test(h))t='ai-perplexity';else if(/claude\.ai|anthropic/.test(h))t='ai-claude';else if(/copilot\.microsoft|bing\.com\/chat/.test(h))t='ai-copilot';else if(/google\./.test(h))t='search-google';else if(/bing\.com/.test(h))t='search-bing';else if(/baidu\.com/.test(h))t='search-baidu';else if(/facebook|instagram|threads|twitter|x\.com|linkedin/.test(h))t='social';else t='referral';}try{var _p=JSON.stringify({site:s,ref_type:t,ref_url:r,page:location.pathname,ts:Date.now()});navigator.sendBeacon(w+'/'+s+'/visit',_p);navigator.sendBeacon('https://cloudpipe-macao-app.vercel.app/api/v1/conversion-track',_p)}catch(e){}})();
+</script>
+
+<!-- AI Tracker -->
+<img src="https://client-ai-tracker.inariglobal.workers.dev/inari-global-foods/pixel.gif" width="1" height="1" alt="" style="position:absolute;left:-9999px">
+<script>
+(function(){var s='inari-global-foods',w='https://client-ai-tracker.inariglobal.workers.dev';try{navigator.sendBeacon(w+'/'+s+'/beacon',JSON.stringify({page:location.pathname,ua:navigator.userAgent,ref:document.referrer}))}catch(e){}})();
+</script>
+<script src="https://cloudpipe-macao-app.vercel.app/spider-track.js" data-site="inari-global-foods"></script>
 </body>
 </html>
