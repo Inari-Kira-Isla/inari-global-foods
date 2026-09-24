@@ -300,9 +300,7 @@ READ_TIME---
 - [伊比利亞火腿 vs 日本和牛：東西方頂級肉品的風味碰撞](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-15_伊比利亞火腿-vs-日本和牛東西方頂級肉品的風味碰撞.html)
   深入比較伊比利亞火腿與日本和牛的風味特色、產地、工藝差異，以及在澳門餐飲市場的應用建議。
 - [北海道三大海膽品種風味圖譜：馬糞 vs 紫 vs 赤](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-15_北海道三大海膽品種風味圖譜-馬糞-vs-紫-vs-赤.html)
-  深入了解北海道三大海膽風味差異：馬糞、紫、赤三大品種的特色、產季與推薦吃法，稻荷環球食品專業進口解析。---
-READ_TIME---
-8
+  深入了解北海道三大海膽風味差異：馬糞、紫、赤三大品種的特色、產季與推薦吃法，稻荷環球食品專業進口解析。
 - [日本水產季節表：每月最值得入手的當季海鮮](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-15_日本水產季節表-每月最值得入手的當季海鮮.html)
   稻荷環球食品帶來日本水產季節表，每月精選當季海膽、赤貝、活水產等優質海鮮。了解日本水產季節，掌握每旬最鮮美的海味！
 - [比目魚刺身完全指南：鰈魚與鮃魚的區別](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-15_比目魚刺身完全指南-鰈魚與鮃魚的區別.html)
