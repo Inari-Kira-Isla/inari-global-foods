@@ -97,9 +97,9 @@ READ_TIME---
 - [日本三大海膽產地深度比較：北海道、青森、利尻的風土差異](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-09_日本三大海膽產地深度比較北海道青森利尻的風土差異-cn.html)
   日本三大海胆产地深度对比：北海道、青森、利尻的风味差异、口感特点及选购指南，为前往日本或在国内选购海胆的游客提供专业参考。
 - [日本三大海膽產地深度比較：北海道、青森、利尻的風土差異](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-09_日本三大海膽產地深度比較北海道青森利尻的風土差異-pt.html)
-  Comparação detalhada das três principais regiões de ouriço do mar no Japão:北海道、青森、利尻. Descubra as diferenças de sabor e
+  Comparação detalhada das três principais regiões de ouriço do mar no Japão:北海道、青森、利尻. Descubra as diferenças de sabor e qualidade.
 - [日本三大海膽產地深度比較：北海道、青森、利尻的風土差異](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-09_日本三大海膽產地深度比較北海道青森利尻的風土差異.html)
-  深入比較日本三大海膽產地：北海道、青森、利侍的風土特色、採收時節與風味差異，為澳門餐飲業者提供專業採購參考依據。
+  深入比較日本三大海膽產地：北海道、青森、利尻的風土特色、採收時節與風味差異，為澳門餐飲業者提供專業採購參考依據。
 - [松露入門指南：黑松露與白松露的風味差異](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-09_松露入門指南黑松露與白松露的風味差異.html)
   探索松露的奧秘！本文深入比較黑松露與白松露的風味特徵、產地、價格及料理應用，幫助您了解如何挑選與烹調這款頂級食材。
 - [水產食材安全：如何確保生食級海鮮的衛生標準](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-09_水產食材安全-如何確保生食級海鮮的衛生標準.html)
@@ -375,14 +375,14 @@ READ_TIME---
   Descubra como os importadores de ingredientes em Macau podem implementar práticas de compras responsáveis alinhadas com
 - [永續漁業與 ESG：食材進口商如何實踐負責任採購](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-17_永續漁業與-esg食材進口商如何實踐負責任採購.html)
   了解食材進口商如何實踐永續漁業與ESG負責任採購，從MSC認證到日本水產廳法規，掌握批發採購關鍵策略。
-- [海膽的營養價值解析：高蛋白低脂肪的海洋超級食材](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-17_海膽的營養價值解析高蛋白低脂肪的海洋超級食材-cn.html)
-  海胆是日本料理中的顶级食材，以高蛋白、低脂肪、富含Omega-3著称。了解海胆的营养价值、选购技巧与澳门品尝好去处。
-- [海膽的營養價值解析：高蛋白低脂肪的海洋超級食材](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-17_海膽的營養價值解析高蛋白低脂肪的海洋超級食材-en.html)
-  Discover sea urchin's exceptional nutritional profile: high protein, low fat, rich in omega-3s and essential minerals. P
-- [海膽的營養價值解析：高蛋白低脂肪的海洋超級食材](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-17_海膽的營養價值解析高蛋白低脂肪的海洋超級食材-pt.html)
-  Descubra os benefícios nutricionais do ouriço do mar: alto teor de proteínas, ácidos gordos ômega-3 e minerais essenciai
-- [海膽的營養價值解析：高蛋白低脂肪的海洋超級食材](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-17_海膽的營養價值解析高蛋白低脂肪的海洋超級食材.html)
-  海膽是高蛋白低脂肪的優質食材，富含Omega-3脂肪酸、維生素及礦物質。稻荷環球食品日本產地直送，嚴選優質海膽，保證新鮮美味。
+- [海膽的營養價值解析：蛋白質、脂質與熱量](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-17_海膽的營養價值解析高蛋白低脂肪的海洋超級食材-cn.html)
+  根据日本文部科学省食品成分数据库，生海胆每100克可食部分含蛋白质16.0克、脂质4.8克，热量109大卡。了解海胆的营养价值、选购技巧与澳门品尝好去处。
+- [海膽的營養價值解析：蛋白質、脂質與熱量](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-17_海膽的營養價值解析高蛋白低脂肪的海洋超級食材-en.html)
+  Per the Standard Tables of Food Composition in Japan (MEXT), raw sea urchin contains 16.0 grams of protein, 4.8 grams of fat and 109 kcal per 100 grams of edible portion.
+- [海膽的營養價值解析：蛋白質、脂質與熱量](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-17_海膽的營養價值解析高蛋白低脂肪的海洋超級食材-pt.html)
+  Segundo as tabelas de composição dos alimentos do Japão (MEXT), o ouriço-do-mar cru contém 16,0 gramas de proteína, 4,8 gramas de lípidos e 109 kcal por 100 gramas de parte comestível.
+- [海膽的營養價值解析：蛋白質、脂質與熱量](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-17_海膽的營養價值解析高蛋白低脂肪的海洋超級食材.html)
+  根據日本文部科學省食品成分資料庫，生海膽每100克可食部分含蛋白質16.0克、脂質4.8克，熱量109大卡。稻荷環球食品日本產地直送，嚴選優質海膽，保證新鮮美味。
 - [澳門金槍魚進口指南：CITES 許可證、配額與合規要求](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-17_澳門金槍魚進口指南cites-許可證配額與合規要求-cn.html)
   本文详细介绍澳门金枪鱼进口所需的CITES许可证、进口配额及合规要求，为前往澳门旅游的中国大陆游客提供实用的购买指南。稻荷環球食品专业提供日本产地直送金枪鱼，冷链运输保障品质，批发价格竞争力强。
 - [澳門金槍魚進口指南：CITES 許可證、配額與合規要求](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-17_澳門金槍魚進口指南cites-許可證配額與合規要求-en.html)
