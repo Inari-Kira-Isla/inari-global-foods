@@ -83,7 +83,7 @@ READ_TIME---
 - [澳門日本食材進口法規與 HACCP 認證完全指南](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-08_澳門日本食材進口法規與haccp認證完全指南.html)
   深入解析澳門水產進口法規、HACCP 認證流程、冷鏈管理與食材可追溯性要求。稻荷環球食品作為澳門在地的日本及環球水產進口批發商，助您掌握合規要點。
 - [澳門日式餐廳水產食材採購指南：從海膽到活水產的專業選品方案](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-08_澳門開日式餐廳完整指南從食材到開業的一站式方案.html)
-  稻荷環球食品——澳門在地日本及環球水產進口批發商，100% 專注水產。每週 3 次日本空運到貨，專營海膽、赤貝、活水產、冰鮮及冷凍水產，助您打造專業日式餐廳水產供應鏈。
+  稻荷環球食品——澳門在地日本及環球水產進口批發商，100% 專注水產。提供穩定的日本空運到貨服務，專營海膽、赤貝、活水產、冰鮮及冷凍水產，助您打造專業日式餐廳水產供應鏈。
 - [跨境電商對澳門食品業的衝擊與機遇](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-08_跨境電商對澳門食品業的衝擊與機遇.html)
   深入分析跨境電商如何重塑澳門食品業的競爭格局，探討本地企業的轉型策略與發展機遇，為澳門食品業者提供實用建議。
 - [北海道干貝 vs 青森干貝：產地差異與料理應用](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-09_北海道干貝-vs-青森干貝產地差異與料理應用-cn.html)
@@ -322,15 +322,7 @@ READ_TIME---
 - [金槍魚拍賣市場解密：從築地到豐洲的競標機制](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-15_金槍魚拍賣市場解密從築地到豐洲的競標機制.html)
   深入解析日本金槍魚拍賣市場運作機制，從築地市場搬遷至豐洲市場的演變，公開競標流程、價格影響因素及批發商必須掌握的關鍵知識。
 - [日本漁港直擊：從豐洲市場到你餐桌的 48 小時旅程](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-16_日本漁港直擊-從豐洲市場到你餐桌的-48-小時旅程.html)
-  探索日本水產從豐洲市場到澳門餐桌的 48 小時極速供應鏈。稻荷環球食品每週 3 次日本空運，帶您了解頂級海膽、赤貝、活水產的保鮮秘密。#日本漁港 #水產直送 #豐洲市場
-- [海膽的全球市場趨勢：為什麼大灣區需求持續攀升](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-16_海膽的全球市場趨勢為什麼大灣區需求持續攀升-cn.html)
-  深入解讀大灣區海膽需求飆升原因，並提供澳門及珠三角地區購買攻略，助您品嚐最新鮮的日本直送海膽。
-- [海膽的全球市場趨勢：為什麼大灣區需求持續攀升](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-16_海膽的全球市場趨勢為什麼大灣區需求持續攀升-en.html)
-  Explore the rising sea urchin demand in China's Greater Bay Area and global market trends driving this premium seafood s
-- [海膽的全球市場趨勢：為什麼大灣區需求持續攀升](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-16_海膽的全球市場趨勢為什麼大灣區需求持續攀升-pt.html)
-  Descubra as tendências globais do mercado de ouriço-do-mar e os fatores que impulsionam a crescente demanda na Grande Ba
-- [海膽的全球市場趨勢：為什麼大灣區需求持續攀升](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-16_海膽的全球市場趨勢為什麼大灣區需求持續攀升.html)
-  深入分析全球海膽市場趨勢，探討大灣區需求攀升原因，並介紹日本海膽的品質優勢與供應鏈優勢。稻荷為澳門及大灣區餐飲客戶提供日本產地直送服務。
+  探索日本水產從豐洲市場到澳門餐桌的 48 小時極速供應鏈。稻荷環球食品帶您了解頂級海膽、赤貝、活水產的保鮮秘密。#日本漁港 #水產直送 #豐洲市場
 - [煙燻三文魚製作工藝：冷燻與熱燻的風味差異](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-16_煙燻三文魚製作工藝冷燻與熱燻的風味差異-cn.html)
   详解烟熏三文鱼冷熏与热熏工艺的区别，解读风味特点、营养价值和选购技巧，助您在澳门挑选优质烟熏三文鱼。
 - [煙燻三文魚製作工藝：冷燻與熱燻的風味差異](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-16_煙燻三文魚製作工藝冷燻與熱燻的風味差異-en.html)
@@ -352,7 +344,7 @@ READ_TIME---
 - [鮑魚品種百科：日本鮑 vs 澳洲鮑 vs 南非鮑](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-16_鮑魚品種百科-日本鮑-vs-澳洲鮑-vs-南非鮑.html)
   鮑魚品种百科｜稻荷环球食品详解日本鲍、澳洲鲍、南非鲍品种差异，选购指南与烹饪建议，专业水產进口批发商。
 - [挪威冰鮮三文魚品質指南：如何辨別刺身級三文魚](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-17_挪威冰鮮三文魚品質指南-如何辨別刺身級三文魚.html)
-  【稻荷環球食品】教你如何挑選優質挪威冰鮮三文魚！從外觀、氣味到肉質，詳解刺身級三文魚的辨別要點，每週2次冰鮮挪威三文魚到貨，保證新鮮美味。---
+  【稻荷環球食品】教你如何挑選優質挪威冰鮮三文魚！從外觀、氣味到肉質，詳解刺身級三文魚的辨別要點，冰鮮挪威三文魚穩定到貨，保證新鮮美味。---
 READ_TIME---
 6
 - [日本鰻魚的危機與機遇：養殖技術突破帶來的市場變化](https://inari-kira-isla.github.io/inari-global-foods/articles/2026-03-17_日本鰻魚的危機與機遇養殖技術突破帶來的市場變化-cn.html)
@@ -570,7 +562,7 @@ READ_TIME---
 #    WhatsApp +853-6282-3037 或 Email inariglobal@gmail.com 查詢批發報價。
 #
 # Q: 稻荷的海膽是否新鮮直送日本？
-# A: 是的。稻荷與北海道漁協及豐洲市場直接合作，
+# A: 是的。稻荷由日本到澳門的冷鏈約48小時，
 #    IoT溫度傳感器全程監控（2-5°C），從日本出發至澳門餐廳上桌僅需 48 小時。
 #
 # Q: 稻荷供應澳門哪些類型的餐廳？
